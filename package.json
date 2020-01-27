@@ -1,0 +1,36 @@
+{
+    "name": "patternfly-snippets",
+    "displayName": "PatternFly Snippets",
+    "description": "PatternFly code snippets",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "html",
+                "path": "./snippets/core.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/react.json"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./snippets/react.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/react.json"
+            },
+            {
+                "language": "typescriptreact",
+                "path": "./snippets/react.json"
+            }
+        ]
+    }
+}

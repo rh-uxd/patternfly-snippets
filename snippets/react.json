@@ -1,0 +1,7 @@
+{
+  "React Bind Snippet": {
+    "prefix": "!bind",
+    "body": "this.${foo} = this.${foo}.bind(this)",
+    "description": "this binding for react"
+  }
+}
