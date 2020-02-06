@@ -1,0 +1,49 @@
+{
+  "codeFragments": [
+    {
+      "label": "AboutModalBox",
+      "content": "<AboutModalBox\n\tchildren={<div>ReactNode</div>}\n</AboutModalBox>"
+    }
+  ],
+  "codeCategories": [
+    { 
+        "category": "Components",
+        "codeFragments": [
+            {
+                "label": "Example fragment",
+                "content": "function foo() {alert('Thank you for using the Code Fragments extension!');}"
+            },
+            {
+                "label": "Example fragment two",
+                "content": "function foo() { alert('Thank you for using the Code Fragments extension!'); }"
+            }
+        ]
+    },
+    { 
+        "category": "Demos",
+        "codeFragments": [
+            {
+                "label": "Example demo",
+                "content": "function demo() {alert('Thank you for using the Code Fragments extension!');}"
+            },
+            {
+                "label": "Example demo two",
+                "content": "function demo() { alert('Thank you for using the Code Fragments extension!'); }"
+            }
+        ]
+    },
+    { 
+        "category": "Layouts",
+        "codeFragments": [
+            {
+                "label": "Example layout",
+                "content": "function layout() {alert('Thank you for using the Code Fragments extension!');}"
+            },
+            {
+                "label": "Example layout two",
+                "content": "function layout() { alert('Thank you for using the Code Fragments extension!'); }"
+            }
+        ]
+    }
+  ]
+}
