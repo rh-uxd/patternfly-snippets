@@ -107,70 +107,9 @@ export class FragmentManager implements IFragmentManager {
   }
 
   public async importDefaults(): Promise<ImportResult> {
-
-    //todo - add back file loader
-    //const uri = new uri('snippets/codeFragments.json');
-    // const uri = await vscode.window.showOpenDialog(
-    //     {
-    //         canSelectFiles: true,
-    //         canSelectFolders: false,
-    //         canSelectMany: false,
-    //         filters: {
-    //             'Json files': ['json'],
-    //             'All files': ['*']
-    //         },
-    //     });
-
-    // if (!uri) {
-    //     return;
-    // }
-    // const data = await this.readFileAsync('./src/snippets/codeFragments.json');
-    let data = `{ 
-    "codeCategories": [
-        { 
-            "category": "Components",
-            "codeFragments": [
-                {
-                    "label": "Example fragment",
-                    "content": "function foo() {alert('Thank you for using the Code Fragments extension!');}"
-                },
-                {
-                    "label": "Example fragment two",
-                    "content": "function foo() { alert('Thank you for using the Code Fragments extension!'); }"
-                }
-            ]
-        },
-        { 
-            "category": "Demos",
-            "codeFragments": [
-                {
-                    "label": "Example demo",
-                    "content": "function demo() {alert('Thank you for using the Code Fragments extension!');}"
-                },
-                {
-                    "label": "Example demo two",
-                    "content": "function demo() { alert('Thank you for using the Code Fragments extension!'); }"
-                }
-            ]
-        },
-        { 
-            "category": "Layouts",
-            "codeFragments": [
-                {
-                    "label": "Example layout",
-                    "content": "function layout() {alert('Thank you for using the Code Fragments extension!');}"
-                },
-                {
-                    "label": "Example layout two",
-                    "content": "function layout() { alert('Thank you for using the Code Fragments extension!'); }"
-                }
-            ]
-        }
-    ]}`;
-
     const pathToSnippet = path.join(__dirname, '../snippets/codeFragments.json');
     console.info(`path: ${pathToSnippet}`);
-    data = fs.readFileSync(pathToSnippet, 'utf8');
+    const data = fs.readFileSync(pathToSnippet, 'utf8');
     console.info(`data: ${data}`);
 
     if (data) {
@@ -199,18 +138,6 @@ export class FragmentManager implements IFragmentManager {
         return ImportResult.Success;
     }
 }
-
-  // private readFileAsync(filename: string): Thenable<string> {
-  //     return new Promise((resolve, reject) => {
-  //         fs.readFile(filename, 'utf8', (err, data) => {
-  //             if (err) {
-  //                 reject(err);
-  //             }
-
-  //             resolve(data);
-  //         });
-  //     });
-  // }
 
   private saveCodeFragmentContent(id: string, label: string, content: string): string {
     this.extensionContext.globalState.update(
