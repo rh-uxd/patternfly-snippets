@@ -1,0 +1,12 @@
+{
+    "codeFragments": [
+        {
+            "label": "Example fragment",
+            "content": "// This is an example fragment.\n// Save a new fragment with the \"Save selection as Code Fragment\" command.\nfunction foo() {\n  alert('Thank you for using the Code Fragments extension!');\n}"
+        },
+        {
+            "label": "Example fragment two",
+            "content": "// This is an example fragment.\n// Save a new fragment with the \"Save selection as Code Fragment\" command.\nfunction foo() {\n  alert('Thank you for using the Code Fragments extension!');\n}"
+        }
+    ]
+}

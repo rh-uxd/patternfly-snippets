@@ -3,34 +3,125 @@
     "displayName": "PatternFly Snippets",
     "description": "PatternFly code snippets",
     "version": "0.0.1",
+    "publisher": "PatternFly",
+    "license": "SEE LICENSE IN LICENSE",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rh-uxd/patternfly-snippets.git"
+    },
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#282C34",
+        "theme": "dark"
+    },
+    "author": {
+        "name": "Joachim Shuler and Dana Gutride",
+        "url": "https://www.patternfly.org"
+    },
     "engines": {
         "vscode": "^1.41.0"
     },
     "categories": [
-        "Snippets"
+        "Other"
     ],
+    "keywords": [
+        "toolbar",
+        "toolbox",
+        "fragments",
+        "presentation"
+    ],
+    "activationEvents": [
+        "*",
+        "onCommand:saveSelectedCodeFragment",
+        "onView:codeFragments"
+    ],
+    "main": "./out/src/extension",
     "contributes": {
-        "snippets": [
+        "views": {
+            "explorer": [
+                {
+                    "id": "codeFragments",
+                    "name": "PatternFly Code Snippets"
+                }
+            ]
+        },
+        "commands": [
             {
-                "language": "html",
-                "path": "./snippets/core.json"
+                "command": "codeFragments.insertCodeFragment",
+                "title": "Insert Code Fragment"
             },
             {
-                "language": "javascript",
-                "path": "./snippets/react.json"
+                "command": "codeFragments.deleteCodeFragment",
+                "title": "Delete Code Fragment"
             },
             {
-                "language": "javascriptreact",
-                "path": "./snippets/react.json"
+                "command": "codeFragments.renameCodeFragment",
+                "title": "Rename Code Fragment"
             },
             {
-                "language": "typescript",
-                "path": "./snippets/react.json"
-            },
-            {
-                "language": "typescriptreact",
-                "path": "./snippets/react.json"
+                "command": "codeFragments.exportFragments",
+                "title": "Export all fragments to Json",
+                "icon": {
+                    "light": "images/icon-export-light.png",
+                    "dark": "images/icon-export-dark.png"
+                }
             }
-        ]
+        ],
+        "configuration": [
+            {
+                "type": "object",
+                "title": "PatternFly Code Snippets",
+                "properties": {
+                    "codeFragments.askForNameOnCreate": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Prompt for specifying a name when creating a new fragment."
+                    }
+                }
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "codeFragments.insertCodeFragment",
+                    "when": "never"
+                }
+            ],
+            "view/title": [
+                {
+                    "command": "codeFragments.exportFragments",
+                    "when": "view == codeFragments",
+                    "group": "navigation@0"
+                }
+            ],
+            "view/item/context": [
+                {
+                    "command": "codeFragments.deleteCodeFragment",
+                    "when": "view == codeFragments",
+                    "group": "codeFragments.viewItemContext.baseGroup"
+                },
+                {
+                    "command": "codeFragments.renameCodeFragment",
+                    "when": "view == codeFragments",
+                    "group": "codeFragments.viewItemContext.baseGroup"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "tslint -c tslint.json 'src/**/*.ts'",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "mocha": "^3.5.0",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.8"
     }
 }
