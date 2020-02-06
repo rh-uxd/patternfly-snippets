@@ -6,5 +6,5 @@
       "<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"${1:dir}/patternfly-addons.css\" />"
     ],
     "description": "css files for PF"
-  },
+  }
 }

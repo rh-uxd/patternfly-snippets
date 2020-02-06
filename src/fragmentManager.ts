@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
-
+import * as path from 'path';
+import * as fs from 'fs';
 
 //category with children, fragments
 export class CodeFragmentCategory {
@@ -124,7 +125,7 @@ export class FragmentManager implements IFragmentManager {
     //     return;
     // }
     // const data = await this.readFileAsync('./src/snippets/codeFragments.json');
-    const data = `{ 
+    let data = `{ 
     "codeCategories": [
         { 
             "category": "Components",
@@ -166,6 +167,11 @@ export class FragmentManager implements IFragmentManager {
             ]
         }
     ]}`;
+
+    const pathToSnippet = path.join(__dirname, '../snippets/codeFragments.json');
+    console.info(`path: ${pathToSnippet}`);
+    data = fs.readFileSync(pathToSnippet, 'utf8');
+    console.info(`data: ${data}`);
 
     if (data) {
         const json: ExportFile = JSON.parse(data);
