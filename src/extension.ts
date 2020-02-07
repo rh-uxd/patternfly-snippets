@@ -22,9 +22,10 @@ export async function activate(context: vscode.ExtensionContext) {
         const content = fragmentManager.getFragmentContent(fragmentId);
 
         if (content) {
-            editor.edit(builder => {
-                builder.insert(editor.selection.start, content.content);
-            });
+            vscode.window.activeTextEditor.insertSnippet(new vscode.SnippetString(content.content));
+            // editor.edit(builder => {
+            //     builder.insert(editor.selection.start, content.content);
+            // });
         }
     };
 
