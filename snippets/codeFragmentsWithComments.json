@@ -1,0 +1,119 @@
+{
+  "codeCategories": [
+    { "category": "Components", "codeFragments": [] },
+    {
+      "category": "Layouts",
+      "codeFragments": [
+        {
+          "group": "Bullseye",
+          "children": [
+            {
+              "label": "Bullseye",
+              "content": "<Bullseye\n\tclassName={${1:\"''\"}/* optional: additional classes added to the Bullseye layout */}\n\tcomponent={${2:'div'}/* optional: Sets the base component to render. defaults to div */}\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Bullseye layout */}\n</Bullseye>"
+            }
+          ]
+        },
+        {
+          "group": "Flex",
+          "children": [
+            {
+              "label": "Flex",
+              "content": "<Flex\n\tclassName={${1:\"''\"}/* optional: additional classes added to the Flex layout */}\n\tbreakpointMods={${2:[]}/* optional: An array of objects representing the various modifiers to apply to the flex component at various breakpoints */}\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Flex layout */}\n</Flex>"
+            },
+            {
+              "label": "FlexItem",
+              "content": "<FlexItem\n\tclassName={${1:\"''\"}/* optional: additional classes added to the Flex layout */}\n\tbreakpointMods={${2:[]}/* optional: An array of objects representing the various modifiers to apply to the flex item at various breakpoints */}\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Flex layout */}\n</FlexItem>"
+            }
+          ]
+        },
+        {
+          "group": "Gallery",
+          "children": [
+            {
+              "label": "Gallery",
+              "content": "<Gallery\n\tclassName={${1:\"''\"}/* optional: additional classes added to the Gallery layout */}\n\tgutter={${2:null}/* optional: Adds space between children. */}\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Gallery layout */}\n</Gallery>"
+            },
+            {
+              "label": "GalleryItem",
+              "content": "<GalleryItem\n\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Gallery Item */}\n</GalleryItem>"
+            }
+          ]
+        },
+        {
+          "group": "Grid",
+          "children": [
+            {
+              "label": "Grid",
+              "content": "<Grid\n\tclassName={${1:\"''\"}/* optional: additional classes added to the Grid layout */}\n\tgutter={${2:null}/* optional: Adds space between children. */}\n\tspan={${3:null}/* optional: The number of rows a column in the grid should span.  Value should be a number 1-12 */}\n\tsm={${4:1}/* optional: the number of columns all grid items should span on a small device */}\n\tmd={${5:1}/* optional: the number of columns all grid items should span on a medium device */}\n\tlg={${6:1}/* optional: the number of columns all grid items should span on a large device */}\n\txl={${7:1}/* optional: the number of columns all grid items should span on a xLarge device */}\n\txl2={${8:1}/* optional: the number of columns all grid items should span on a 2xLarge device */}\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Grid layout */}\n</Grid>"
+            },
+            {
+              "label": "GridItem",
+              "content": "<GridItem\n\tclassName={${1:\"''\"}/* optional: additional classes added to the Grid Layout Item */}\n\tspan={${2:null}/* optional: the number of columns the grid item spans. Value should be a number 1-12 */}\n\trowSpan={${3:null}/* optional: the number of rows the grid item spans. Value should be a number 1-12 */}\n\toffset={${4:null}/* optional: the number of columns a grid item is offset */}\n\tsm={${5:1}/* optional: the number of columns the grid item spans on small device. Value should be a number 1-12 */}\n\tsmRowSpan={${6:1}/* optional: the number of rows the grid item spans on medium device. Value should be a number 1-12 */}\n\tsmOffset={${7:1}/* optional: the number of columns the grid item is offset on small device. Value should be a number 1-12 */}\n\tmd={${8:1}/* optional: the number of columns the grid item spans on medium device. Value should be a number 1-12 */}\n\tmdRowSpan={${9:1}/* optional: the number of rows the grid item spans on medium device. Value should be a number 1-12 */}\n\tmdOffset={${10:1}/* optional: the number of columns the grid item is offset on medium device. Value should be a number 1-12 */}\n\tlg={${11:1}/* optional: the number of columns the grid item spans on large device. Value should be a number 1-12 */}\n\tlgRowSpan={${12:1}/* optional: the number of rows the grid item spans on large device. Value should be a number 1-12 */}\n\tlgOffset={${13:1}/* optional: the number of columns the grid item is offset on large device. Value should be a number 1-12 */}\n\txl={${14:1}/* optional: the number of columns the grid item spans on xLarge device. Value should be a number 1-12 */}\n\txlRowSpan={${15:1}/* optional: the number of rows the grid item spans on large device. Value should be a number 1-12 */}\n\txlOffset={${16:1}/* optional: the number of columns the grid item is offset on xLarge device. Value should be a number 1-12 */}\n\txl2={${17:1}/* optional: the number of columns the grid item spans on 2xLarge device. Value should be a number 1-12 */}\n\txl2RowSpan={${18:1}/* optional: the number of rows the grid item spans on 2xLarge device. Value should be a number 1-12 */}\n\txl2Offset={${19:1}/* optional: the number of columns the grid item is offset on 2xLarge device. Value should be a number 1-12 */}\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Grid Layout Item */}\n</GridItem>"
+            }
+          ]
+        },
+        {
+          "group": "Level",
+          "children": [
+            {
+              "label": "Level",
+              "content": "<Level\n\tgutter={${1:null}/* optional: Adds space between children. */}\n\tclassName={${2:\"''\"}/* optional: additional classes added to the Level layout */}\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Level layout */}\n</Level>"
+            },
+            {
+              "label": "LevelItem",
+              "content": "<LevelItem\n\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Level Layout Item */}\n</LevelItem>"
+            }
+          ]
+        },
+        {
+          "group": "Split",
+          "children": [
+            {
+              "label": "Split",
+              "content": "<Split\n\tgutter={${1:null}/* optional: Adds space between children. */}\n\tclassName={${2:\"''\"}/* optional: additional classes added to the Split layout */}\n\tcomponent={${3:'div'}/* optional: Sets the base component to render. defaults to div */}\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Split layout */}\n</Split>"
+            },
+            {
+              "label": "SplitItem",
+              "content": "<SplitItem\n\tisFilled={${1:false}/* optional: Flag indicating if this Split Layout item should fill the available horizontal space. */}\n\tclassName={${2:\"''\"}/* optional: additional classes added to the Split Layout Item */}\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Split Layout Item */}\n</SplitItem>"
+            }
+          ]
+        },
+        {
+          "group": "Stack",
+          "children": [
+            {
+              "label": "Stack",
+              "content": "<Stack\n\tgutter={${1:null}/* optional: Adds space between children. */}\n\tclassName={${2:\"''\"}/* optional: additional classes added to the Stack layout */}\n\tcomponent={${3:'div'}/* optional: Sets the base component to render. defaults to div */}\n>\n\t{${0:<>ReactNode</>}/* optional: content rendered inside the Stack layout */}\n</Stack>"
+            },
+            {
+              "label": "StackItem",
+              "content": "<StackItem\n\tisFilled={${1:false}/* optional: Flag indicating if this Stack Layout item should fill the available vertical space. */}\n\tclassName={${2:\"''\"}/* optional: content rendered inside the Stack Layout Item */}\n>\n\t{${0:<>ReactNode</>}/* optional: additional classes added to the Stack Layout Item */}\n</StackItem>"
+            }
+          ]
+        },
+        {
+          "group": "Toolbar",
+          "children": [
+            {
+              "label": "Toolbar",
+              "content": "<Toolbar\n\tclassName={${1:\"null\"}/* optional: Classes applied to toolbar parent */}\n>\n\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as toolbar content */}\n</Toolbar>"
+            },
+            {
+              "label": "ToolbarGroup",
+              "content": "<ToolbarGroup\n\tclassName={${1:\"null\"}/* optional: Classes applied to toolbar group */}\n>\n\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as one toolbar group */}\n</ToolbarGroup>"
+            },
+            {
+              "label": "ToolbarItem",
+              "content": "<ToolbarItem\n\tclassName={${1:\"null\"}/* optional: Classes applied to toolbar item */}\n>\n\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as toolbar item content */}\n</ToolbarItem>"
+            },
+            {
+              "label": "ToolbarSection",
+              "content": "<ToolbarSection\n\tclassName={${1:\"null\"}/* optional: Classes applied to toolbar section */}\n\taria-label={${2:\"string\"}/* optional: Aria label applied to toolbar section */}\n>\n\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as toolbar section */}\n</ToolbarSection>"
+            }
+          ]
+        }
+      ]
+    },
+    { "category": "Beta", "codeFragments": [] }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "codeCategories": [
+    { "category": "Components", "codeFragments": [] },
+    {
+      "category": "Layouts",
+      "codeFragments": [
+        {
+          "group": "Bullseye",
+          "children": [
+            {
+              "label": "Bullseye",
+              "content": "<Bullseye\n\tclassName={${1:\"''\"}}\n\tcomponent={${1:'div'}}\n>\n\t{${0:<>ReactNode</>}}\n</Bullseye>"
+            }
+          ]
+        },
+        {
+          "group": "Flex",
+          "children": [
+            {
+              "label": "Flex",
+              "content": "<Flex\n\tclassName={${1:\"''\"}}\n\tbreakpointMods={${1:[]}}\n>\n\t{${0:<>ReactNode</>}}\n</Flex>"
+            },
+            {
+              "label": "FlexItem",
+              "content": "<FlexItem\n\tclassName={${1:\"''\"}}\n\tbreakpointMods={${1:[]}}\n>\n\t{${0:<>ReactNode</>}}\n</FlexItem>"
+            }
+          ]
+        },
+        {
+          "group": "Gallery",
+          "children": [
+            {
+              "label": "Gallery",
+              "content": "<Gallery\n\tclassName={${1:\"''\"}}\n\tgutter={${1:null}}\n>\n\t{${0:<>ReactNode</>}}\n</Gallery>"
+            },
+            { "label": "GalleryItem", "content": "<GalleryItem\n\n>\n\t{${0:<>ReactNode</>}}\n</GalleryItem>" }
+          ]
+        },
+        {
+          "group": "Grid",
+          "children": [
+            {
+              "label": "Grid",
+              "content": "<Grid\n\tclassName={${1:\"''\"}}\n\tgutter={${1:null}}\n\tspan={${1:null}}\n\tsm={${1:1}}\n\tmd={${1:1}}\n\tlg={${1:1}}\n\txl={${1:1}}\n\txl2={${1:1}}\n>\n\t{${0:<>ReactNode</>}}\n</Grid>"
+            },
+            {
+              "label": "GridItem",
+              "content": "<GridItem\n\tclassName={${1:\"''\"}}\n\tspan={${1:null}}\n\trowSpan={${1:null}}\n\toffset={${1:null}}\n\tsm={${1:1}}\n\tsmRowSpan={${1:1}}\n\tsmOffset={${1:1}}\n\tmd={${1:1}}\n\tmdRowSpan={${1:1}}\n\tmdOffset={${1:1}}\n\tlg={${1:1}}\n\tlgRowSpan={${1:1}}\n\tlgOffset={${1:1}}\n\txl={${1:1}}\n\txlRowSpan={${1:1}}\n\txlOffset={${1:1}}\n\txl2={${1:1}}\n\txl2RowSpan={${1:1}}\n\txl2Offset={${1:1}}\n>\n\t{${0:<>ReactNode</>}}\n</GridItem>"
+            }
+          ]
+        },
+        {
+          "group": "Level",
+          "children": [
+            {
+              "label": "Level",
+              "content": "<Level\n\tgutter={${1:null}}\n\tclassName={${1:\"''\"}}\n>\n\t{${0:<>ReactNode</>}}\n</Level>"
+            },
+            { "label": "LevelItem", "content": "<LevelItem\n\n>\n\t{${0:<>ReactNode</>}}\n</LevelItem>" }
+          ]
+        },
+        {
+          "group": "Split",
+          "children": [
+            {
+              "label": "Split",
+              "content": "<Split\n\tgutter={${1:null}}\n\tclassName={${1:\"''\"}}\n\tcomponent={${1:'div'}}\n>\n\t{${0:<>ReactNode</>}}\n</Split>"
+            },
+            {
+              "label": "SplitItem",
+              "content": "<SplitItem\n\tisFilled={${1:false}}\n\tclassName={${1:\"''\"}}\n>\n\t{${0:<>ReactNode</>}}\n</SplitItem>"
+            }
+          ]
+        },
+        {
+          "group": "Stack",
+          "children": [
+            {
+              "label": "Stack",
+              "content": "<Stack\n\tgutter={${1:null}}\n\tclassName={${1:\"''\"}}\n\tcomponent={${1:'div'}}\n>\n\t{${0:<>ReactNode</>}}\n</Stack>"
+            },
+            {
+              "label": "StackItem",
+              "content": "<StackItem\n\tisFilled={${1:false}}\n\tclassName={${1:\"''\"}}\n>\n\t{${0:<>ReactNode</>}}\n</StackItem>"
+            }
+          ]
+        },
+        {
+          "group": "Toolbar",
+          "children": [
+            {
+              "label": "Toolbar",
+              "content": "<Toolbar\n\tclassName={${1:\"null\"}}\n>\n\t{${0:<>ReactNode</>}}\n</Toolbar>"
+            },
+            {
+              "label": "ToolbarGroup",
+              "content": "<ToolbarGroup\n\tclassName={${1:\"null\"}}\n>\n\t{${0:<>ReactNode</>}}\n</ToolbarGroup>"
+            },
+            {
+              "label": "ToolbarItem",
+              "content": "<ToolbarItem\n\tclassName={${1:\"null\"}}\n>\n\t{${0:<>ReactNode</>}}\n</ToolbarItem>"
+            },
+            {
+              "label": "ToolbarSection",
+              "content": "<ToolbarSection\n\tclassName={${1:\"null\"}}\n\taria-label={${1:\"string\"}}\n>\n\t{${0:<>ReactNode</>}}\n</ToolbarSection>"
+            }
+          ]
+        }
+      ]
+    },
+    { "category": "Beta", "codeFragments": [] }
+  ]
+}
