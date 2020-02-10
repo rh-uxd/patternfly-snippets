@@ -26,11 +26,16 @@ export async function activate(context: vscode.ExtensionContext) {
         }
     };
 
+    const refreshFragments = () => {
+        fragmentManager.reimportDefaults();
+    };
+
     fragmentManager.initialize();
 
     vscode.window.registerTreeDataProvider('codeFragments', codeFragmentProvider);
 
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.insertCodeFragment', insertCodeFragment));
+    context.subscriptions.push(vscode.commands.registerCommand('codeFragments.refreshFragments', refreshFragments));
 }
 
 export function deactivate() { }

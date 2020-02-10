@@ -59,8 +59,8 @@
                 "title": "Rename Code Fragment"
             },
             {
-                "command": "codeFragments.exportFragments",
-                "title": "Export all fragments to Json",
+                "command": "codeFragments.refreshFragments",
+                "title": "Refresh code fragments",
                 "icon": {
                     "light": "images/icon-export-light.png",
                     "dark": "images/icon-export-dark.png"
@@ -72,10 +72,10 @@
                 "type": "object",
                 "title": "PatternFly Code Snippets",
                 "properties": {
-                    "codeFragments.askForNameOnCreate": {
+                    "codeFragments.includeCommentsInFragment": {
                         "type": "boolean",
                         "default": false,
-                        "description": "Prompt for specifying a name when creating a new fragment."
+                        "description": "Include property help comments when inserting a code fragment."
                     }
                 }
             }
@@ -89,7 +89,7 @@
             ],
             "view/title": [
                 {
-                    "command": "codeFragments.exportFragments",
+                    "command": "codeFragments.refreshFragments",
                     "when": "view == codeFragments",
                     "group": "navigation@0"
                 }

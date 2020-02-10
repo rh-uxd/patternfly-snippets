@@ -104,8 +104,16 @@ export class FragmentManager implements IFragmentManager {
     }
   }
 
+  public reimportDefaults(): ImportResult {
+    const result = this.importDefaults();
+    this.fireFragmentsChanged();
+    return result;
+  }
+
   public importDefaults(): ImportResult {
-    const pathToSnippet = path.join(__dirname, '../snippets/codeFragmentsNoComments.json');
+    const config = vscode.workspace.getConfiguration('codeFragments'); 
+    const snippetPath = (config.get('includeCommentsInFragment')) ? '../snippets/codeFragmentsWithComments.json' : '../snippets/codeFragmentsNoComments.json';
+    const pathToSnippet = path.join(__dirname, snippetPath);
     console.info(`path: ${pathToSnippet}`, new Date().toISOString());
     const data = fs.readFileSync(pathToSnippet, 'utf8');
     console.info('data loaded', new Date().toISOString());
