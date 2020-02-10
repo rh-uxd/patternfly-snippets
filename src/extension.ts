@@ -23,13 +23,10 @@ export async function activate(context: vscode.ExtensionContext) {
 
         if (content) {
             vscode.window.activeTextEditor.insertSnippet(new vscode.SnippetString(content.content));
-            // editor.edit(builder => {
-            //     builder.insert(editor.selection.start, content.content);
-            // });
         }
     };
 
-    await fragmentManager.initialize();
+    fragmentManager.initialize();
 
     vscode.window.registerTreeDataProvider('codeFragments', codeFragmentProvider);
 

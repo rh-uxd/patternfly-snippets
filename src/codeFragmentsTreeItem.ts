@@ -33,23 +33,31 @@ export class CodeFragmentProvider implements vscode.TreeDataProvider<CodeFragmen
 
   public getChildren(element?: CodeFragmentTreeItem): Thenable<CodeFragmentTreeItem[]> {
     if (!element) {
-      return Promise.resolve(this.fragmentManager.getAll().map(f =>
+      return Promise.resolve(this.fragmentManager.getAllFragments().map(f =>
         new CodeFragmentTreeItem(
-          f.label,
+          f.category,
           f.id,
-          vscode.TreeItemCollapsibleState.Expanded,
+          vscode.TreeItemCollapsibleState.Collapsed,
           null,
-          f.children.map(ch => 
+          f.codeFragments.map(group => 
             new CodeFragmentTreeItem(
-              ch.label,
-              ch.id,
-              vscode.TreeItemCollapsibleState.None,
-              {
-                arguments: [ch.id],
-                command: 'codeFragments.insertCodeFragment',
-                title: 'Insert Code Fragment',
-                tooltip: 'Insert Code Fragment' //can put component tooltip here maybe???
-              }
+              group.group,
+              group.id,
+              vscode.TreeItemCollapsibleState.Collapsed,
+              null,
+              group.children.map(ch => 
+                new CodeFragmentTreeItem(
+                  ch.label,
+                  ch.id,
+                  vscode.TreeItemCollapsibleState.None,
+                  {
+                    arguments: [ch.id],
+                    command: 'codeFragments.insertCodeFragment',
+                    title: 'Insert Code Fragment',
+                    tooltip: 'Insert Code Fragment' //can put component tooltip here maybe???
+                  }
+                )
+              )
             )
           )
         )

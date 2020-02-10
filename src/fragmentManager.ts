@@ -27,23 +27,34 @@ export class CodeFragmentCollection {
 
 class PersistedCategories {
   constructor(
+      public id: string,
       public readonly category: string,
-      public readonly codeFragments: PersistedFragment[]
+      public readonly codeFragments: CodeGroup[]
+  ) {
+  }
+}
+
+class CodeGroup {
+  constructor(
+    public id: string,
+    public readonly group: string,
+    public readonly children: PersistedFragment[]
   ) {
   }
 }
 
 class PersistedFragment {
   constructor(
+      public id: string,
       public readonly label: string,
       public readonly content: string
   ) {
   }
 }
 
-class ExportFile {
+export class ExportFile {
   constructor(
-      public readonly codeCategories: PersistedCategories[]
+      public codeCategories: PersistedCategories[]
   ) {
   }
 }
@@ -55,49 +66,36 @@ export enum ImportResult {
 
 export interface IFragmentManager {
   getAll(): CodeFragmentCategory[];
-  saveCategory(label: string, children?: CodeFragmentContent[]): Thenable<string>;
+  getAllFragments(): PersistedCategories[];
   onFragmentsChanged(handler: () => void);
 }
 
 export class FragmentManager implements IFragmentManager {
   private codeFragments: CodeFragmentCollection = undefined;
+  private allLoadedCodeFragments: ExportFile = undefined;
   private readonly fragmentsChangeEvent: Array<() => void> = [];
+  private fragmentMap = new Map<string, CodeFragmentContent>();
 
   constructor(
     private readonly extensionContext: vscode.ExtensionContext
   ) { }
 
-  public initialize(): Thenable<void> {
+  public initialize(): void {
     this.codeFragments = new CodeFragmentCollection([]);
     Promise.resolve(this.importDefaults());
-
-    return this.extensionContext.globalState.update(
-      'CodeFragmentCollection',
-      this.codeFragments
-    );
   }
 
   public getFragmentContent(id: string): CodeFragmentContent {
-    let content = this.extensionContext.globalState.get<CodeFragmentContent>(id);
+    let content = this.fragmentMap.get(id);
     return content;
-  }
-
-  public async saveCategory(label: string, children: CodeFragmentContent[]): Promise<string> {
-    const id = 'CodeFragmentCategory' + this.generateId();
-    const header = new CodeFragmentCategory(
-      id,
-      label,
-      children
-    );
-    this.codeFragments.fragments.push(header);
-    
-    await this.persistCodeFragmentCollection();
-
-    return id;
   }
 
   public getAll(): CodeFragmentCategory[] {
     return this.codeFragments.fragments;
+  }
+
+  public getAllFragments(): PersistedCategories[] {
+    return this.allLoadedCodeFragments.codeCategories;
   }
 
   public onFragmentsChanged(handler: () => void) {
@@ -106,57 +104,47 @@ export class FragmentManager implements IFragmentManager {
     }
   }
 
-  public async importDefaults(): Promise<ImportResult> {
-    const pathToSnippet = path.join(__dirname, '../snippets/codeFragments.json');
-    console.info(`path: ${pathToSnippet}`);
+  public importDefaults(): ImportResult {
+    const pathToSnippet = path.join(__dirname, '../snippets/codeFragmentsNoComments.json');
+    console.info(`path: ${pathToSnippet}`, new Date().toISOString());
     const data = fs.readFileSync(pathToSnippet, 'utf8');
-    console.info(`data: ${data}`);
+    console.info('data loaded', new Date().toISOString());
 
     if (data) {
         const json: ExportFile = JSON.parse(data);
-        const myPromises = [];
+        this.allLoadedCodeFragments = json;
         if (json.codeCategories && json.codeCategories.length > 0) {
-            json.codeCategories.forEach(category => {
-                // create new category
-                const codeFragments = [];
-                if (category.codeFragments && category.codeFragments.some(f => !!f.content && !!f.label)) {
-                    category.codeFragments.map(fragment => {
-                        const id = 'CodeFragment' + this.generateId();
-                        codeFragments.push(new CodeFragmentContent(id, fragment.label, fragment.content));
-                        this.saveCodeFragmentContent(id, fragment.label, fragment.content);
-                    });
+          json.codeCategories.forEach((category) => {
+            category.id = 'CodeCategory' + this.generateId();
+
+            if (category.codeFragments && category.codeFragments.length > 0) {
+              category.codeFragments.forEach(group => {
+                group.id = 'CodeGroup' + this.generateId();
+                if (group.children && group.children.some(f => !!f.content && !!f.label)) {
+                  group.children.map(fragment => {
+                      const id = 'CodeFragment' + this.generateId();
+                      fragment.id = id;
+                      this.saveCodeFragmentContent(id, fragment.label, fragment.content);
+                  });
                 } 
-                let task = this.saveCategory(category.category, codeFragments);
-                myPromises.push(task);
-            })
-            await Promise.all(myPromises);
-            return ImportResult.Success;
-        } else {
-            return ImportResult.NoFragments;
+              });
+            }
+          });
         }
+        console.info('load complete', new Date().toISOString());
+        return ImportResult.Success;
     } else {
         return ImportResult.Success;
-    }
-}
-
-  private saveCodeFragmentContent(id: string, label: string, content: string): string {
-    this.extensionContext.globalState.update(
-      id,
-      new CodeFragmentContent(
-        id,
-        label,
-        content
-      )
-    );
-
-    return id;
+    } 
   }
 
-  private persistCodeFragmentCollection(): Thenable<void> {
-    return this.extensionContext.globalState.update(
-      'CodeFragmentCollection',
-      this.codeFragments
-    );
+  private saveCodeFragmentContent(id: string, label: string, content: string): string {
+    this.fragmentMap.set(id, new CodeFragmentContent(
+      id,
+      label,
+      content
+    ));
+    return id;
   }
 
   private generateId(): string {
