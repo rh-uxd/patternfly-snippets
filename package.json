@@ -106,7 +106,29 @@
                     "group": "codeFragments.viewItemContext.baseGroup"
                 }
             ]
-        }
+        },
+        "snippets": [
+            {
+                "language": "markdown",
+                "path": "./snippets/reactSnippets.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/reactSnippets.json"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./snippets/reactSnippets.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/reactSnippets.json"
+            },
+            {
+                "language": "typescriptreact",
+                "path": "./snippets/reactSnippets.json"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
