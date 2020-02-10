@@ -1,6 +1,6 @@
 'use strict';
 import * as vscode from 'vscode';
-import { CodeFragmentProvider, CodeFragmentTreeItem } from './codeFragmentsTreeItem';
+import { CodeFragmentProvider, CodeFragmentGroupTreeItem } from './codeFragmentsTreeItem';
 import { FragmentManager } from './fragmentManager';
 
 export async function activate(context: vscode.ExtensionContext) {
@@ -30,12 +30,13 @@ export async function activate(context: vscode.ExtensionContext) {
         fragmentManager.reimportDefaults();
     };
 
-    const gotoDocumentation = urlEnding => {
-        if (!urlEnding) {
+    const gotoDocumentation = (group: CodeFragmentGroupTreeItem) => {
+        if (!group) {
             vscode.window.showInformationMessage(
                 'Nothing passed');
         }
-        vscode.env.openExternal(vscode.Uri.parse(`https://www.patternfly.org/documentation/react/${urlEnding[0]}`));
+        const url = `${group.category}/${group.label}`.toLowerCase();
+        vscode.env.openExternal(vscode.Uri.parse(`https://www.patternfly.org/v4/documentation/react/${url}`));
     };
 
     fragmentManager.initialize();

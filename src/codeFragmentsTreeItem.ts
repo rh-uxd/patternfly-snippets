@@ -1,19 +1,62 @@
 import * as vscode from 'vscode';
 import { IFragmentManager } from './fragmentManager';
 
-
 export class CodeFragmentTreeItem extends vscode.TreeItem {
   constructor(
     public readonly label: string,
     public readonly id: string,
     public readonly collapsibleState: vscode.TreeItemCollapsibleState,
     public readonly command?: vscode.Command,
-    public readonly children?: CodeFragmentTreeItem[]
+    public readonly children?: CodeFragmentChildTreeItem[]
   ) {
     super(label, children == undefined ? 
       vscode.TreeItemCollapsibleState.None : 
       vscode.TreeItemCollapsibleState.Expanded);
   }
+
+  get tooltip(): string {
+		return `Category: ${this.label}-${this.id}`;
+	}
+
+  contextValue = 'category';
+}
+
+export class CodeFragmentGroupTreeItem extends vscode.TreeItem {
+  constructor(
+    public readonly category: string,
+    public readonly label: string,
+    public readonly id: string,
+    public readonly collapsibleState: vscode.TreeItemCollapsibleState,
+    public readonly command?: vscode.Command,
+    public readonly children?: CodeFragmentChildTreeItem[]
+  ) {
+    super(label, children == undefined ? 
+      vscode.TreeItemCollapsibleState.None : 
+      vscode.TreeItemCollapsibleState.Expanded);
+  }
+
+  get tooltip(): string {
+		return `Group: ${this.label}-${this.id}`;
+	}
+
+  contextValue = 'group';
+}
+
+export class CodeFragmentChildTreeItem extends vscode.TreeItem {
+  constructor(
+    public readonly label: string,
+    public readonly id: string,
+    public readonly collapsibleState: vscode.TreeItemCollapsibleState,
+    public readonly command?: vscode.Command
+  ) {
+    super(label, vscode.TreeItemCollapsibleState.None);
+  }
+
+  get tooltip(): string {
+		return `Component: ${this.label}-${this.id}`;
+	}
+
+  contextValue = 'component';
 }
 
 export class CodeFragmentProvider implements vscode.TreeDataProvider<CodeFragmentTreeItem> {
@@ -40,18 +83,14 @@ export class CodeFragmentProvider implements vscode.TreeDataProvider<CodeFragmen
           vscode.TreeItemCollapsibleState.Collapsed,
           null,
           f.codeFragments.map(group => 
-            new CodeFragmentTreeItem(
+            new CodeFragmentGroupTreeItem(
+              f.category,
               group.group,
               group.id,
               vscode.TreeItemCollapsibleState.Collapsed,
-              {
-                arguments: [`${f.category}/${group.group}`],
-                command: 'codeFragments.gotoDocumentation',
-                title: 'Open Documentation',
-                tooltip: 'Open Documentation' //can put component tooltip here maybe???
-              },
+              null,
               group.children.map(ch => 
-                new CodeFragmentTreeItem(
+                new CodeFragmentChildTreeItem(
                   ch.label,
                   ch.id,
                   vscode.TreeItemCollapsibleState.None,
