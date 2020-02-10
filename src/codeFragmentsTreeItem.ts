@@ -44,7 +44,12 @@ export class CodeFragmentProvider implements vscode.TreeDataProvider<CodeFragmen
               group.group,
               group.id,
               vscode.TreeItemCollapsibleState.Collapsed,
-              null,
+              {
+                arguments: [`${f.category}/${group.group}`],
+                command: 'codeFragments.gotoDocumentation',
+                title: 'Open Documentation',
+                tooltip: 'Open Documentation' //can put component tooltip here maybe???
+              },
               group.children.map(ch => 
                 new CodeFragmentTreeItem(
                   ch.label,

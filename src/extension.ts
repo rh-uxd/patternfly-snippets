@@ -30,12 +30,21 @@ export async function activate(context: vscode.ExtensionContext) {
         fragmentManager.reimportDefaults();
     };
 
+    const gotoDocumentation = urlEnding => {
+        if (!urlEnding) {
+            vscode.window.showInformationMessage(
+                'Nothing passed');
+        }
+        vscode.env.openExternal(vscode.Uri.parse(`https://www.patternfly.org/documentation/react/${urlEnding[0]}`));
+    };
+
     fragmentManager.initialize();
 
     vscode.window.registerTreeDataProvider('codeFragments', codeFragmentProvider);
 
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.insertCodeFragment', insertCodeFragment));
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.refreshFragments', refreshFragments));
+    context.subscriptions.push(vscode.commands.registerCommand('codeFragments.gotoDocumentation', gotoDocumentation));
 }
 
 export function deactivate() { }

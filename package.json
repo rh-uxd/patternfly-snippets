@@ -51,8 +51,12 @@
                 "title": "Insert Code Fragment"
             },
             {
-                "command": "codeFragments.deleteCodeFragment",
-                "title": "Delete Code Fragment"
+                "command": "codeFragments.gotoDocumentation",
+                "title": "Go to documentation",
+                "icon": {
+                    "light": "images/icon-import-light.png",
+                    "dark": "images/icon-import-dark.png"
+                }
             },
             {
                 "command": "codeFragments.renameCodeFragment",
@@ -96,7 +100,7 @@
             ],
             "view/item/context": [
                 {
-                    "command": "codeFragments.deleteCodeFragment",
+                    "command": "codeFragments.gotoDocumentation",
                     "when": "view == codeFragments",
                     "group": "codeFragments.viewItemContext.baseGroup"
                 },
