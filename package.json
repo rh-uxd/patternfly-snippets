@@ -1,144 +1,165 @@
 {
-    "name": "patternfly-snippets",
-    "displayName": "PatternFly Snippets",
-    "description": "PatternFly code snippets",
-    "version": "0.0.1",
-    "publisher": "PatternFly",
-    "license": "SEE LICENSE IN LICENSE",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/rh-uxd/patternfly-snippets.git"
+  "name": "patternfly-snippets",
+  "displayName": "PatternFly Snippets",
+  "description": "PatternFly code snippets",
+  "version": "0.0.1",
+  "publisher": "PatternFly",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rh-uxd/patternfly-snippets.git"
+  },
+  "icon": "images/icon.svg",
+  "galleryBanner": {
+    "color": "#282C34",
+    "theme": "dark"
+  },
+  "author": {
+    "name": "Joachim Schuler and Dana Gutride",
+    "url": "https://www.patternfly.org"
+  },
+  "engines": {
+    "vscode": "^1.41.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "toolbar",
+    "toolbox",
+    "fragments",
+    "presentation"
+  ],
+  "activationEvents": [
+    "*",
+    "onCommand:saveSelectedCodeFragment",
+    "onView:codeFragments"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "codeFragments",
+          "name": "PatternFly Code Snippets"
+        }
+      ]
     },
-    "icon": "images/icon.svg",
-    "galleryBanner": {
-        "color": "#282C34",
-        "theme": "dark"
-    },
-    "author": {
-        "name": "Joachim Shuler and Dana Gutride",
-        "url": "https://www.patternfly.org"
-    },
-    "engines": {
-        "vscode": "^1.41.0"
-    },
-    "categories": [
-        "Other"
+    "commands": [
+      {
+        "command": "codeFragments.insertCodeFragment",
+        "title": "Insert Code Fragment"
+      },
+      {
+        "command": "codeFragments.gotoDocumentation",
+        "title": "Go to documentation",
+        "icon": {
+          "light": "images/external-link-alt.svg",
+          "dark": "images/external-link-alt-1.svg"
+        }
+      },
+      {
+        "command": "codeFragments.refreshFragments",
+        "title": "Refresh code fragments",
+        "icon": {
+          "light": "images/refresh-light.svg",
+          "dark": "images/refresh-dark.svg"
+        }
+			},
+			{
+				"command": "codeFragments.switchVersion_2020.01",
+				"title": "Release 2020.01"
+			},
+			{
+				"command": "codeFragments.switchVersion_2019.11",
+				"title": "Release 2019.11"
+			},
+			{
+				"command": "codeFragments.switchVersion_2019.10",
+				"title": "Release 2019.10"
+			}
     ],
-    "keywords": [
-        "toolbar",
-        "toolbox",
-        "fragments",
-        "presentation"
+    "configuration": [
+      {
+        "type": "object",
+        "title": "PatternFly Code Snippets",
+        "properties": {
+          "codeFragments.includeCommentsInFragment": {
+            "type": "boolean",
+            "default": false,
+            "description": "Include property help comments when inserting a code fragment."
+          }
+        }
+      }
     ],
-    "activationEvents": [
-        "*",
-        "onCommand:saveSelectedCodeFragment",
-        "onView:codeFragments"
-    ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "views": {
-            "explorer": [
-                {
-                    "id": "codeFragments",
-                    "name": "PatternFly Code Snippets"
-                }
-            ]
-        },
-        "commands": [
-            {
-                "command": "codeFragments.insertCodeFragment",
-                "title": "Insert Code Fragment"
-            },
-            {
-                "command": "codeFragments.gotoDocumentation",
-                "title": "Go to documentation",
-                "icon": {
-                    "light": "images/external-link-alt.svg",
-                    "dark": "images/external-link-alt-1.svg"
-                }
-            },
-            {
-                "command": "codeFragments.refreshFragments",
-                "title": "Refresh code fragments",
-                "icon": {
-                    "light": "images/refresh-light.svg",
-                    "dark": "images/refresh-dark.svg"
-                }
-            }
-        ],
-        "configuration": [
-            {
-                "type": "object",
-                "title": "PatternFly Code Snippets",
-                "properties": {
-                    "codeFragments.includeCommentsInFragment": {
-                        "type": "boolean",
-                        "default": false,
-                        "description": "Include property help comments when inserting a code fragment."
-                    }
-                }
-            }
-        ],
-        "menus": {
-            "commandPalette": [
-                {
-                    "command": "codeFragments.insertCodeFragment",
-                    "when": "never"
-                }
-            ],
-            "view/title": [
-                {
-                    "command": "codeFragments.refreshFragments",
-                    "when": "view == codeFragments",
-                    "group": "navigation@0"
-                }
-            ],
-            "view/item/context": [
-                {
-                    "command": "codeFragments.gotoDocumentation",
-                    "when": "viewItem == group",
-                    "group": "inline"
-                }
-            ]
-        },
-        "snippets": [
-            {
-                "language": "markdown",
-                "path": "./snippets/reactSnippets.json"
-            },
-            {
-                "language": "javascript",
-                "path": "./snippets/reactSnippets.json"
-            },
-            {
-                "language": "javascriptreact",
-                "path": "./snippets/reactSnippets.json"
-            },
-            {
-                "language": "typescript",
-                "path": "./snippets/reactSnippets.json"
-            },
-            {
-                "language": "typescriptreact",
-                "path": "./snippets/reactSnippets.json"
-            }
-        ]
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "codeFragments.insertCodeFragment",
+          "when": "never"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "codeFragments.refreshFragments",
+          "when": "view == codeFragments",
+          "group": "navigation@0"
+				},
+				{
+					"command": "codeFragments.switchVersion_2020.01"
+				},
+				{
+					"command": "codeFragments.switchVersion_2019.11"
+				},
+				{
+					"command": "codeFragments.switchVersion_2019.10"
+				}
+      ],
+      "view/item/context": [
+        {
+          "command": "codeFragments.gotoDocumentation",
+          "when": "viewItem == group",
+          "group": "inline"
+        }
+      ]
     },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./ && cp -r snippets out",
-        "lint": "tslint -c tslint.json 'src/**/*.ts'",
-        "watch": "tsc -watch -p ./ && cp -r snippets out",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^7.0.43",
-        "mocha": "^3.5.0",
-        "tslint": "^5.8.0",
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.8"
-    }
+    "snippets": [
+      {
+        "language": "markdown",
+        "path": "./snippets/snippets_2020.01.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets_2020.01.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets_2020.01.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets_2020.01.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets_2020.01.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./ && cp -r snippets out",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "watch": "tsc -watch -p ./ && cp -r snippets out",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
+    "mocha": "^3.5.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.8"
+  }
 }

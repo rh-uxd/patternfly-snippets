@@ -7,7 +7,8 @@ export class CodeFragmentTreeItem extends vscode.TreeItem {
     public readonly id: string,
     public readonly collapsibleState: vscode.TreeItemCollapsibleState,
     public readonly command?: vscode.Command,
-    public readonly children?: CodeFragmentChildTreeItem[]
+    public readonly children?: CodeFragmentChildTreeItem[],
+    public readonly version?: string
   ) {
     super(label, children == undefined ? 
       vscode.TreeItemCollapsibleState.None : 
@@ -15,7 +16,11 @@ export class CodeFragmentTreeItem extends vscode.TreeItem {
   }
 
   get tooltip(): string {
-		return `Category: ${this.label}-${this.id}`;
+		return `${this.label}`;
+  }
+  
+  get description(): string {
+		return this.version;
 	}
 
   contextValue = 'category';
@@ -36,7 +41,11 @@ export class CodeFragmentGroupTreeItem extends vscode.TreeItem {
   }
 
   get tooltip(): string {
-		return `Group: ${this.label}-${this.id}`;
+		return `${this.label}`;
+  }
+  
+  get description(): string {
+		return '';
 	}
 
   contextValue = 'group';
@@ -53,7 +62,11 @@ export class CodeFragmentChildTreeItem extends vscode.TreeItem {
   }
 
   get tooltip(): string {
-		return `Component: ${this.label}-${this.id}`;
+		return `${this.label}`;
+  }
+  
+  get description(): string {
+		return '';
 	}
 
   contextValue = 'component';
@@ -103,7 +116,8 @@ export class CodeFragmentProvider implements vscode.TreeDataProvider<CodeFragmen
                 )
               )
             )
-          )
+          ),
+          this.fragmentManager.getVersion()
         )
       ));
     } 

@@ -68,6 +68,7 @@ export interface IFragmentManager {
   getAll(): CodeFragmentCategory[];
   getAllFragments(): PersistedCategories[];
   onFragmentsChanged(handler: () => void);
+  getVersion(): string;
 }
 
 export class FragmentManager implements IFragmentManager {
@@ -75,6 +76,7 @@ export class FragmentManager implements IFragmentManager {
   private allLoadedCodeFragments: ExportFile = undefined;
   private readonly fragmentsChangeEvent: Array<() => void> = [];
   private fragmentMap = new Map<string, CodeFragmentContent>();
+  private loadedVersion: string = '2020.01';
 
   constructor(
     private readonly extensionContext: vscode.ExtensionContext
@@ -98,25 +100,31 @@ export class FragmentManager implements IFragmentManager {
     return this.allLoadedCodeFragments.codeCategories;
   }
 
+  public getVersion(): string {
+    return this.loadedVersion;
+  }
+
   public onFragmentsChanged(handler: () => void) {
     if (handler) {
       this.fragmentsChangeEvent.push(handler);
     }
   }
 
-  public reimportDefaults(): ImportResult {
-    const result = this.importDefaults();
+  public reimportDefaults(version?: string): ImportResult {
+    const result = this.importDefaults(version);
     this.fireFragmentsChanged();
     return result;
   }
 
-  public importDefaults(): ImportResult {
-    const config = vscode.workspace.getConfiguration('codeFragments'); 
-    const snippetPath = (config.get('includeCommentsInFragment')) ? '../snippets/codeFragmentsWithComments.json' : '../snippets/codeFragmentsNoComments.json';
+  public importDefaults(version?: string): ImportResult {
+    const config = vscode.workspace.getConfiguration('codeFragments');
+    const versionToLoad = version || this.getVersion();
+    this.loadedVersion = versionToLoad;
+    const snippetPath = (config.get('includeCommentsInFragment')) ? `../snippets/codeFragmentsWithComments_${versionToLoad}.json` : `../snippets/codeFragmentsNoComments_${versionToLoad}.json`;
     const pathToSnippet = path.join(__dirname, snippetPath);
     console.info(`path: ${pathToSnippet}`, new Date().toISOString());
     const data = fs.readFileSync(pathToSnippet, 'utf8');
-    console.info('data loaded', new Date().toISOString());
+    // console.info('data loaded', new Date().toISOString());
 
     if (data) {
         const json: ExportFile = JSON.parse(data);
