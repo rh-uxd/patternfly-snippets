@@ -1182,7 +1182,6 @@
 				"\tlabel={${7:<div>ReactNode</div>}/* optional: Label text of the checkbox. */}",
 				"\tid={${8:\"string\"}/* required: Id of the checkbox. */}",
 				"\taria-label={${9:\"string\"}/* optional: Aria-label of the checkbox. */}",
-				"\tdescription={${10:<div>ReactNode</div>}/* optional: Description text of the checkbox. */}",
 				"/>"
       ],
       "description": "Checkbox"
@@ -1202,7 +1201,6 @@
 				"\tlabel={${7:<div>ReactNode</div>}}",
 				"\tid={${8:\"string\"}}",
 				"\taria-label={${9:\"string\"}}",
-				"\tdescription={${10:<div>ReactNode</div>}}",
 				"/>"
       ],
       "description": "Checkbox"
@@ -1683,7 +1681,7 @@
         "<DataList",
 				"\tclassName={${1:\"''\"}/* optional:  */}",
 				"\taria-label={${2:\"string\"}/* required:  */}",
-				"\tonSelectDataListItem={${3:(id: string) => undefined as void}/* optional:  */}",
+				"\tonSelectDataListItem={${3:(id:string) => undefined as void}/* optional:  */}",
 				"\tselectedDataListItemId={${4:\"''\"}/* optional:  */}",
 				">",
 				"\t{${0:<>ReactNode</>}/* optional:  */}",
@@ -1699,7 +1697,7 @@
         "<DataList",
 				"\tclassName={${1:\"''\"}}",
 				"\taria-label={${2:\"string\"}}",
-				"\tonSelectDataListItem={${3:(id: string) => undefined as void}}",
+				"\tonSelectDataListItem={${3:(id:string) => undefined as void}}",
 				"\tselectedDataListItemId={${4:\"''\"}}",
 				">",
 				"\t{${0:<>ReactNode</>}}",
@@ -2988,32 +2986,6 @@
       "description": "Label"
     }
   ,
-	"ListItem": 
-    {
-      "prefix": "#ListItem",
-      "body": [
-        "<ListItem",
-				"",
-				">",
-				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered inside of list item */}",
-				"</ListItem>"
-      ],
-      "description": "ListItem"
-    }
-  ,
-	"ListItemNoComments": 
-    {
-      "prefix": "!ListItem",
-      "body": [
-        "<ListItem",
-				"",
-				">",
-				"\t{${0:<>ReactNode</>}}",
-				"</ListItem>"
-      ],
-      "description": "ListItem"
-    }
-  ,
 	"Login": 
     {
       "prefix": "#Login",
@@ -3279,7 +3251,6 @@
 				"\ttarget={${2:\"''\"}/* optional: Target for Footer Link Item */}",
 				"\tclassName={${3:\"''\"}/* optional: Additional classes added to the Footer Link Item */}",
 				"\tlinkComponent={${4:'a'}/* optional: Component used to render the Footer Link Item */}",
-				"\tlinkComponentProps={${5:'any'}/* optional: Props for the LinkComponent */}",
 				">",
 				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the footer Link Item */}",
 				"</LoginMainFooterLinksItem>"
@@ -3296,7 +3267,6 @@
 				"\ttarget={${2:\"''\"}}",
 				"\tclassName={${3:\"''\"}}",
 				"\tlinkComponent={${4:'a'}}",
-				"\tlinkComponentProps={${5:'any'}}",
 				">",
 				"\t{${0:<>ReactNode</>}}",
 				"</LoginMainFooterLinksItem>"
@@ -4107,11 +4077,8 @@
       "prefix": "#OverflowMenuContent",
       "body": [
         "<OverflowMenuContent",
-				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the OverflowMenuContent */}",
-				"\tisPersistent={${2:true}/* optional: Modifies the overflow menu content visibility */}",
-				">",
-				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
-				"</OverflowMenuContent>"
+				"",
+				"/>"
       ],
       "description": "OverflowMenuContent"
     }
@@ -4121,11 +4088,8 @@
       "prefix": "!OverflowMenuContent",
       "body": [
         "<OverflowMenuContent",
-				"\tclassName={${1:\"string\"}}",
-				"\tisPersistent={${2:true}}",
-				">",
-				"\t{${0:'any'}}",
-				"</OverflowMenuContent>"
+				"",
+				"/>"
       ],
       "description": "OverflowMenuContent"
     }
@@ -4135,11 +4099,8 @@
       "prefix": "#OverflowMenuControl",
       "body": [
         "<OverflowMenuControl",
-				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the OverflowMenuControl */}",
-				"\thasAdditionalOptions={${2:true}/* optional: Triggers the overflow dropdown to persist at all viewport sizes */}",
-				">",
-				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
-				"</OverflowMenuControl>"
+				"",
+				"/>"
       ],
       "description": "OverflowMenuControl"
     }
@@ -4149,97 +4110,10 @@
       "prefix": "!OverflowMenuControl",
       "body": [
         "<OverflowMenuControl",
-				"\tclassName={${1:\"string\"}}",
-				"\thasAdditionalOptions={${2:true}}",
-				">",
-				"\t{${0:'any'}}",
-				"</OverflowMenuControl>"
+				"",
+				"/>"
       ],
       "description": "OverflowMenuControl"
-    }
-  ,
-	"OverflowMenuDropdownItem": 
-    {
-      "prefix": "#OverflowMenuDropdownItem",
-      "body": [
-        "<OverflowMenuDropdownItem",
-				"\tisShared={${1:false}/* optional: Indicates when a dropdown item shows and hides the corresponding list item */}",
-				">",
-				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
-				"</OverflowMenuDropdownItem>"
-      ],
-      "description": "OverflowMenuDropdownItem"
-    }
-  ,
-	"OverflowMenuDropdownItemNoComments": 
-    {
-      "prefix": "!OverflowMenuDropdownItem",
-      "body": [
-        "<OverflowMenuDropdownItem",
-				"\tisShared={${1:false}}",
-				">",
-				"\t{${0:'any'}}",
-				"</OverflowMenuDropdownItem>"
-      ],
-      "description": "OverflowMenuDropdownItem"
-    }
-  ,
-	"OverflowMenuGroup": 
-    {
-      "prefix": "#OverflowMenuGroup",
-      "body": [
-        "<OverflowMenuGroup",
-				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the OverflowMenuGroup */}",
-				"\tisPersistent={${2:false}/* optional: Modifies the overflow menu group visibility */}",
-				"\tgroupType={${3:'button'}/* optional: Indicates a button or icon group */}",
-				">",
-				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
-				"</OverflowMenuGroup>"
-      ],
-      "description": "OverflowMenuGroup"
-    }
-  ,
-	"OverflowMenuGroupNoComments": 
-    {
-      "prefix": "!OverflowMenuGroup",
-      "body": [
-        "<OverflowMenuGroup",
-				"\tclassName={${1:\"string\"}}",
-				"\tisPersistent={${2:false}}",
-				"\tgroupType={${3:'button'}}",
-				">",
-				"\t{${0:'any'}}",
-				"</OverflowMenuGroup>"
-      ],
-      "description": "OverflowMenuGroup"
-    }
-  ,
-	"OverflowMenuItem": 
-    {
-      "prefix": "#OverflowMenuItem",
-      "body": [
-        "<OverflowMenuItem",
-				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the OverflowMenuItem */}",
-				"\tisPersistent={${2:false}/* optional: Modifies the overflow menu item visibility */}",
-				">",
-				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
-				"</OverflowMenuItem>"
-      ],
-      "description": "OverflowMenuItem"
-    }
-  ,
-	"OverflowMenuItemNoComments": 
-    {
-      "prefix": "!OverflowMenuItem",
-      "body": [
-        "<OverflowMenuItem",
-				"\tclassName={${1:\"string\"}}",
-				"\tisPersistent={${2:false}}",
-				">",
-				"\t{${0:'any'}}",
-				"</OverflowMenuItem>"
-      ],
-      "description": "OverflowMenuItem"
     }
   ,
 	"Page": 
@@ -4251,13 +4125,12 @@
 				"\theader={${2:null}/* optional: Header component (e.g. <PageHeader />) */}",
 				"\tsidebar={${3:null}/* optional: Sidebar component for a side nav (e.g. <PageSidebar />) */}",
 				"\tskipToContent={${4:null}/* optional: Skip to content component for the page */}",
-				"\trole={${5:\"string\"}/* optional: Sets the value for role on the <main> element */}",
-				"\tmainContainerId={${6:\"null\"}/* optional: an id to use for the [role=\"main\"] element */}",
-				"\tisManagedSidebar={${7:false}/* optional: If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into | the sidebar component or add a callback onNavToggle function into the PageHeader component */}",
-				"\tdefaultManagedSidebarIsOpen={${8:true}/* optional: If true, the managed sidebar is initially open for desktop view */}",
-				"\tonPageResize={${9:(): void => null}/* optional: Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px | Returns object { mobileView: boolean, windowSize: number } */}",
-				"\tbreadcrumb={${10:null}/* optional: Breadcrumb component for the page */}",
-				"\tmainAriaLabel={${11:\"string\"}/* optional: Accessible label, can be used to name main section */}",
+				"\tmainContainerId={${5:\"null\"}/* optional: an id to use for the [role=\"main\"] element */}",
+				"\tisManagedSidebar={${6:false}/* optional: If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into | the sidebar component or add a callback onNavToggle function into the PageHeader component */}",
+				"\tdefaultManagedSidebarIsOpen={${7:true}/* optional: If true, the managed sidebar is initially open for desktop view */}",
+				"\tonPageResize={${8:(): void => null}/* optional: Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px | Returns object { mobileView: boolean, windowSize: number } */}",
+				"\tbreadcrumb={${9:null}/* optional: Breadcrumb component for the page */}",
+				"\tmainAriaLabel={${10:\"string\"}/* optional: Accessible label, can be used to name main section */}",
 				">",
 				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the main section of the page layout (e.g. <PageSection />) */}",
 				"</Page>"
@@ -4274,13 +4147,12 @@
 				"\theader={${2:null}}",
 				"\tsidebar={${3:null}}",
 				"\tskipToContent={${4:null}}",
-				"\trole={${5:\"string\"}}",
-				"\tmainContainerId={${6:\"null\"}}",
-				"\tisManagedSidebar={${7:false}}",
-				"\tdefaultManagedSidebarIsOpen={${8:true}}",
-				"\tonPageResize={${9:(): void => null}}",
-				"\tbreadcrumb={${10:null}}",
-				"\tmainAriaLabel={${11:\"string\"}}",
+				"\tmainContainerId={${5:\"null\"}}",
+				"\tisManagedSidebar={${6:false}}",
+				"\tdefaultManagedSidebarIsOpen={${7:true}}",
+				"\tonPageResize={${8:(): void => null}}",
+				"\tbreadcrumb={${9:null}}",
+				"\tmainAriaLabel={${10:\"string\"}}",
 				">",
 				"\t{${0:<>ReactNode</>}}",
 				"</Page>"
@@ -4303,9 +4175,8 @@
 				"\tshowNavToggle={${8:false}/* optional: True to show the nav toggle button (toggles side nav) */}",
 				"\tisNavOpen={${9:true}/* optional: True if the side nav is shown */}",
 				"\tisManagedSidebar={${10:true}/* optional: If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into | the sidebar component or add a callback onNavToggle function into the PageHeader component */}",
-				"\trole={${11:\"string\"}/* optional: Sets the value for role on the <main> element */}",
-				"\tonNavToggle={${12:() => undefined as any}/* optional: Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */}",
-				"\taria-label={${13:\"'Global navigation'\"}/* optional: Aria Label for the nav toggle button */}",
+				"\tonNavToggle={${11:() => undefined as any}/* optional: Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */}",
+				"\taria-label={${12:\"'Global navigation'\"}/* optional: Aria Label for the nav toggle button */}",
 				"/>"
       ],
       "description": "PageHeader"
@@ -4326,9 +4197,8 @@
 				"\tshowNavToggle={${8:false}}",
 				"\tisNavOpen={${9:true}}",
 				"\tisManagedSidebar={${10:true}}",
-				"\trole={${11:\"string\"}}",
-				"\tonNavToggle={${12:() => undefined as any}}",
-				"\taria-label={${13:\"'Global navigation'\"}}",
+				"\tonNavToggle={${11:() => undefined as any}}",
+				"\taria-label={${12:\"'Global navigation'\"}}",
 				"/>"
       ],
       "description": "PageHeader"
@@ -5009,7 +4879,7 @@
         "<ProgressBar",
 				"\tclassName={${1:\"''\"}/* optional: Additional classes for Progres bar. */}",
 				"\tvalue={${2:42}/* required: Actual progress value. */}",
-				"\tariaProps={${3:undefined}/* optional: Minimal value of progress. */}",
+				"\tariaProps={${3:{}/*unrecognizedType AriaProps undefined*/}/* required: Minimal value of progress. */}",
 				">",
 				"\t{${0:<>ReactNode</>}/* optional: What should be rendered inside progress bar. */}",
 				"</ProgressBar>"
@@ -5024,7 +4894,7 @@
         "<ProgressBar",
 				"\tclassName={${1:\"''\"}}",
 				"\tvalue={${2:42}}",
-				"\tariaProps={${3:undefined}}",
+				"\tariaProps={${3:{}/*unrecognizedType AriaProps undefined*/}}",
 				">",
 				"\t{${0:<>ReactNode</>}}",
 				"</ProgressBar>"
@@ -5037,7 +4907,7 @@
       "prefix": "#ProgressContainer",
       "body": [
         "<ProgressContainer",
-				"\tariaProps={${1:undefined}/* optional: Properties needed for aria support */}",
+				"\tariaProps={${1:{}/*unrecognizedType AriaProps undefined*/}/* required: Properties needed for aria support */}",
 				"\tparentId={${2:\"string\"}/* required: Progress component DOM ID. */}",
 				"\ttitle={${3:\"''\"}/* optional: Progress title. */}",
 				"\tlabel={${4:null}/* optional: Label to indicate what progress is showing. */}",
@@ -5054,7 +4924,7 @@
       "prefix": "!ProgressContainer",
       "body": [
         "<ProgressContainer",
-				"\tariaProps={${1:undefined}}",
+				"\tariaProps={${1:{}/*unrecognizedType AriaProps undefined*/}}",
 				"\tparentId={${2:\"string\"}}",
 				"\ttitle={${3:\"''\"}}",
 				"\tlabel={${4:null}}",
@@ -5083,7 +4953,6 @@
 				"\tname={${10:\"string\"}/* required: Name for group of radios */}",
 				"\tonChange={${11:() => {}}/* optional: A callback for when the radio selection changes. */}",
 				"\taria-label={${12:\"string\"}/* optional: Aria label for the radio. */}",
-				"\tdescription={${13:<div>ReactNode</div>}/* optional: Description text of the radio. */}",
 				"/>"
       ],
       "description": "Radio"
@@ -5106,7 +4975,6 @@
 				"\tname={${10:\"string\"}}",
 				"\tonChange={${11:() => {}}}",
 				"\taria-label={${12:\"string\"}}",
-				"\tdescription={${13:<div>ReactNode</div>}}",
 				"/>"
       ],
       "description": "Radio"
@@ -5211,9 +5079,9 @@
 				"  isPlaceholder?: boolean",
 				") => undefined as void}/* optional: Callback for selection behavior */}",
 				"\tonToggle={${20:(isExpanded: boolean) => undefined as void}/* required: Callback for toggle button behavior */}",
-				"\tonClear={${21:() => undefined as void}/* optional: Callback for typeahead clear button */}",
+				"\tonClear={${21:(_e: React.MouseEvent) => undefined as void}/* optional: Callback for typeahead clear button */}",
 				"\tonFilter={${22:null}/* optional: Optional callback for custom filtering */}",
-				"\tonCreateOption={${23:() => undefined as void}/* optional: Optional callback for newly created options */}",
+				"\tonCreateOption={${23:(_newOptionValue: string) => undefined as void}/* optional: Optional callback for newly created options */}",
 				"\tvariant={${24:'single'}/* optional: Variant of rendered Select */}",
 				"\twidth={${25:''}/* optional: Width of the select container as a number of px or string percentage */}",
 				"\tmaxHeight={${26:'string'}/* optional: Max height of the select container as a number of px or string percentage */}",
@@ -5255,9 +5123,9 @@
 				"  isPlaceholder?: boolean",
 				") => undefined as void}}",
 				"\tonToggle={${20:(isExpanded: boolean) => undefined as void}}",
-				"\tonClear={${21:() => undefined as void}}",
+				"\tonClear={${21:(_e: React.MouseEvent) => undefined as void}}",
 				"\tonFilter={${22:null}}",
-				"\tonCreateOption={${23:() => undefined as void}}",
+				"\tonCreateOption={${23:(_newOptionValue: string) => undefined as void}}",
 				"\tvariant={${24:'single'}}",
 				"\twidth={${25:''}}",
 				"\tmaxHeight={${26:'string'}}",
@@ -5484,32 +5352,6 @@
 				"</SkipToContent>"
       ],
       "description": "SkipToContent"
-    }
-  ,
-	"Spinner": 
-    {
-      "prefix": "#Spinner",
-      "body": [
-        "<Spinner",
-				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Spinner. */}",
-				"\tsize={${2:'xl'}/* optional: Size variant of progress. */}",
-				"\taria-valuetext={${3:\"'Loading...'\"}/* optional: Aria value text */}",
-				"/>"
-      ],
-      "description": "Spinner"
-    }
-  ,
-	"SpinnerNoComments": 
-    {
-      "prefix": "!Spinner",
-      "body": [
-        "<Spinner",
-				"\tclassName={${1:\"''\"}}",
-				"\tsize={${2:'xl'}}",
-				"\taria-valuetext={${3:\"'Loading...'\"}}",
-				"/>"
-      ],
-      "description": "Spinner"
     }
   ,
 	"Switch": 
