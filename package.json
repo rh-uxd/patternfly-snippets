@@ -9,7 +9,7 @@
         "type": "git",
         "url": "https://github.com/rh-uxd/patternfly-snippets.git"
     },
-    "icon": "images/icon.png",
+    "icon": "images/icon.svg",
     "galleryBanner": {
         "color": "#282C34",
         "theme": "dark"
@@ -54,20 +54,16 @@
                 "command": "codeFragments.gotoDocumentation",
                 "title": "Go to documentation",
                 "icon": {
-                    "light": "images/icon-import-light.png",
-                    "dark": "images/icon-import-dark.png"
+                    "light": "images/external-link-alt.svg",
+                    "dark": "images/external-link-alt-1.svg"
                 }
-            },
-            {
-                "command": "codeFragments.renameCodeFragment",
-                "title": "Rename Code Fragment"
             },
             {
                 "command": "codeFragments.refreshFragments",
                 "title": "Refresh code fragments",
                 "icon": {
-                    "light": "images/icon-export-light.png",
-                    "dark": "images/icon-export-dark.png"
+                    "light": "images/refresh-light.svg",
+                    "dark": "images/refresh-dark.svg"
                 }
             }
         ],
@@ -103,11 +99,6 @@
                     "command": "codeFragments.gotoDocumentation",
                     "when": "viewItem == group",
                     "group": "inline"
-                },
-                {
-                    "command": "codeFragments.renameCodeFragment",
-                    "when": "view == codeFragments",
-                    "group": "codeFragments.viewItemContext.baseGroup"
                 }
             ]
         },
