@@ -88,13 +88,13 @@ export class FragmentManager implements IFragmentManager {
     this.codeFragments = new CodeFragmentCollection([]);
     const config = vscode.workspace.getConfiguration('codeFragments');
     this.includeCommentsInFragment = config.get('includeCommentsInFragment');
-    Promise.resolve(this.importDefaults(null, ));
+    Promise.resolve(this.importDefaults());
   }
 
   public getFragmentContent(id: string): CodeFragmentContent {
     let content = this.fragmentMap.get(id);
     return content;
-  }
+  } d
 
   public getAll(): CodeFragmentCategory[] {
     return this.codeFragments.fragments;
@@ -110,6 +110,8 @@ export class FragmentManager implements IFragmentManager {
 
   public toggleCommentsInFragments(includeCommentsInFragment? : boolean): void {
     this.includeCommentsInFragment = includeCommentsInFragment !== undefined ? includeCommentsInFragment : !this.includeCommentsInFragment;
+    const config = vscode.workspace.getConfiguration('codeFragments');
+    config.update('includeCommentsInFragment', this.includeCommentsInFragment, true);
   }
 
   public onFragmentsChanged(handler: () => void) {
