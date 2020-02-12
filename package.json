@@ -33,7 +33,8 @@
   "activationEvents": [
     "*",
     "onCommand:saveSelectedCodeFragment",
-    "onView:codeFragments"
+		"onView:codeFragments",
+		"onCommand:extension.web-browse"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -46,6 +47,15 @@
       ]
     },
     "commands": [
+			{
+				"command": "extension.web-browse",
+				"title": "Browse localhost"
+			},
+			{
+        "command": "catCoding.start",
+        "title": "Start new cat coding session",
+        "category": "Cat Coding"
+      },
       {
         "command": "codeFragments.insertCodeFragment",
         "title": "Insert Code Fragment"
