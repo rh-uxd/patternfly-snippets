@@ -51,6 +51,14 @@
         "title": "Insert Code Fragment"
       },
       {
+        "command": "codeFragments.toggleCommentsInFragments",
+        "title": "Toggle comments in fragments",
+        "icon": {
+          "light": "images/refresh-light.svg",
+          "dark": "images/refresh-dark.svg"
+        }
+      },
+      {
         "command": "codeFragments.gotoDocumentation",
         "title": "Go to documentation",
         "icon": {
@@ -101,10 +109,10 @@
       ],
       "view/title": [
         {
-          "command": "codeFragments.refreshFragments",
+          "command": "codeFragments.toggleCommentsInFragments",
           "when": "view == codeFragments",
           "group": "navigation@0"
-				},
+        },
 				{
 					"command": "codeFragments.switchVersion_2020.01"
 				},
