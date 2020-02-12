@@ -67,8 +67,9 @@ export enum ImportResult {
 export interface IFragmentManager {
   getAll(): CodeFragmentCategory[];
   getAllFragments(): PersistedCategories[];
-  onFragmentsChanged(handler: () => void);
+  onFragmentsChanged(handler: () => void): void;
   getVersion(): string;
+  toggleCommentsInFragments(): void;
 }
 
 export class FragmentManager implements IFragmentManager {
@@ -77,6 +78,7 @@ export class FragmentManager implements IFragmentManager {
   private readonly fragmentsChangeEvent: Array<() => void> = [];
   private fragmentMap = new Map<string, CodeFragmentContent>();
   private loadedVersion: string = '2020.01';
+  private includeCommentsInFragment: boolean = undefined;
 
   constructor(
     private readonly extensionContext: vscode.ExtensionContext
@@ -84,7 +86,9 @@ export class FragmentManager implements IFragmentManager {
 
   public initialize(): void {
     this.codeFragments = new CodeFragmentCollection([]);
-    Promise.resolve(this.importDefaults());
+    const config = vscode.workspace.getConfiguration('codeFragments');
+    this.includeCommentsInFragment = config.get('includeCommentsInFragment');
+    Promise.resolve(this.importDefaults(null, ));
   }
 
   public getFragmentContent(id: string): CodeFragmentContent {
@@ -104,6 +108,10 @@ export class FragmentManager implements IFragmentManager {
     return this.loadedVersion;
   }
 
+  public toggleCommentsInFragments(includeCommentsInFragment? : boolean): void {
+    this.includeCommentsInFragment = includeCommentsInFragment !== undefined ? includeCommentsInFragment : !this.includeCommentsInFragment;
+  }
+
   public onFragmentsChanged(handler: () => void) {
     if (handler) {
       this.fragmentsChangeEvent.push(handler);
@@ -117,10 +125,9 @@ export class FragmentManager implements IFragmentManager {
   }
 
   public importDefaults(version?: string): ImportResult {
-    const config = vscode.workspace.getConfiguration('codeFragments');
     const versionToLoad = version || this.getVersion();
     this.loadedVersion = versionToLoad;
-    const snippetPath = (config.get('includeCommentsInFragment')) ? `../snippets/codeFragmentsWithComments_${versionToLoad}.json` : `../snippets/codeFragmentsNoComments_${versionToLoad}.json`;
+    const snippetPath = this.includeCommentsInFragment ? `../snippets/codeFragmentsWithComments_${versionToLoad}.json` : `../snippets/codeFragmentsNoComments_${versionToLoad}.json`;
     const pathToSnippet = path.join(__dirname, snippetPath);
     console.info(`path: ${pathToSnippet}`, new Date().toISOString());
     const data = fs.readFileSync(pathToSnippet, 'utf8');
