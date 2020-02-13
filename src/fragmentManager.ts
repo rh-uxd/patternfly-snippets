@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
+import { SnippetCompletionItemProvider } from './snippetLoader';
 
 //category with children, fragments
 export class CodeFragmentCategory {
@@ -77,7 +78,7 @@ export class FragmentManager implements IFragmentManager {
   private allLoadedCodeFragments: ExportFile = undefined;
   private readonly fragmentsChangeEvent: Array<() => void> = [];
   private fragmentMap = new Map<string, CodeFragmentContent>();
-  private loadedVersion: string = '2020.01';
+  private loadedVersion: string;
   private includeCommentsInFragment: boolean = undefined;
 
   constructor(
@@ -88,6 +89,7 @@ export class FragmentManager implements IFragmentManager {
     this.codeFragments = new CodeFragmentCollection([]);
     const config = vscode.workspace.getConfiguration('codeFragments');
     this.includeCommentsInFragment = config.get('includeCommentsInFragment');
+    this.loadedVersion = config.get('patternflyRelease');
     Promise.resolve(this.importDefaults());
   }
 
@@ -110,8 +112,14 @@ export class FragmentManager implements IFragmentManager {
 
   public toggleCommentsInFragments(includeCommentsInFragment? : boolean): void {
     this.includeCommentsInFragment = includeCommentsInFragment !== undefined ? includeCommentsInFragment : !this.includeCommentsInFragment;
-    const config = vscode.workspace.getConfiguration('codeFragments');
-    config.update('includeCommentsInFragment', this.includeCommentsInFragment, true);
+    if (includeCommentsInFragment === undefined) {
+      const config = vscode.workspace.getConfiguration('codeFragments');
+      config.update('includeCommentsInFragment', this.includeCommentsInFragment, true);
+    }
+  }
+
+  public updateVersionUsed(release: string): void {
+    this.loadedVersion = release;
   }
 
   public onFragmentsChanged(handler: () => void) {
@@ -126,9 +134,25 @@ export class FragmentManager implements IFragmentManager {
     return result;
   }
 
+  public loadSnippets(version: string): void {
+    if (this.extensionContext.subscriptions.length) {
+      const languageSelectors: vscode.DocumentSelector = ['typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'html', 'plaintext', 'markdown'];
+      // remove and dispose last 2 subscriptions
+      let lastSubscription = this.extensionContext.subscriptions.pop();
+      lastSubscription.dispose();
+      lastSubscription = this.extensionContext.subscriptions.pop();
+      lastSubscription.dispose();
+      this.extensionContext.subscriptions.push(vscode.languages.registerCompletionItemProvider(languageSelectors, new SnippetCompletionItemProvider(version, true), '#'));
+      this.extensionContext.subscriptions.push(vscode.languages.registerCompletionItemProvider(languageSelectors, new SnippetCompletionItemProvider(version, false), '!'));
+      const config = vscode.workspace.getConfiguration('codeFragments');
+      config.update('patternflyRelease', version, true);
+    }
+  }
+
   public importDefaults(version?: string): ImportResult {
     const versionToLoad = version || this.getVersion();
     this.loadedVersion = versionToLoad;
+    this.loadSnippets(versionToLoad);
     const snippetPath = this.includeCommentsInFragment ? `../snippets/codeFragmentsWithComments_${versionToLoad}.json` : `../snippets/codeFragmentsNoComments_${versionToLoad}.json`;
     const pathToSnippet = path.join(__dirname, snippetPath);
     console.info(`path: ${pathToSnippet}`, new Date().toISOString());
