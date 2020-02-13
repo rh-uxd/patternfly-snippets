@@ -2,6 +2,7 @@
 import * as vscode from 'vscode';
 import { CodeFragmentProvider, CodeFragmentGroupTreeItem } from './codeFragmentsTreeItem';
 import { FragmentManager } from './fragmentManager';
+import { SnippetCompletionItemProvider } from './snippetLoader';
 
 export async function activate(context: vscode.ExtensionContext) {
     const fragmentManager = new FragmentManager(context);
@@ -52,6 +53,7 @@ export async function activate(context: vscode.ExtensionContext) {
     const onUpdateConfiguration = () => {
       const config = vscode.workspace.getConfiguration('codeFragments');
       fragmentManager.toggleCommentsInFragments(config.get('includeCommentsInFragment'));
+      fragmentManager.updateVersionUsed(config.get('patternflyRelease'));
       fragmentManager.reimportDefaults();
     }
 
@@ -68,6 +70,13 @@ export async function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.switchVersion_2020.01', () => switchVersion('2020.01')));
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.switchVersion_2019.11', () => switchVersion('2019.11')));
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.switchVersion_2019.10', () => switchVersion('2019.10')));
+
+    // push these 2 subscriptions last
+    const config = vscode.workspace.getConfiguration('codeFragments');
+    const release: string = config.get('patternflyRelease');
+    const languageSelectors: vscode.DocumentSelector = ['typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'html', 'plaintext', 'markdown'];
+    context.subscriptions.push(vscode.languages.registerCompletionItemProvider(languageSelectors, new SnippetCompletionItemProvider(release, true), '#'));
+    context.subscriptions.push(vscode.languages.registerCompletionItemProvider(languageSelectors, new SnippetCompletionItemProvider(release, false), '!'));
 }
 
 export function deactivate() { }

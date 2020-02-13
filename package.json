@@ -9,7 +9,6 @@
     "type": "git",
     "url": "https://github.com/rh-uxd/patternfly-snippets.git"
   },
-  "icon": "images/icon.svg",
   "galleryBanner": {
     "color": "#282C34",
     "theme": "dark"
@@ -96,6 +95,12 @@
             "type": "boolean",
             "default": false,
             "description": "Include property help comments when inserting a code fragment."
+          },
+          "codeFragments.patternflyRelease": {
+            "type": "string",
+            "default": "2020.01",
+            "enum": ["2020.01", "2019.11", "2019.10"],
+            "description": "PatternFly release"
           }
         }
       }
@@ -130,29 +135,7 @@
           "group": "inline"
         }
       ]
-    },
-    "snippets": [
-      {
-        "language": "markdown",
-        "path": "./snippets/snippets_2020.01.json"
-      },
-      {
-        "language": "javascript",
-        "path": "./snippets/snippets_2020.01.json"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./snippets/snippets_2020.01.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/snippets_2020.01.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./snippets/snippets_2020.01.json"
-      }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
