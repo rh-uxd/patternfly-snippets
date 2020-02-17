@@ -36,8 +36,9 @@ export async function activate(context: vscode.ExtensionContext) {
             vscode.window.showInformationMessage(
                 'Nothing passed');
         }
-        const url = `${group.category}/${group.label}`.toLowerCase();
-        vscode.env.openExternal(vscode.Uri.parse(`https://www.patternfly.org/v4/documentation/react/${url}`));
+        const url = `${group.category.toLowerCase() === 'beta' ? 'experimental' : group.category}/${group.label}`.toLowerCase();
+        // console.info(`https://www.patternfly.org/${group.version || 'v4'}/documentation/react/${url}`);
+        vscode.env.openExternal(vscode.Uri.parse(`https://www.patternfly.org/${group.version || 'v4'}/documentation/react/${url}`));
     };
 
     const switchVersion = (version: string) => {
