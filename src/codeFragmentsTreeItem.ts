@@ -33,7 +33,8 @@ export class CodeFragmentGroupTreeItem extends vscode.TreeItem {
     public readonly id: string,
     public readonly collapsibleState: vscode.TreeItemCollapsibleState,
     public readonly command?: vscode.Command,
-    public readonly children?: CodeFragmentChildTreeItem[]
+    public readonly children?: CodeFragmentChildTreeItem[],
+    public readonly version?: string
   ) {
     super(label, children == undefined ? 
       vscode.TreeItemCollapsibleState.None : 
@@ -114,7 +115,8 @@ export class CodeFragmentProvider implements vscode.TreeDataProvider<CodeFragmen
                     tooltip: 'Insert Code Fragment' //can put component tooltip here maybe???
                   }
                 )
-              )
+              ),
+              this.fragmentManager.getVersion()
             )
           ),
           this.fragmentManager.getVersion()

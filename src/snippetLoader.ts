@@ -3,7 +3,6 @@ import * as path from 'path';
 import { isArray } from 'util';
 
 export class SnippetCompletionItemProvider implements vscode.CompletionItemProvider {
-  private completions = new vscode.CompletionList();
   private snippets: any;
   private release: string;
 
@@ -17,6 +16,7 @@ export class SnippetCompletionItemProvider implements vscode.CompletionItemProvi
 	public provideCompletionItems(
 		document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken,
 	): vscode.CompletionList {
+    let result: vscode.CompletionItem[] = [];
     for (const snippetName of Object.keys(this.snippets)) {
       // console.info(`snippetName: ${JSON.stringify(snippetName)}`);
       const snippet = this.snippets[snippetName];
@@ -33,8 +33,8 @@ export class SnippetCompletionItemProvider implements vscode.CompletionItemProvi
       completionItem.detail = `PatternFly ${snippet.description} (release ${this.release})`;
       completionItem.documentation = new vscode.MarkdownString().appendCodeblock(completionItem.insertText.value);
       // console.info(`documentation: ${JSON.stringify(completionItem.documentation)}\n`);
-      this.completions.items.push(completionItem);
+      result.push(completionItem);
     }
-		return this.completions;
+		return new vscode.CompletionList(result);
 	}
 }
