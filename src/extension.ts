@@ -68,6 +68,7 @@ export async function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.refreshFragments', refreshFragments));
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.gotoDocumentation', gotoDocumentation));
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.toggleCommentsInFragments', toggleCommentsInFragments));
+    context.subscriptions.push(vscode.commands.registerCommand('codeFragments.switchVersion_2020.02', () => switchVersion('2020.02')));
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.switchVersion_2020.01', () => switchVersion('2020.01')));
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.switchVersion_2019.11', () => switchVersion('2019.11')));
     context.subscriptions.push(vscode.commands.registerCommand('codeFragments.switchVersion_2019.10', () => switchVersion('2019.10')));

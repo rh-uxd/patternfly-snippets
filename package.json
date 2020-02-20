@@ -2,7 +2,7 @@
   "name": "patternfly-snippets",
   "displayName": "PatternFly Snippets",
   "description": "PatternFly code snippets",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "PatternFly",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
@@ -72,6 +72,10 @@
           "light": "images/refresh-light.svg",
           "dark": "images/refresh-dark.svg"
         }
+      },
+      {
+				"command": "codeFragments.switchVersion_2020.02",
+				"title": "Release 2020.02"
 			},
 			{
 				"command": "codeFragments.switchVersion_2020.01",
@@ -98,8 +102,8 @@
           },
           "codeFragments.patternflyRelease": {
             "type": "string",
-            "default": "2020.01",
-            "enum": ["2020.01", "2019.11", "2019.10"],
+            "default": "2020.02",
+            "enum": ["2020.02", "2020.01", "2019.11", "2019.10"],
             "description": "PatternFly release"
           }
         }
@@ -118,6 +122,9 @@
           "when": "view == codeFragments",
           "group": "navigation@0"
         },
+        {
+					"command": "codeFragments.switchVersion_2020.02"
+				},
 				{
 					"command": "codeFragments.switchVersion_2020.01"
 				},
