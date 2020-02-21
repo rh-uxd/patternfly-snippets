@@ -69,7 +69,6 @@ export class FragmentManager implements IFragmentManager {
     let content = this.fragmentMap.get(id);
     return content;
   }
-  d;
 
   public getAll(): CodeFragmentCategory[] {
     return this.codeFragments.fragments;
@@ -123,8 +122,6 @@ export class FragmentManager implements IFragmentManager {
         'typescriptreact',
         'javascript',
         'javascriptreact',
-        'html',
-        'plaintext',
         'markdown'
       ];
       // remove and dispose last 2 subscriptions
