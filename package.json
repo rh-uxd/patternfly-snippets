@@ -2,7 +2,7 @@
   "name": "patternfly-snippets",
   "displayName": "PatternFly Snippets",
   "description": "PatternFly code snippets",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "publisher": "PatternFly",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
@@ -53,8 +53,16 @@
         "command": "codeFragments.toggleCommentsInFragments",
         "title": "Toggle comments in fragments",
         "icon": {
-          "light": "images/refresh-light.svg",
-          "dark": "images/refresh-dark.svg"
+          "light": "images/hashtag-light.svg",
+          "dark": "images/hashtag-dark.svg"
+        }
+      },
+      {
+        "command": "codeFragments.autoImportCommand",
+        "title": "Experimental: Add the component import when a snippet is inserted.",
+        "icon": {
+          "light": "images/package-light.svg",
+          "dark": "images/package-dark.svg"
         }
       },
       {
@@ -72,6 +80,10 @@
           "light": "images/refresh-light.svg",
           "dark": "images/refresh-dark.svg"
         }
+      },
+      {
+				"command": "codeFragments.switchVersion_2020.02",
+				"title": "Release 2020.02"
 			},
 			{
 				"command": "codeFragments.switchVersion_2020.01",
@@ -98,9 +110,14 @@
           },
           "codeFragments.patternflyRelease": {
             "type": "string",
-            "default": "2020.01",
-            "enum": ["2020.01", "2019.11", "2019.10"],
+            "default": "2020.02",
+            "enum": ["2020.02", "2020.01", "2019.11", "2019.10"],
             "description": "PatternFly release"
+          },
+          "codeFragments.autoImport": {
+            "type": "boolean",
+            "default": false,
+            "description": "Experimental: Add the component import when a snippet is inserted."
           }
         }
       }
@@ -118,6 +135,14 @@
           "when": "view == codeFragments",
           "group": "navigation@0"
         },
+        {
+          "command": "codeFragments.autoImportCommand",
+          "when": "view == codeFragments",
+          "group": "navigation@0"
+        },
+        {
+					"command": "codeFragments.switchVersion_2020.02"
+				},
 				{
 					"command": "codeFragments.switchVersion_2020.01"
 				},
