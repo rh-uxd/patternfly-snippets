@@ -53,8 +53,16 @@
         "command": "codeFragments.toggleCommentsInFragments",
         "title": "Toggle comments in fragments",
         "icon": {
-          "light": "images/refresh-light.svg",
-          "dark": "images/refresh-dark.svg"
+          "light": "images/hashtag-light.svg",
+          "dark": "images/hashtag-dark.svg"
+        }
+      },
+      {
+        "command": "codeFragments.autoImportCommand",
+        "title": "Experimental: Add the component import when a snippet is inserted.",
+        "icon": {
+          "light": "images/package-light.svg",
+          "dark": "images/package-dark.svg"
         }
       },
       {
@@ -105,6 +113,11 @@
             "default": "2020.02",
             "enum": ["2020.02", "2020.01", "2019.11", "2019.10"],
             "description": "PatternFly release"
+          },
+          "codeFragments.autoImport": {
+            "type": "boolean",
+            "default": false,
+            "description": "Experimental: Add the component import when a snippet is inserted."
           }
         }
       }
@@ -119,6 +132,11 @@
       "view/title": [
         {
           "command": "codeFragments.toggleCommentsInFragments",
+          "when": "view == codeFragments",
+          "group": "navigation@0"
+        },
+        {
+          "command": "codeFragments.autoImportCommand",
           "when": "view == codeFragments",
           "group": "navigation@0"
         },

@@ -79,7 +79,8 @@ export class FragmentManager implements IFragmentManager {
   private readonly fragmentsChangeEvent: Array<() => void> = [];
   private fragmentMap = new Map<string, CodeFragmentContent>();
   private loadedVersion: string;
-  private includeCommentsInFragment: boolean = undefined;
+  private includeCommentsInFragment: boolean;
+  private autoImport: boolean;
 
   constructor(
     private readonly extensionContext: vscode.ExtensionContext
@@ -89,6 +90,7 @@ export class FragmentManager implements IFragmentManager {
     this.codeFragments = new CodeFragmentCollection([]);
     const config = vscode.workspace.getConfiguration('codeFragments');
     this.includeCommentsInFragment = config.get('includeCommentsInFragment');
+    this.autoImport = config.get('autoImport');
     this.loadedVersion = config.get('patternflyRelease');
     Promise.resolve(this.importDefaults());
   }
@@ -118,6 +120,14 @@ export class FragmentManager implements IFragmentManager {
     }
   }
 
+  public toggleAutoImport(autoImport?: boolean): void {
+    this.autoImport = autoImport !== undefined ? autoImport : !this.autoImport;
+    if (autoImport === undefined) {
+      const config = vscode.workspace.getConfiguration('codeFragments');
+      config.update('autoImport', this.autoImport, true);
+    }
+  }
+
   public updateVersionUsed(release: string): void {
     this.loadedVersion = release;
   }
@@ -142,8 +152,8 @@ export class FragmentManager implements IFragmentManager {
       lastSubscription.dispose();
       lastSubscription = this.extensionContext.subscriptions.pop();
       lastSubscription.dispose();
-      this.extensionContext.subscriptions.push(vscode.languages.registerCompletionItemProvider(languageSelectors, new SnippetCompletionItemProvider(version, true), '#'));
-      this.extensionContext.subscriptions.push(vscode.languages.registerCompletionItemProvider(languageSelectors, new SnippetCompletionItemProvider(version, false), '!'));
+      this.extensionContext.subscriptions.push(vscode.languages.registerCompletionItemProvider(languageSelectors, new SnippetCompletionItemProvider(version, true, this.autoImport), '#'));
+      this.extensionContext.subscriptions.push(vscode.languages.registerCompletionItemProvider(languageSelectors, new SnippetCompletionItemProvider(version, false, this.autoImport), '!'));
       const config = vscode.workspace.getConfiguration('codeFragments');
       config.update('patternflyRelease', version, true);
     }
