@@ -10,7 +10,8 @@ export async function activate(context: vscode.ExtensionContext) {
 
   const additionalEdits = (editBuilder: vscode.TextEditorEdit, label: string) => {
     const { leadingControlChars, importPosition, match, lastMatchingIndex } = addAutoImport(
-      vscode.window.activeTextEditor.document
+      vscode.window.activeTextEditor.document,
+      vscode.window.activeTextEditor.selection.start
     );
     if (match.indexOf(label) === -1) {
       // we do not have the import, need to insert it

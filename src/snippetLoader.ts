@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import { isArray } from 'util';
 
-export const addAutoImport = (document: vscode.TextDocument) => {
+export const addAutoImport = (document: vscode.TextDocument, position: vscode.Position) => {
   let leadingControlChars: string = '';
   let importPosition: vscode.Position;
   let match: string[] = [];
@@ -11,8 +11,13 @@ export const addAutoImport = (document: vscode.TextDocument) => {
   const importRegex = /\{([^}]+)\}.*@patternfly\/react-core/g;
   let matcher = importRegex.exec(wholeText);
   while (matcher != null) {
+    if (document.positionAt(matcher.index).line > position.line) {
+      // if the found line position exceeds the cursor position we can stop
+      break;
+    }
     leadingControlChars = '';
     lastMatchingIndex = matcher.index;
+    // console.info(`cursor line: ${position.line}, matcher: ${document.positionAt(matcher.index).line}`);
     const firstMatch = matcher[1].split(',')[0];
     for (let i = 0; i < firstMatch.length; i++) {
       if (/[a-zA-Z]/.test(firstMatch.charAt(i)) === false) {
@@ -65,7 +70,7 @@ export class SnippetCompletionItemProvider implements vscode.CompletionItemProvi
     }
     let result: vscode.CompletionItem[] = [];
 
-    const { leadingControlChars, importPosition, match, lastMatchingIndex } = addAutoImport(document);
+    const { leadingControlChars, importPosition, match, lastMatchingIndex } = addAutoImport(document, position);
 
     for (const snippetName of Object.keys(this.snippets)) {
       // console.info(`snippetName: ${JSON.stringify(snippetName)}`);
