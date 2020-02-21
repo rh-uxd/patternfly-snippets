@@ -81,13 +81,14 @@ export async function activate(context: vscode.ExtensionContext) {
   };
 
   const onUpdateConfiguration = (event: vscode.ConfigurationChangeEvent) => {
-    if (event.affectsConfiguration('codeFragments')) {
-      const config = vscode.workspace.getConfiguration('codeFragments');
+    const config = vscode.workspace.getConfiguration('codeFragments');
+    event.affectsConfiguration('codeFragments.includeCommentsInFragment') &&
       fragmentManager.toggleCommentsInFragments(config.get('includeCommentsInFragment'));
+    event.affectsConfiguration('codeFragments.autoImport') &&
       fragmentManager.toggleAutoImport(config.get('autoImport'));
+    event.affectsConfiguration('codeFragments.patternflyRelease') &&
       fragmentManager.updateVersionUsed(config.get('patternflyRelease'));
-      fragmentManager.reimportDefaults();
-    }
+    fragmentManager.reimportDefaults();
   };
 
   fragmentManager.initialize();

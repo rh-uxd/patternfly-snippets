@@ -89,6 +89,7 @@ export class FragmentManager implements IFragmentManager {
       const config = vscode.workspace.getConfiguration('codeFragments');
       config.update('includeCommentsInFragment', this.includeCommentsInFragment, true);
     }
+    vscode.window.showInformationMessage(this.includeCommentsInFragment ? 'Enabled prop comments' : 'Disabled prop comments');
   }
 
   public toggleAutoImport(autoImport?: boolean): void {
@@ -97,6 +98,7 @@ export class FragmentManager implements IFragmentManager {
       const config = vscode.workspace.getConfiguration('codeFragments');
       config.update('autoImport', this.autoImport, true);
     }
+    vscode.window.showInformationMessage(this.autoImport ? 'Enabled auto import' : 'Disabled auto import');
   }
 
   public updateVersionUsed(release: string): void {
