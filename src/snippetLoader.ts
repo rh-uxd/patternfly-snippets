@@ -22,7 +22,10 @@ export const addAutoImport = (document: vscode.TextDocument) => {
         break;
       }
     }
-    const cleanedupMatches = matcher[1].trim().replace(/[\n\r\t]/g, '').split(/,\s*/);
+    const cleanedupMatches = matcher[1]
+      .trim()
+      .replace(/[\n\r\t]/g, '')
+      .split(/,\s*/);
     match = match.concat(cleanedupMatches);
     matcher = importRegex.exec(wholeText);
   }
@@ -32,25 +35,30 @@ export const addAutoImport = (document: vscode.TextDocument) => {
     importPosition,
     match,
     lastMatchingIndex
-  }
-}
+  };
+};
 
 export class SnippetCompletionItemProvider implements vscode.CompletionItemProvider {
   private snippets: any;
   private release: string;
   private autoImport: boolean;
 
-	constructor(release: string, withComments: boolean, autoImport: boolean) {
-    const pathToSnippet = path.join(__dirname, `../snippets/snippets${withComments ? 'WithComments' : 'NoComments'}_${release}.json`);
+  constructor(release: string, withComments: boolean, autoImport: boolean) {
+    const pathToSnippet = path.join(
+      __dirname,
+      `../snippets/snippets${withComments ? 'WithComments' : 'NoComments'}_${release}.json`
+    );
     console.info(`Loading snippet from ${pathToSnippet}`);
-    this.snippets = require(pathToSnippet);;
+    this.snippets = require(pathToSnippet);
     this.release = release;
     this.autoImport = autoImport;
-	}
+  }
 
-	public provideCompletionItems(
-		document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken,
-	): vscode.CompletionList {
+  public provideCompletionItems(
+    document: vscode.TextDocument,
+    position: vscode.Position,
+    token: vscode.CancellationToken
+  ): vscode.CompletionList {
     const linePrefix: string = document.lineAt(position).text.substr(position.character - 1, 1);
     if (linePrefix !== '!' && linePrefix !== '#') {
       return;
@@ -65,31 +73,38 @@ export class SnippetCompletionItemProvider implements vscode.CompletionItemProvi
       const completionItem = new vscode.CompletionItem(snippet.prefix, vscode.CompletionItemKind.Snippet);
       completionItem.filterText = snippet.prefix;
       // console.info(`filterText: ${JSON.stringify(completionItem.filterText)}`);
-      completionItem.range = new vscode.Range(new vscode.Position(position.line, position.character - 1), new vscode.Position(position.line, position.character));
+      completionItem.range = new vscode.Range(
+        new vscode.Position(position.line, position.character - 1),
+        new vscode.Position(position.line, position.character)
+      );
       completionItem.insertText = new vscode.SnippetString(
-        isArray(snippet.body)
-          ? snippet.body.join("\n")
-          : snippet.body,
+        isArray(snippet.body) ? snippet.body.join('\n') : snippet.body
       );
       // console.info(`insertText: ${JSON.stringify(completionItem.insertText)}`);
       completionItem.detail = `PatternFly ${snippet.description} (release ${this.release})`;
       completionItem.documentation = new vscode.MarkdownString().appendCodeblock(completionItem.insertText.value);
-      
+
       if (this.autoImport) {
         if (match.indexOf(snippet.description) === -1) {
           // we do not have the import, need to insert it
           completionItem.additionalTextEdits = [
-            lastMatchingIndex === -1 ? 
-              new vscode.TextEdit(new vscode.Range(document.positionAt(0), document.positionAt(0)), `import { ${snippet.description} } from '@patternfly/react-core';\n`) : 
-              new vscode.TextEdit(new vscode.Range(importPosition, importPosition), leadingControlChars ? `${leadingControlChars}${snippet.description},` : ` ${snippet.description}, `)
+            lastMatchingIndex === -1
+              ? new vscode.TextEdit(
+                  new vscode.Range(document.positionAt(0), document.positionAt(0)),
+                  `import { ${snippet.description} } from '@patternfly/react-core';\n`
+                )
+              : new vscode.TextEdit(
+                  new vscode.Range(importPosition, importPosition),
+                  leadingControlChars ? `${leadingControlChars}${snippet.description},` : ` ${snippet.description}, `
+                )
           ];
         }
       }
-      
+
       // console.info(asd);
       // console.info(`documentation: ${JSON.stringify(completionItem.documentation)}\n`);
       result.push(completionItem);
     }
-		return new vscode.CompletionList(result);
-	}
+    return new vscode.CompletionList(result);
+  }
 }
