@@ -4,6 +4,18 @@ All notable changes to the "pfsnippets" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.1] - 2020-02-21
+### Fixed
+- Update CHANGELOG
+
+## [0.1.0] - 2020-02-21
+### Fixed
+- Include latest PatternFly release 2020.02
+- Do not show snippets for plaintext and HTML files
+- Only trigger snippet suggestions on typing the `!` or `#` keywords
+### Added
+- Added experimental feature to automatically add the import statement in the form import { COMPONENT } from '@patternfly/react-core; If there is an existing import in the file from react-core it will add to that import instead.
+
 ## [0.0.2] - 2020-02-17
 ### Fixed
 - Snippets will no longer duplicate in the search results that show up after using the `!` or `#` keywords
