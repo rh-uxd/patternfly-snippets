@@ -4,6 +4,10 @@ All notable changes to the "pfsnippets" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.3] - 2020-02-21
+### Fixed
+- Release menu items should only appear in the code snippets view
+
 ## [0.1.2] - 2020-02-21
 ### Fixed
 - If there is already an import from `@patternfly/react-core`, add the auto import to the closest matching import statement above the cursor position
