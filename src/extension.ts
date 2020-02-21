@@ -125,8 +125,6 @@ export async function activate(context: vscode.ExtensionContext) {
     'typescriptreact',
     'javascript',
     'javascriptreact',
-    'html',
-    'plaintext',
     'markdown'
   ];
   context.subscriptions.push(
