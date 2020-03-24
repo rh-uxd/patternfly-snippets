@@ -1,7 +1,6 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
-import { SnippetCompletionItemProvider } from './snippetLoader';
 
 //category with children, fragments
 export class CodeFragmentCategory {
@@ -28,8 +27,12 @@ class PersistedFragment {
   constructor(public id: string, public readonly label: string, public readonly content: string) {}
 }
 
-export class ExportFile {
+class CodeCategory {
   constructor(public codeCategories: PersistedCategories[]) {}
+}
+
+export class ExportFile {
+  constructor(public react: CodeCategory, public core: CodeCategory) {}
 }
 
 export enum ImportResult {
@@ -39,10 +42,10 @@ export enum ImportResult {
 
 export interface IFragmentManager {
   getAll(): CodeFragmentCategory[];
-  getAllFragments(): PersistedCategories[];
+  getAllFragments(type: 'react' | 'core'): PersistedCategories[];
   onFragmentsChanged(handler: () => void): void;
   getVersion(): string;
-  toggleCommentsInFragments(): void;
+  toggleCommentsInFragmentsReact(): void;
 }
 
 export class FragmentManager implements IFragmentManager {
@@ -51,17 +54,25 @@ export class FragmentManager implements IFragmentManager {
   private readonly fragmentsChangeEvent: Array<() => void> = [];
   private fragmentMap = new Map<string, CodeFragmentContent>();
   private loadedVersion: string;
-  private includeCommentsInFragment: boolean;
-  private autoImport: boolean;
+  private reactIncludeCommentsInFragment: boolean;
+  private reactAutoImport: boolean;
+  private type: 'react' | 'core';
 
-  constructor(private readonly extensionContext: vscode.ExtensionContext) {}
+  constructor(
+    private readonly extensionContext: vscode.ExtensionContext,
+    type: 'react' | 'core'
+  ) {
+    this.type = type;
+  }
 
   public initialize(): void {
     this.codeFragments = new CodeFragmentCollection([]);
-    const config = vscode.workspace.getConfiguration('codeFragments');
-    this.includeCommentsInFragment = config.get('includeCommentsInFragment');
-    this.autoImport = config.get('autoImport');
-    this.loadedVersion = config.get('patternflyRelease');
+    const config = vscode.workspace.getConfiguration('patternflySnippets');
+    if (this.type === 'react') {
+      this.reactIncludeCommentsInFragment = config.get('reactIncludeCommentsInFragment');
+      this.reactAutoImport = config.get('reactAutoImport');
+    }
+    this.loadedVersion = config.get(this.type === 'react' ? 'reactPatternflyRelease' : 'corePatternflyRelease');
     Promise.resolve(this.importDefaults());
   }
 
@@ -74,31 +85,31 @@ export class FragmentManager implements IFragmentManager {
     return this.codeFragments.fragments;
   }
 
-  public getAllFragments(): PersistedCategories[] {
-    return this.allLoadedCodeFragments.codeCategories;
+  public getAllFragments(type: 'react' | 'core'): PersistedCategories[] {
+    return this.allLoadedCodeFragments[type].codeCategories;
   }
 
   public getVersion(): string {
     return this.loadedVersion;
   }
 
-  public toggleCommentsInFragments(includeCommentsInFragment?: boolean): void {
-    this.includeCommentsInFragment =
-      includeCommentsInFragment !== undefined ? includeCommentsInFragment : !this.includeCommentsInFragment;
-    if (includeCommentsInFragment === undefined) {
-      const config = vscode.workspace.getConfiguration('codeFragments');
-      config.update('includeCommentsInFragment', this.includeCommentsInFragment, true);
+  public toggleCommentsInFragmentsReact(reactIncludeCommentsInFragment?: boolean): void {
+    this.reactIncludeCommentsInFragment =
+      reactIncludeCommentsInFragment !== undefined ? reactIncludeCommentsInFragment : !this.reactIncludeCommentsInFragment;
+    if (reactIncludeCommentsInFragment === undefined) {
+      const config = vscode.workspace.getConfiguration('patternflySnippets');
+      config.update('reactIncludeCommentsInFragment', this.reactIncludeCommentsInFragment, true);
     }
-    vscode.window.showInformationMessage(this.includeCommentsInFragment ? 'Enabled prop comments' : 'Disabled prop comments');
+    vscode.window.showInformationMessage(this.reactIncludeCommentsInFragment ? 'Enabled prop comments' : 'Disabled prop comments');
   }
 
-  public toggleAutoImport(autoImport?: boolean): void {
-    this.autoImport = autoImport !== undefined ? autoImport : !this.autoImport;
-    if (autoImport === undefined) {
-      const config = vscode.workspace.getConfiguration('codeFragments');
-      config.update('autoImport', this.autoImport, true);
+  public toggleAutoImportReact(reactAutoImport?: boolean): void {
+    this.reactAutoImport = reactAutoImport !== undefined ? reactAutoImport : !this.reactAutoImport;
+    if (reactAutoImport === undefined) {
+      const config = vscode.workspace.getConfiguration('patternflySnippets');
+      config.update('reactAutoImport', this.reactAutoImport, true);
     }
-    vscode.window.showInformationMessage(this.autoImport ? 'Enabled auto import' : 'Disabled auto import');
+    vscode.window.showInformationMessage(this.reactAutoImport ? 'Enabled auto import' : 'Disabled auto import');
   }
 
   public updateVersionUsed(release: string): void {
@@ -117,73 +128,51 @@ export class FragmentManager implements IFragmentManager {
     return result;
   }
 
-  public loadSnippets(version: string): void {
-    if (this.extensionContext.subscriptions.length) {
-      const languageSelectors: vscode.DocumentSelector = [
-        'typescript',
-        'typescriptreact',
-        'javascript',
-        'javascriptreact',
-        'markdown'
-      ];
-      // remove and dispose last 2 subscriptions
-      let lastSubscription = this.extensionContext.subscriptions.pop();
-      lastSubscription.dispose();
-      lastSubscription = this.extensionContext.subscriptions.pop();
-      lastSubscription.dispose();
-      this.extensionContext.subscriptions.push(
-        vscode.languages.registerCompletionItemProvider(
-          languageSelectors,
-          new SnippetCompletionItemProvider(version, true, this.autoImport),
-          '#'
-        )
-      );
-      this.extensionContext.subscriptions.push(
-        vscode.languages.registerCompletionItemProvider(
-          languageSelectors,
-          new SnippetCompletionItemProvider(version, false, this.autoImport),
-          '!'
-        )
-      );
-      const config = vscode.workspace.getConfiguration('codeFragments');
-      config.update('patternflyRelease', version, true);
+  public loadFragments(version: string) {
+    const snippetPath = `../../snippets/${this.type}/fragments_${version}.json`;
+    const pathToFragments = path.join(__dirname, snippetPath);
+    console.info(`${this.type} path: ${pathToFragments}`, new Date().toISOString());
+    const data = fs.readFileSync(pathToFragments, 'utf8');
+    return data;
+  }
+
+  public saveSnippetsToFragments(data: string, type: string) {
+    const json: CodeCategory = JSON.parse(data);
+    if (json.codeCategories && json.codeCategories.length > 0) {
+      json.codeCategories.forEach((category, index) => {
+        category.id = 'CodeCategory' + this.generateId();
+
+        if (category.codeFragments && category.codeFragments.length > 0) {
+          category.codeFragments.forEach(group => {
+            group.id = 'CodeGroup' + this.generateId();
+            if (group.children && group.children.some(f => !!f.content && !!f.label)) {
+              group.children.map(fragment => {
+                const id = 'CodeFragment' + this.generateId();
+                fragment.id = id;
+                this.saveCodeFragmentContent(id, fragment.label, fragment.content);
+              });
+            }
+          });
+        } else {
+          json.codeCategories.splice(index, 1);
+        }
+      });
+    }
+    this.allLoadedCodeFragments = {
+      ...this.allLoadedCodeFragments,
+      [type]: json
     }
   }
 
   public importDefaults(version?: string): ImportResult {
     const versionToLoad = version || this.getVersion();
     this.loadedVersion = versionToLoad;
-    this.loadSnippets(versionToLoad);
-    const snippetPath = this.includeCommentsInFragment
-      ? `../snippets/codeFragmentsWithComments_${versionToLoad}.json`
-      : `../snippets/codeFragmentsNoComments_${versionToLoad}.json`;
-    const pathToSnippet = path.join(__dirname, snippetPath);
-    console.info(`path: ${pathToSnippet}`, new Date().toISOString());
-    const data = fs.readFileSync(pathToSnippet, 'utf8');
-    // console.info('data loaded', new Date().toISOString());
+    
+    const data = this.loadFragments(versionToLoad);
 
     if (data) {
-      const json: ExportFile = JSON.parse(data);
-      this.allLoadedCodeFragments = json;
-      if (json.codeCategories && json.codeCategories.length > 0) {
-        json.codeCategories.forEach(category => {
-          category.id = 'CodeCategory' + this.generateId();
-
-          if (category.codeFragments && category.codeFragments.length > 0) {
-            category.codeFragments.forEach(group => {
-              group.id = 'CodeGroup' + this.generateId();
-              if (group.children && group.children.some(f => !!f.content && !!f.label)) {
-                group.children.map(fragment => {
-                  const id = 'CodeFragment' + this.generateId();
-                  fragment.id = id;
-                  this.saveCodeFragmentContent(id, fragment.label, fragment.content);
-                });
-              }
-            });
-          }
-        });
-      }
-      console.info('load complete', new Date().toISOString());
+      this.saveSnippetsToFragments(data, this.type);
+      console.info(`load complete ${this.type}`, new Date().toISOString());
       return ImportResult.Success;
     } else {
       return ImportResult.Success;

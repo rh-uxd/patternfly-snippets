@@ -4,6 +4,12 @@ All notable changes to the "pfsnippets" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.0.0] - 2020-03-23
+### Added
+- The PatternFly fragments are now in their own view container in the sidebar. Look for the PatternFly icon!
+- Core snippets have been added, the default (configurable) trigger to get snippet suggestions is the `@` key.
+- More configurable options can now be found within the extension settings, including the completion trigger and the applicable file types.
+
 ## [0.1.3] - 2020-02-21
 ### Fixed
 - Release menu items should only appear in the code snippets view
