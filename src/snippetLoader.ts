@@ -48,10 +48,8 @@ export class SnippetCompletionItemProvider implements vscode.CompletionItemProvi
   private release: string;
   private trigger: string;
   private reactAutoImport: boolean;
-  private withComments: boolean;
 
-  constructor(type: 'react' | 'core', trigger: string, release: string, withComments?: boolean, reactAutoImport?: boolean) {
-    this.withComments = withComments;
+  constructor(type: 'react' | 'core', trigger: string, release: string, reactAutoImport?: boolean) {
     this.trigger = trigger;
     const pathToSnippet = path.join(
       __dirname,
@@ -77,11 +75,14 @@ export class SnippetCompletionItemProvider implements vscode.CompletionItemProvi
 
     const { leadingControlChars, importPosition, match, lastMatchingIndex } = addAutoImport(document, position);
 
+    const config = vscode.workspace.getConfiguration('patternflySnippets');
+    const includeComments: boolean = config.get('reactIncludeCommentsInFragment');
+
     for (const snippetName of Object.keys(this.snippets)) {
       const snippet = this.snippets[snippetName];
       // const snippetPrefix = snippet.prefix.replace('#', this.trigger);
       let snippetBody = isArray(snippet.body) ? snippet.body.join('\n') : snippet.body;
-      if (this.withComments === false) {
+      if (!includeComments) {
         snippetBody = snippetBody.replace(/\/\*.*\*\//g, '');
       }
       const completionItem = new vscode.CompletionItem(`${this.trigger}${snippetName}`, vscode.CompletionItemKind.Snippet);

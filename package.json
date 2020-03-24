@@ -2,7 +2,7 @@
   "name": "patternfly-snippets",
   "displayName": "PatternFly Snippets",
   "description": "PatternFly code snippets",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "publisher": "PatternFly",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
@@ -59,7 +59,7 @@
     "commands": [
       {
         "command": "patternflySnippets.toggleCommentsInFragments",
-        "title": "Toggle comments in fragments",
+        "title": "Toggle comments in react fragments and snippets",
         "icon": {
           "light": "images/hashtag-light.svg",
           "dark": "images/hashtag-dark.svg"
@@ -67,7 +67,7 @@
       },
       {
         "command": "patternflySnippets.autoImportCommand",
-        "title": "Experimental: Add the component import when a snippet is inserted.",
+        "title": "Experimental: Add the component import when a react fragment or snippet is inserted.",
         "icon": {
           "light": "images/package-light.svg",
           "dark": "images/package-dark.svg"
@@ -127,15 +127,10 @@
             "default": false,
             "description": "Experimental: Add the component import when a snippet is inserted."
           },
-          "patternflySnippets.reactSnippetPrefixWithComments": {
-            "type": "string",
-            "default": "#",
-            "description": "Key trigger used to load the snippet completions (with comments)"
-          },
-          "patternflySnippets.reactSnippetPrefixWithoutComments": {
+          "patternflySnippets.reactSnippetPrefix": {
             "type": "string",
             "default": "!",
-            "description": "Key trigger used to load the snippet completions (without comments)"
+            "description": "Key trigger used to load the snippet completions"
           },
           "patternflySnippets.reactSnippetFileTypes": {
             "type": "array",

@@ -4,6 +4,15 @@ All notable changes to the "pfsnippets" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.0.2] - 2020-03-24
+### Fixed
+- Updated README
+
+## [1.0.1] - 2020-03-24
+### Fixed
+- Removed patternflySnippets.reactSnippetPrefixWithComments and patternflySnippets.reactSnippetPrefixWithoutComments settings and replaced with a single patternflySnippets.reactSnippetPrefix. Comments can be toggled in the React view.
+- Reload snippets when auto import is toggled
+
 ## [1.0.0] - 2020-03-23
 ### Added
 - The PatternFly fragments are now in their own view container in the sidebar. Look for the PatternFly icon!

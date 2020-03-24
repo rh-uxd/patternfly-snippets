@@ -12,6 +12,7 @@ The components are organized by type (component/layout) and grouped by category.
 The extension also makes the code snippets available through code completion. If you type the configured trigger string (which is configurable in the extension settings), e.g. `#Alert` you will see a dropdown with components that match the text. 
 
 The default triggers are:
-- `!`: Loads react snippets without prop comments
-- `#`: Loads react snippets with prop comments
-- `@`: Loads core snippets
+- `!`: Show react snippet completions  (available by default in: `typescript`, `typescriptreact`, `javascript`, `javascriptreact`, `markdown`)
+- `@`: Show core snippet completions (available by default in: `html`, `markdown`)
+
+Both the trigger string and the file types are configurable in the extension settings.

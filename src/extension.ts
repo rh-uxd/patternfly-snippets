@@ -83,7 +83,7 @@ export async function activate(context: vscode.ExtensionContext) {
   };
 
   const loadSnippets = (reload?: boolean) => {
-    const totalSnippetSubscriptions = 3;
+    const totalSnippetSubscriptions = 2;
     if (reload && context.subscriptions.length) {
       // remove and dispose last subscriptions related to snippets
       for (let j = 0; j < totalSnippetSubscriptions; j++) {
@@ -96,20 +96,14 @@ export async function activate(context: vscode.ExtensionContext) {
     const releaseCore: string = config.get('corePatternflyRelease');
     const reactAutoImport: boolean = config.get('reactAutoImport');
     const coreSnippetPrefix: string = config.get('coreSnippetPrefix');
-    const reactSnippetPrefixWithComments: string = config.get('reactSnippetPrefixWithComments');
-    const reactSnippetPrefixWithoutComments: string = config.get('reactSnippetPrefixWithoutComments');
+    const reactSnippetPrefix: string = config.get('reactSnippetPrefix');
     const reactLanguageSelectors: string[] = config.get('reactSnippetFileTypes');
     const coreLanguageSelectors: string[] = config.get('coreSnippetFileTypes');
     const snippetSubscriptions = [
       vscode.languages.registerCompletionItemProvider(
         reactLanguageSelectors,
-        new SnippetCompletionItemProvider('react', reactSnippetPrefixWithComments, releaseReact, true, reactAutoImport),
-        reactSnippetPrefixWithComments.charAt(0)
-      ),
-      vscode.languages.registerCompletionItemProvider(
-        reactLanguageSelectors,
-        new SnippetCompletionItemProvider('react', reactSnippetPrefixWithoutComments, releaseReact, false, reactAutoImport),
-        reactSnippetPrefixWithoutComments.charAt(0)
+        new SnippetCompletionItemProvider('react', reactSnippetPrefix, releaseReact, reactAutoImport),
+        reactSnippetPrefix.charAt(0)
       ),
       vscode.languages.registerCompletionItemProvider(
         coreLanguageSelectors,
@@ -148,10 +142,16 @@ export async function activate(context: vscode.ExtensionContext) {
 
   const onUpdateConfiguration = (event: vscode.ConfigurationChangeEvent) => {
     const config = vscode.workspace.getConfiguration('patternflySnippets');
-    event.affectsConfiguration('patternflySnippets.reactIncludeCommentsInFragment') &&
+
+    if (event.affectsConfiguration('patternflySnippets.reactIncludeCommentsInFragment')) {
       fragmentManagerReact.toggleCommentsInFragmentsReact(config.get('reactIncludeCommentsInFragment'));
-    event.affectsConfiguration('patternflySnippets.reactAutoImport') &&
+      loadSnippets(true);
+    }
+    
+    if (event.affectsConfiguration('patternflySnippets.reactAutoImport')) {
       fragmentManagerReact.toggleAutoImportReact(config.get('reactAutoImport'));
+      loadSnippets(true);
+    }
 
     const affectsReleaseReact = event.affectsConfiguration('patternflySnippets.reactPatternflyRelease');
     const affectsReleaseCore = event.affectsConfiguration('patternflySnippets.corePatternflyRelease');
@@ -164,8 +164,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
     if (!affectsReleaseCore && !affectsReleaseReact && (
       event.affectsConfiguration('patternflySnippets.coreSnippetPrefix') ||
-      event.affectsConfiguration('patternflySnippets.reactSnippetPrefixWithComments') ||
-      event.affectsConfiguration('patternflySnippets.reactSnippetPrefixWithoutComments') ||
+      event.affectsConfiguration('patternflySnippets.reactSnippetPrefix') ||
       event.affectsConfiguration('patternflySnippets.reactSnippetFileTypes') ||
       event.affectsConfiguration('patternflySnippets.coreSnippetFileTypes')
     )) {
