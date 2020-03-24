@@ -1,14 +1,16 @@
 'use strict';
 import * as vscode from 'vscode';
-import { CodeFragmentProvider, CodeFragmentGroupTreeItem } from './codeFragmentsTreeItem';
+import { CodeFragmentProvider, CodeFragmentGroupTreeItem } from './fragmentProvider';
 import { FragmentManager } from './fragmentManager';
 import { SnippetCompletionItemProvider, addAutoImport } from './snippetLoader';
 
 export async function activate(context: vscode.ExtensionContext) {
-  const fragmentManager = new FragmentManager(context);
-  const codeFragmentProvider = new CodeFragmentProvider(fragmentManager);
+  const fragmentManagerReact = new FragmentManager(context, 'react');
+  const fragmentManagerCore = new FragmentManager(context, 'core');
+  const codeFragmentProviderReact = new CodeFragmentProvider(fragmentManagerReact, 'react');
+  const codeFragmentProviderCore = new CodeFragmentProvider(fragmentManagerCore, 'core');
 
-  const additionalEdits = (editBuilder: vscode.TextEditorEdit, label: string) => {
+  const additionalReactEdits = (editBuilder: vscode.TextEditorEdit, label: string) => {
     const { leadingControlChars, importPosition, match, lastMatchingIndex } = addAutoImport(
       vscode.window.activeTextEditor.document,
       vscode.window.activeTextEditor.selection.start
@@ -23,7 +25,15 @@ export async function activate(context: vscode.ExtensionContext) {
     }
   };
 
-  const insertCodeFragment = fragmentId => {
+  const insertCodeFragmentReact = fragmentId => {
+    insertCodeFragment(fragmentId, 'react');
+  }
+
+  const insertCodeFragmentCore = fragmentId => {
+    insertCodeFragment(fragmentId, 'core');
+  }
+
+  const insertCodeFragment = (fragmentId, type: 'react' | 'core') => {
     if (!fragmentId) {
       vscode.window.showInformationMessage(
         'Insert a code fragment into the editor by clicking on it in the Code Fragments view.'
@@ -36,22 +46,27 @@ export async function activate(context: vscode.ExtensionContext) {
       return;
     }
 
-    const content = fragmentManager.getFragmentContent(fragmentId);
+    const content = type === 'react' ? fragmentManagerReact.getFragmentContent(fragmentId) : fragmentManagerCore.getFragmentContent(fragmentId);
 
     if (content) {
-      // new SnippetCompletionItemProvider().provideCompletionItems();
-      vscode.window.activeTextEditor.insertSnippet(new vscode.SnippetString(content.content)).then(() => {
-        const config = vscode.workspace.getConfiguration('codeFragments');
-        const autoImport: boolean = config.get('autoImport');
-        if (autoImport) {
-          vscode.window.activeTextEditor.edit(editBuilder => additionalEdits(editBuilder, content.label));
+      let contentToInsert = content.content;
+      if (type === 'react') {
+        const config = vscode.workspace.getConfiguration('patternflySnippets');
+        const reactIncludeCommentsInFragment = config.get('reactIncludeCommentsInFragment');
+        if (!reactIncludeCommentsInFragment) {
+          contentToInsert = contentToInsert.replace(/\/\*.*\*\//g, '');
         }
-      });
+        vscode.window.activeTextEditor.insertSnippet(new vscode.SnippetString(contentToInsert)).then(() => {
+          const config = vscode.workspace.getConfiguration('patternflySnippets');
+          const reactAutoImport: boolean = config.get('reactAutoImport');
+          if (reactAutoImport) {
+            vscode.window.activeTextEditor.edit(editBuilder => additionalReactEdits(editBuilder, content.label));
+          }
+        });
+      } else {
+        vscode.window.activeTextEditor.insertSnippet(new vscode.SnippetString(contentToInsert))
+      }
     }
-  };
-
-  const refreshFragments = () => {
-    fragmentManager.reimportDefaults();
   };
 
   const gotoDocumentation = (group: CodeFragmentGroupTreeItem) => {
@@ -63,86 +78,138 @@ export async function activate(context: vscode.ExtensionContext) {
     }`.toLowerCase();
     // console.info(`https://www.patternfly.org/${group.version || 'v4'}/documentation/react/${url}`);
     vscode.env.openExternal(
-      vscode.Uri.parse(`https://www.patternfly.org/${group.version || 'v4'}/documentation/react/${url}`)
+      vscode.Uri.parse(`https://www.patternfly.org/${group.version || 'v4'}/documentation/${group.type}/${url}`)
     );
   };
 
-  const switchVersion = (version: string) => {
-    fragmentManager.reimportDefaults(version);
-    vscode.window.showInformationMessage(`Loaded release ${version}`);
+  const loadSnippets = (reload?: boolean) => {
+    const totalSnippetSubscriptions = 3;
+    if (reload && context.subscriptions.length) {
+      // remove and dispose last subscriptions related to snippets
+      for (let j = 0; j < totalSnippetSubscriptions; j++) {
+        let lastSubscription = context.subscriptions.pop();
+        lastSubscription.dispose();
+      }
+    }
+    const config = vscode.workspace.getConfiguration('patternflySnippets');
+    const releaseReact: string = config.get('reactPatternflyRelease');
+    const releaseCore: string = config.get('corePatternflyRelease');
+    const reactAutoImport: boolean = config.get('reactAutoImport');
+    const coreSnippetPrefix: string = config.get('coreSnippetPrefix');
+    const reactSnippetPrefixWithComments: string = config.get('reactSnippetPrefixWithComments');
+    const reactSnippetPrefixWithoutComments: string = config.get('reactSnippetPrefixWithoutComments');
+    const reactLanguageSelectors: string[] = config.get('reactSnippetFileTypes');
+    const coreLanguageSelectors: string[] = config.get('coreSnippetFileTypes');
+    const snippetSubscriptions = [
+      vscode.languages.registerCompletionItemProvider(
+        reactLanguageSelectors,
+        new SnippetCompletionItemProvider('react', reactSnippetPrefixWithComments, releaseReact, true, reactAutoImport),
+        reactSnippetPrefixWithComments.charAt(0)
+      ),
+      vscode.languages.registerCompletionItemProvider(
+        reactLanguageSelectors,
+        new SnippetCompletionItemProvider('react', reactSnippetPrefixWithoutComments, releaseReact, false, reactAutoImport),
+        reactSnippetPrefixWithoutComments.charAt(0)
+      ),
+      vscode.languages.registerCompletionItemProvider(
+        coreLanguageSelectors,
+        new SnippetCompletionItemProvider('core', coreSnippetPrefix, releaseCore),
+        coreSnippetPrefix.charAt(0)
+      )
+    ];
+
+    for (let i = 0; i < snippetSubscriptions.length; i++) {
+      context.subscriptions.push(snippetSubscriptions[i]);
+    }
+  }
+
+  const switchVersionReact = (version: string) => {
+    fragmentManagerReact.updateVersionUsed(version);
+    fragmentManagerReact.reimportDefaults(version);
+    loadSnippets(true);
+    vscode.window.showInformationMessage(`Loaded release ${version} for react`);
   };
 
-  const toggleCommentsInFragments = () => {
-    fragmentManager.toggleCommentsInFragments();
-    fragmentManager.reimportDefaults();
+  const switchVersionCore = (version: string) => {
+    fragmentManagerCore.updateVersionUsed(version);
+    fragmentManagerCore.reimportDefaults(version);
+    loadSnippets(true);
+    vscode.window.showInformationMessage(`Loaded release ${version} for core`);
   };
 
-  const toggleAutoImport = () => {
-    fragmentManager.toggleAutoImport();
+  const toggleCommentsInFragmentsReact = () => {
+    fragmentManagerReact.toggleCommentsInFragmentsReact();
+    fragmentManagerReact.reimportDefaults();
+  };
+
+  const toggleAutoImportReact = () => {
+    fragmentManagerReact.toggleAutoImportReact();
   };
 
   const onUpdateConfiguration = (event: vscode.ConfigurationChangeEvent) => {
-    const config = vscode.workspace.getConfiguration('codeFragments');
-    event.affectsConfiguration('codeFragments.includeCommentsInFragment') &&
-      fragmentManager.toggleCommentsInFragments(config.get('includeCommentsInFragment'));
-    event.affectsConfiguration('codeFragments.autoImport') &&
-      fragmentManager.toggleAutoImport(config.get('autoImport'));
-    event.affectsConfiguration('codeFragments.patternflyRelease') &&
-      fragmentManager.updateVersionUsed(config.get('patternflyRelease'));
-    fragmentManager.reimportDefaults();
+    const config = vscode.workspace.getConfiguration('patternflySnippets');
+    event.affectsConfiguration('patternflySnippets.reactIncludeCommentsInFragment') &&
+      fragmentManagerReact.toggleCommentsInFragmentsReact(config.get('reactIncludeCommentsInFragment'));
+    event.affectsConfiguration('patternflySnippets.reactAutoImport') &&
+      fragmentManagerReact.toggleAutoImportReact(config.get('reactAutoImport'));
+
+    const affectsReleaseReact = event.affectsConfiguration('patternflySnippets.reactPatternflyRelease');
+    const affectsReleaseCore = event.affectsConfiguration('patternflySnippets.corePatternflyRelease');
+    if (affectsReleaseReact) {
+      switchVersionReact(config.get('reactPatternflyRelease'));
+    }
+    if (affectsReleaseCore) {
+      switchVersionCore(config.get('corePatternflyRelease'));
+    }
+
+    if (!affectsReleaseCore && !affectsReleaseReact && (
+      event.affectsConfiguration('patternflySnippets.coreSnippetPrefix') ||
+      event.affectsConfiguration('patternflySnippets.reactSnippetPrefixWithComments') ||
+      event.affectsConfiguration('patternflySnippets.reactSnippetPrefixWithoutComments') ||
+      event.affectsConfiguration('patternflySnippets.reactSnippetFileTypes') ||
+      event.affectsConfiguration('patternflySnippets.coreSnippetFileTypes')
+    )) {
+      loadSnippets(true);
+      vscode.window.showInformationMessage(`Reloading snippet completions`);
+    }
   };
 
-  fragmentManager.initialize();
+  fragmentManagerReact.initialize();
+  fragmentManagerCore.initialize();
 
-  vscode.window.registerTreeDataProvider('codeFragments', codeFragmentProvider);
+  vscode.window.registerTreeDataProvider('pfSnippetsReact', codeFragmentProviderReact);
+  vscode.window.registerTreeDataProvider('pfSnippetsCore', codeFragmentProviderCore);
 
   vscode.workspace.onDidChangeConfiguration(onUpdateConfiguration);
 
-  context.subscriptions.push(vscode.commands.registerCommand('codeFragments.insertCodeFragment', insertCodeFragment));
-  context.subscriptions.push(vscode.commands.registerCommand('codeFragments.refreshFragments', refreshFragments));
-  context.subscriptions.push(vscode.commands.registerCommand('codeFragments.gotoDocumentation', gotoDocumentation));
+  context.subscriptions.push(vscode.commands.registerCommand('patternflySnippets.insertCodeFragment_react', insertCodeFragmentReact));
+  context.subscriptions.push(vscode.commands.registerCommand('patternflySnippets.insertCodeFragment_core', insertCodeFragmentCore));
+  context.subscriptions.push(vscode.commands.registerCommand('patternflySnippets.gotoDocumentation', gotoDocumentation));
   context.subscriptions.push(
-    vscode.commands.registerCommand('codeFragments.toggleCommentsInFragments', toggleCommentsInFragments)
+    vscode.commands.registerCommand('patternflySnippets.toggleCommentsInFragments', toggleCommentsInFragmentsReact)
   );
-  context.subscriptions.push(vscode.commands.registerCommand('codeFragments.autoImportCommand', toggleAutoImport));
+  context.subscriptions.push(vscode.commands.registerCommand('patternflySnippets.autoImportCommand', toggleAutoImportReact));
   context.subscriptions.push(
-    vscode.commands.registerCommand('codeFragments.switchVersion_2020.02', () => switchVersion('2020.02'))
-  );
-  context.subscriptions.push(
-    vscode.commands.registerCommand('codeFragments.switchVersion_2020.01', () => switchVersion('2020.01'))
+    vscode.commands.registerCommand('patternflySnippets.switchVersion_core_2020.03', () => switchVersionCore('2020.03'))
   );
   context.subscriptions.push(
-    vscode.commands.registerCommand('codeFragments.switchVersion_2019.11', () => switchVersion('2019.11'))
+    vscode.commands.registerCommand('patternflySnippets.switchVersion_react_2020.03', () => switchVersionReact('2020.03'))
   );
   context.subscriptions.push(
-    vscode.commands.registerCommand('codeFragments.switchVersion_2019.10', () => switchVersion('2019.10'))
+    vscode.commands.registerCommand('patternflySnippets.switchVersion_react_2020.02', () => switchVersionReact('2020.02'))
+  );
+  context.subscriptions.push(
+    vscode.commands.registerCommand('patternflySnippets.switchVersion_react_2020.01', () => switchVersionReact('2020.01'))
+  );
+  context.subscriptions.push(
+    vscode.commands.registerCommand('patternflySnippets.switchVersion_react_2019.11', () => switchVersionReact('2019.11'))
+  );
+  context.subscriptions.push(
+    vscode.commands.registerCommand('patternflySnippets.switchVersion_react_2019.10', () => switchVersionReact('2019.10'))
   );
 
-  // push these 2 subscriptions last
-  const config = vscode.workspace.getConfiguration('codeFragments');
-  const release: string = config.get('patternflyRelease');
-  const autoImport: boolean = config.get('autoImport');
-  const languageSelectors: vscode.DocumentSelector = [
-    'typescript',
-    'typescriptreact',
-    'javascript',
-    'javascriptreact',
-    'markdown'
-  ];
-  context.subscriptions.push(
-    vscode.languages.registerCompletionItemProvider(
-      languageSelectors,
-      new SnippetCompletionItemProvider(release, true, autoImport),
-      '#'
-    )
-  );
-  context.subscriptions.push(
-    vscode.languages.registerCompletionItemProvider(
-      languageSelectors,
-      new SnippetCompletionItemProvider(release, false, autoImport),
-      '!'
-    )
-  );
+  // push these subscriptions last
+  loadSnippets();
 }
 
 export function deactivate() {}

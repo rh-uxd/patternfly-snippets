@@ -46,17 +46,21 @@ export const addAutoImport = (document: vscode.TextDocument, position: vscode.Po
 export class SnippetCompletionItemProvider implements vscode.CompletionItemProvider {
   private snippets: any;
   private release: string;
-  private autoImport: boolean;
+  private trigger: string;
+  private reactAutoImport: boolean;
+  private withComments: boolean;
 
-  constructor(release: string, withComments: boolean, autoImport: boolean) {
+  constructor(type: 'react' | 'core', trigger: string, release: string, withComments?: boolean, reactAutoImport?: boolean) {
+    this.withComments = withComments;
+    this.trigger = trigger;
     const pathToSnippet = path.join(
       __dirname,
-      `../snippets/snippets${withComments ? 'WithComments' : 'NoComments'}_${release}.json`
+      `../../snippets/${type}/snippets_${release}.json`
     );
-    console.info(`Loading snippet from ${pathToSnippet}`);
+    console.info(`Loading snippet from ${pathToSnippet} with trigger ${trigger}`);
     this.snippets = require(pathToSnippet);
     this.release = release;
-    this.autoImport = autoImport;
+    this.reactAutoImport = reactAutoImport;
   }
 
   public provideCompletionItems(
@@ -64,32 +68,35 @@ export class SnippetCompletionItemProvider implements vscode.CompletionItemProvi
     position: vscode.Position,
     token: vscode.CancellationToken
   ): vscode.CompletionList {
-    const linePrefix: string = document.lineAt(position).text.substr(position.character - 1, 1);
-    if (linePrefix !== '!' && linePrefix !== '#') {
+    const linePrefix: string = document.lineAt(position).text.substr(position.character - this.trigger.length, this.trigger.length);
+    if (linePrefix !== this.trigger) {
       return;
     }
+
     let result: vscode.CompletionItem[] = [];
 
     const { leadingControlChars, importPosition, match, lastMatchingIndex } = addAutoImport(document, position);
 
     for (const snippetName of Object.keys(this.snippets)) {
-      // console.info(`snippetName: ${JSON.stringify(snippetName)}`);
       const snippet = this.snippets[snippetName];
-      const completionItem = new vscode.CompletionItem(snippet.prefix, vscode.CompletionItemKind.Snippet);
-      completionItem.filterText = snippet.prefix;
+      // const snippetPrefix = snippet.prefix.replace('#', this.trigger);
+      let snippetBody = isArray(snippet.body) ? snippet.body.join('\n') : snippet.body;
+      if (this.withComments === false) {
+        snippetBody = snippetBody.replace(/\/\*.*\*\//g, '');
+      }
+      const completionItem = new vscode.CompletionItem(`${this.trigger}${snippetName}`, vscode.CompletionItemKind.Snippet);
+      // completionItem.filterText = snippetName;
       // console.info(`filterText: ${JSON.stringify(completionItem.filterText)}`);
       completionItem.range = new vscode.Range(
-        new vscode.Position(position.line, position.character - 1),
+        new vscode.Position(position.line, position.character - this.trigger.length),
         new vscode.Position(position.line, position.character)
       );
-      completionItem.insertText = new vscode.SnippetString(
-        isArray(snippet.body) ? snippet.body.join('\n') : snippet.body
-      );
+      completionItem.insertText = new vscode.SnippetString(snippetBody);
       // console.info(`insertText: ${JSON.stringify(completionItem.insertText)}`);
       completionItem.detail = `PatternFly ${snippet.description} (release ${this.release})`;
       completionItem.documentation = new vscode.MarkdownString().appendCodeblock(completionItem.insertText.value);
 
-      if (this.autoImport) {
+      if (this.reactAutoImport) {
         if (match.indexOf(snippet.description) === -1) {
           // we do not have the import, need to insert it
           completionItem.additionalTextEdits = [

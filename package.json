@@ -2,7 +2,7 @@
   "name": "patternfly-snippets",
   "displayName": "PatternFly Snippets",
   "description": "PatternFly code snippets",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "publisher": "PatternFly",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
@@ -31,26 +31,34 @@
   ],
   "activationEvents": [
     "*",
-    "onCommand:saveSelectedCodeFragment",
-    "onView:codeFragments"
+    "onView:patternflySnippets"
   ],
   "main": "./out/src/extension",
   "contributes": {
+    "viewsContainers": {
+			"activitybar": [
+				{
+					"id": "patternflySnippets",
+					"title": "PatternFly Snippets",
+					"icon": "images/icon.svg"
+				}
+			]
+		},
     "views": {
-      "explorer": [
+      "patternflySnippets": [
         {
-          "id": "codeFragments",
-          "name": "PatternFly Code Snippets"
+          "id": "pfSnippetsCore",
+          "name": "Core"
+        },
+        {
+          "id": "pfSnippetsReact",
+          "name": "React"
         }
       ]
     },
     "commands": [
       {
-        "command": "codeFragments.insertCodeFragment",
-        "title": "Insert Code Fragment"
-      },
-      {
-        "command": "codeFragments.toggleCommentsInFragments",
+        "command": "patternflySnippets.toggleCommentsInFragments",
         "title": "Toggle comments in fragments",
         "icon": {
           "light": "images/hashtag-light.svg",
@@ -58,7 +66,7 @@
         }
       },
       {
-        "command": "codeFragments.autoImportCommand",
+        "command": "patternflySnippets.autoImportCommand",
         "title": "Experimental: Add the component import when a snippet is inserted.",
         "icon": {
           "light": "images/package-light.svg",
@@ -66,7 +74,7 @@
         }
       },
       {
-        "command": "codeFragments.gotoDocumentation",
+        "command": "patternflySnippets.gotoDocumentation",
         "title": "Go to documentation",
         "icon": {
           "light": "images/external-link-alt.svg",
@@ -74,92 +82,140 @@
         }
       },
       {
-        "command": "codeFragments.refreshFragments",
-        "title": "Refresh code fragments",
-        "icon": {
-          "light": "images/refresh-light.svg",
-          "dark": "images/refresh-dark.svg"
-        }
+        "command": "patternflySnippets.switchVersion_core_2020.03",
+        "title": "Release 2020.03"
       },
       {
-				"command": "codeFragments.switchVersion_2020.02",
+				"command": "patternflySnippets.switchVersion_react_2020.03",
+				"title": "Release 2020.03"
+			},
+      {
+				"command": "patternflySnippets.switchVersion_react_2020.02",
 				"title": "Release 2020.02"
 			},
 			{
-				"command": "codeFragments.switchVersion_2020.01",
+				"command": "patternflySnippets.switchVersion_react_2020.01",
 				"title": "Release 2020.01"
 			},
 			{
-				"command": "codeFragments.switchVersion_2019.11",
+				"command": "patternflySnippets.switchVersion_react_2019.11",
 				"title": "Release 2019.11"
 			},
 			{
-				"command": "codeFragments.switchVersion_2019.10",
+				"command": "patternflySnippets.switchVersion_react_2019.10",
 				"title": "Release 2019.10"
-			}
+      }
     ],
     "configuration": [
       {
         "type": "object",
-        "title": "PatternFly Code Snippets",
+        "title": "PatternFly Code Snippets - React",
         "properties": {
-          "codeFragments.includeCommentsInFragment": {
+          "patternflySnippets.reactPatternflyRelease": {
+            "type": "string",
+            "default": "2020.03",
+            "enum": ["2020.03", "2020.02", "2020.01", "2019.11", "2019.10"],
+            "description": "PatternFly release"
+          },
+          "patternflySnippets.reactIncludeCommentsInFragment": {
             "type": "boolean",
             "default": false,
             "description": "Include property help comments when inserting a code fragment."
           },
-          "codeFragments.patternflyRelease": {
-            "type": "string",
-            "default": "2020.02",
-            "enum": ["2020.02", "2020.01", "2019.11", "2019.10"],
-            "description": "PatternFly release"
-          },
-          "codeFragments.autoImport": {
+          "patternflySnippets.reactAutoImport": {
             "type": "boolean",
             "default": false,
             "description": "Experimental: Add the component import when a snippet is inserted."
+          },
+          "patternflySnippets.reactSnippetPrefixWithComments": {
+            "type": "string",
+            "default": "#",
+            "description": "Key trigger used to load the snippet completions (with comments)"
+          },
+          "patternflySnippets.reactSnippetPrefixWithoutComments": {
+            "type": "string",
+            "default": "!",
+            "description": "Key trigger used to load the snippet completions (without comments)"
+          },
+          "patternflySnippets.reactSnippetFileTypes": {
+            "type": "array",
+            "default": [
+              "typescript",
+              "typescriptreact",
+              "javascript",
+              "javascriptreact",
+              "markdown"
+            ],
+            "description": "File types to trigger snippet completions for.\nDefaults to: \"patternflySnippets.reactSnippetFileTypes\": [\"typescript\",\"typescriptreact\",\"javascript\",\"javascriptreact\",\"markdown\"]\nList of types: https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers"
+          }
+        }
+      },
+      {
+        "type": "object",
+        "title": "PatternFly Code Snippets - Core",
+        "properties": {
+          "patternflySnippets.corePatternflyRelease": {
+            "type": "string",
+            "default": "2020.03",
+            "enum": ["2020.03"],
+            "description": "PatternFly release"
+          },
+          "patternflySnippets.coreSnippetPrefix": {
+            "type": "string",
+            "default": "@",
+            "description": "Key trigger used to load the snippet completions"
+          },
+          "patternflySnippets.coreSnippetFileTypes": {
+            "type": "array",
+            "default": [
+              "html",
+              "markdown"
+            ],
+            "description": "File types to trigger snippet completions for.\nDefaults to: \"patternflySnippets.coreSnippetFileTypes\": [\"html\",\"markdown\"]\nList of types: https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers"
           }
         }
       }
     ],
     "menus": {
-      "commandPalette": [
-        {
-          "command": "codeFragments.insertCodeFragment",
-          "when": "never"
-        }
-      ],
       "view/title": [
         {
-          "command": "codeFragments.toggleCommentsInFragments",
-          "when": "view == codeFragments",
+          "command": "patternflySnippets.toggleCommentsInFragments",
+          "when": "view == pfSnippetsReact",
           "group": "navigation@0"
         },
         {
-          "command": "codeFragments.autoImportCommand",
-          "when": "view == codeFragments",
+          "command": "patternflySnippets.autoImportCommand",
+          "when": "view == pfSnippetsReact",
           "group": "navigation@0"
         },
         {
-          "command": "codeFragments.switchVersion_2020.02",
-          "when": "view == codeFragments"
+          "command": "patternflySnippets.switchVersion_core_2020.03",
+          "when": "view == pfSnippetsCore"
+        },
+        {
+          "command": "patternflySnippets.switchVersion_react_2020.03",
+          "when": "view == pfSnippetsReact"
+				},
+        {
+          "command": "patternflySnippets.switchVersion_react_2020.02",
+          "when": "view == pfSnippetsReact"
 				},
 				{
-          "command": "codeFragments.switchVersion_2020.01",
-          "when": "view == codeFragments"
+          "command": "patternflySnippets.switchVersion_react_2020.01",
+          "when": "view == pfSnippetsReact"
 				},
 				{
-          "command": "codeFragments.switchVersion_2019.11",
-          "when": "view == codeFragments"
+          "command": "patternflySnippets.switchVersion_react_2019.11",
+          "when": "view == pfSnippetsReact"
 				},
 				{
-          "command": "codeFragments.switchVersion_2019.10",
-          "when": "view == codeFragments"
-				}
+          "command": "patternflySnippets.switchVersion_react_2019.10",
+          "when": "view == pfSnippetsReact"
+        }
       ],
       "view/item/context": [
         {
-          "command": "codeFragments.gotoDocumentation",
+          "command": "patternflySnippets.gotoDocumentation",
           "when": "viewItem == group",
           "group": "inline"
         }
@@ -168,9 +224,9 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./ && cp -r snippets out",
+    "compile": "tsc -p ./",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "watch": "tsc -watch -p ./ && cp -r snippets out",
+    "watch": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
