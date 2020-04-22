@@ -2,9 +2,10 @@
   "name": "patternfly-snippets",
   "displayName": "PatternFly Snippets",
   "description": "PatternFly code snippets",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher": "PatternFly",
   "license": "SEE LICENSE IN LICENSE",
+  "icon": "images/PF256.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/rh-uxd/patternfly-snippets.git"

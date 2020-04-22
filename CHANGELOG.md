@@ -4,6 +4,10 @@ All notable changes to the "pfsnippets" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.0.4] - 2020-04-22
+### Fixed
+- Added a web icon
+
 ## [1.0.3] - 2020-04-22
 ### Fixed
 - Updated the PatternFly icon
