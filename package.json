@@ -2,7 +2,7 @@
   "name": "patternfly-snippets",
   "displayName": "PatternFly Snippets",
   "description": "PatternFly code snippets",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "PatternFly",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
@@ -40,7 +40,7 @@
 				{
 					"id": "patternflySnippets",
 					"title": "PatternFly Snippets",
-					"icon": "images/icon.svg"
+					"icon": "images/VS_PF.svg"
 				}
 			]
 		},
