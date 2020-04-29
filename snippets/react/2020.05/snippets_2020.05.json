@@ -1,0 +1,3864 @@
+{
+
+	"AboutModal": 
+    {
+      "prefix": "#AboutModal",
+      "body": [
+        "<AboutModal",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the about modal */}",
+				"\tisOpen={${2:false}/* optional: Flag to show the about modal */}",
+				"\tonClose={${3:(): any => undefined}/* optional: A callback for when the close button is clicked */}",
+				"\tproductName={${4:\"''\"}/* optional: Product name */}",
+				"\ttrademark={${5:\"''\"}/* optional: Trademark information */}",
+				"\tbrandImageSrc={${6:\"string\"}/* required: The URL of the image for the brand */}",
+				"\tbrandImageAlt={${7:\"string\"}/* required: The alternate text of the brand image */}",
+				"\tbackgroundImageSrc={${8:\"''\"}/* optional: The URL of the image for the background */}",
+				"\tnoAboutModalBoxContentContainer={${9:false}/* optional: Prevents the about modal from rendering content inside a container; allows for more flexible layouts */}",
+				"\tappendTo={${10:null}/* optional: The parent container to append the modal to. Defaults to document.body */}",
+				"\tcloseButtonAriaLabel={${11:\"string\"}/* optional: Set aria label to the close button */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the about modal */}",
+				"</AboutModal>"
+      ],
+      "description": "AboutModal"
+    }
+  ,
+	"AboutModalBox": 
+    {
+      "prefix": "#AboutModalBox",
+      "body": [
+        "<AboutModalBox",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the AboutModalBox */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: content rendered inside the AboutModelBox. */}",
+				"</AboutModalBox>"
+      ],
+      "description": "AboutModalBox"
+    }
+  ,
+	"AboutModalBoxBrand": 
+    {
+      "prefix": "#AboutModalBoxBrand",
+      "body": [
+        "<AboutModalBoxBrand",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the About Modal Brand */}",
+				"\tsrc={${2:\"''\"}/* optional: the URL of the image for the Brand. */}",
+				"\talt={${3:\"string\"}/* required: the alternate text of the Brand image. */}",
+				"/>"
+      ],
+      "description": "AboutModalBoxBrand"
+    }
+  ,
+	"AboutModalBoxCloseButton": 
+    {
+      "prefix": "#AboutModalBoxCloseButton",
+      "body": [
+        "<AboutModalBoxCloseButton",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the About Modal Close button */}",
+				"\tonClose={${2:() => undefined as any}/* optional: A callback for when the close button is clicked */}",
+				"\taria-label={${3:\"'Close Dialog'\"}/* optional: Set close button aria label */}",
+				"/>"
+      ],
+      "description": "AboutModalBoxCloseButton"
+    }
+  ,
+	"AboutModalBoxContent": 
+    {
+      "prefix": "#AboutModalBoxContent",
+      "body": [
+        "<AboutModalBoxContent",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the AboutModalBoxContent */}",
+				"\tid={${2:\"string\"}/* required: id to use for About Modal Box aria described by */}",
+				"\ttrademark={${3:\"string\"}/* required: The Trademark info for the product */}",
+				"\tnoAboutModalBoxContentContainer={${4:false}/* optional: Prevents the about modal from rendering content inside a container; allows for more flexible layouts */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: content rendered inside the AboutModalBoxContent */}",
+				"</AboutModalBoxContent>"
+      ],
+      "description": "AboutModalBoxContent"
+    }
+  ,
+	"AboutModalBoxHeader": 
+    {
+      "prefix": "#AboutModalBoxHeader",
+      "body": [
+        "<AboutModalBoxHeader",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the button */}",
+				"\tproductName={${2:\"''\"}/* optional: Name of the Product */}",
+				"\tid={${3:\"string\"}/* required: id to used for Modal Box header */}",
+				"/>"
+      ],
+      "description": "AboutModalBoxHeader"
+    }
+  ,
+	"AboutModalBoxHero": 
+    {
+      "prefix": "#AboutModalBoxHero",
+      "body": [
+        "<AboutModalBoxHero",
+				"\tclassName={${1:\"string\"}/* optional: additional classes added to the About Modal Hero */}",
+				"\tbackgroundImageSrc={${2:\"string\"}/* optional: background image data or file path */}",
+				"/>"
+      ],
+      "description": "AboutModalBoxHero"
+    }
+  ,
+	"AboutModalContainer": 
+    {
+      "prefix": "#AboutModalContainer",
+      "body": [
+        "<AboutModalContainer",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the About Modal Box */}",
+				"\tisOpen={${2:false}/* optional: Flag to show the About Modal */}",
+				"\tonClose={${3:() => undefined}/* optional: A callback for when the close button is clicked */}",
+				"\tproductName={${4:\"''\"}/* optional: Product Name */}",
+				"\ttrademark={${5:\"string\"}/* optional: Trademark information */}",
+				"\tbrandImageSrc={${6:\"string\"}/* required: the URL of the image for the Brand. */}",
+				"\tbrandImageAlt={${7:\"string\"}/* required: the alternate text of the Brand image. */}",
+				"\tbackgroundImageSrc={${8:\"string\"}/* optional: the URL of the image for the background. */}",
+				"\tariaLabelledbyId={${9:\"string\"}/* required: id to use for About Modal Box aria labeled by */}",
+				"\tariaDescribedById={${10:\"string\"}/* required: id to use for About Modal Box aria described by */}",
+				"\tcloseButtonAriaLabel={${11:\"string\"}/* optional: Set close button aria label */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: content rendered inside the About Modal Box Content. */}",
+				"</AboutModalContainer>"
+      ],
+      "description": "AboutModalContainer"
+    }
+  ,
+	"Accordion": 
+    {
+      "prefix": "#Accordion",
+      "body": [
+        "<Accordion",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Accordion */}",
+				"\taria-label={${2:\"''\"}/* optional: Adds accessible text to the Accordion */}",
+				"\theadingLevel={${3:'h3'}/* optional: Heading level to use */}",
+				"\tasDefinitionList={${4:true}/* optional: Flag to indicate whether use definition list or div */}",
+				"\tnoBoxShadow={${5:false}/* optional: Flag to indicate if the box shadow should be removed */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Accordion */}",
+				"</Accordion>"
+      ],
+      "description": "Accordion"
+    }
+  ,
+	"AccordionContent": 
+    {
+      "prefix": "#AccordionContent",
+      "body": [
+        "<AccordionContent",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Accordion content */}",
+				"\tid={${2:\"''\"}/* optional: Identify the AccordionContent item */}",
+				"\tisHidden={${3:false}/* optional: Flag to show if the expanded content of the Accordion item is visible */}",
+				"\tisFixed={${4:false}/* optional: Flag to indicate Accordion content is fixed */}",
+				"\taria-label={${5:\"''\"}/* optional: Adds accessible text to the Accordion content */}",
+				"\tcomponent={${6:() => <div />}/* optional: Component to use as content container */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Accordion */}",
+				"</AccordionContent>"
+      ],
+      "description": "AccordionContent"
+    }
+  ,
+	"AccordionItem": 
+    {
+      "prefix": "#AccordionItem",
+      "body": [
+        "<AccordionItem",
+				"",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Accordion item */}",
+				"</AccordionItem>"
+      ],
+      "description": "AccordionItem"
+    }
+  ,
+	"AccordionToggle": 
+    {
+      "prefix": "#AccordionToggle",
+      "body": [
+        "<AccordionToggle",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Accordion Toggle */}",
+				"\tisExpanded={${2:false}/* optional: Flag to show if the expanded content of the Accordion item is visible */}",
+				"\tid={${3:\"string\"}/* required: Identify the Accordion toggle number */}",
+				"\tcomponent={${4:() => <div />}/* optional: Container to override the default for toggle */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Accordion toggle */}",
+				"</AccordionToggle>"
+      ],
+      "description": "AccordionToggle"
+    }
+  ,
+	"Alert": 
+    {
+      "prefix": "#Alert",
+      "body": [
+        "<Alert",
+				"\tvariant={${1:'success'}/* optional: Adds Alert variant styles */}",
+				"\tisInline={${2:false}/* optional: Flag to indicate if the Alert is inline */}",
+				"\ttitle={${3:<div>ReactNode</div>}/* required: Title of the Alert */}",
+				"\taction={${4:null}/* optional: Action button to put in the Alert. Should be <AlertActionLink> or <AlertActionCloseButton> */}",
+				"\tclassName={${5:\"''\"}/* optional: Additional classes added to the Alert */}",
+				"\taria-label={${6:\"string\"}/* optional: Adds accessible text to the Alert */}",
+				"\tvariantLabel={${7:\"string\"}/* optional: Variant label text for screen readers */}",
+				"\tisLiveRegion={${8:false}/* optional: Flag to indicate if the Alert is in a live region */}",
+				">",
+				"\t{${0:''}/* optional: Content rendered inside the Alert */}",
+				"</Alert>"
+      ],
+      "description": "Alert"
+    }
+  ,
+	"AlertActionCloseButton": 
+    {
+      "prefix": "#AlertActionCloseButton",
+      "body": [
+        "<AlertActionCloseButton",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the AlertActionCloseButton */}",
+				"\tonClose={${2:() => undefined as any}/* optional: A callback for when the close button is clicked */}",
+				"\taria-label={${3:\"''\"}/* optional: Aria Label for the Close button */}",
+				"\tvariantLabel={${4:\"string\"}/* optional: Variant Label for the Close button */}",
+				"/>"
+      ],
+      "description": "AlertActionCloseButton"
+    }
+  ,
+	"AlertActionLink": 
+    {
+      "prefix": "#AlertActionLink",
+      "body": [
+        "<AlertActionLink",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the AlertActionLink */}",
+				">",
+				"\t{${0:\"string\"}/* optional: Content rendered inside the AlertLinkAction */}",
+				"</AlertActionLink>"
+      ],
+      "description": "AlertActionLink"
+    }
+  ,
+	"AlertIcon": 
+    {
+      "prefix": "#AlertIcon",
+      "body": [
+        "<AlertIcon",
+				"\tvariant={${1:'success'}/* required: variant */}",
+				"\tclassName={${2:\"''\"}/* optional: className */}",
+				"/>"
+      ],
+      "description": "AlertIcon"
+    }
+  ,
+	"AlertGroup": 
+    {
+      "prefix": "#AlertGroup",
+      "body": [
+        "<AlertGroup",
+				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the AlertGroup */}",
+				"\tisToast={${2:true}/* optional: Toast notifications are positioned at the top right corner of the viewport */}",
+				"\tappendTo={${3:undefined}/* optional: Determine where the alert is appended to */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Alerts to be rendered in the AlertGroup */}",
+				"</AlertGroup>"
+      ],
+      "description": "AlertGroup"
+    }
+  ,
+	"AlertGroupInline": 
+    {
+      "prefix": "#AlertGroupInline",
+      "body": [
+        "<AlertGroupInline",
+				"",
+				"/>"
+      ],
+      "description": "AlertGroupInline"
+    }
+  ,
+	"ApplicationLauncher": 
+    {
+      "prefix": "#ApplicationLauncher",
+      "body": [
+        "<ApplicationLauncher",
+				"\tclassName={${1:\"''\"}/* optional: Additional element css classes */}",
+				"\tdirection={${2:'up'}/* optional: Display menu above or below dropdown toggle */}",
+				"\tdropdownItems={${3:[]}/* optional: @deprecated | Use the items prop instead | Array of DropdownItem nodes that will be rendered in the dropdown Menu list */}",
+				"\titems={${4:[]}/* optional: Array of application launcher items */}",
+				"\tisDisabled={${5:false}/* optional: Render Application launcher toggle as disabled icon */}",
+				"\tisOpen={${6:false}/* optional: open bool */}",
+				"\tposition={${7:'right'}/* optional: Indicates where menu will be alligned horizontally */}",
+				"\tonSelect={${8:(_event: any): any => undefined}/* optional: Function callback called when user selects item */}",
+				"\tonToggle={${9:(_value: boolean): any => undefined}/* optional: Callback called when application launcher toggle is clicked */}",
+				"\taria-label={${10:\"'Application launcher'\"}/* optional: Adds accessible text to the button. Required for plain buttons */}",
+				"\tisGrouped={${11:false}/* optional: Flag to indicate if application launcher has groups */}",
+				"\ttoggleIcon={${12:<div>ReactNode</div>}/* optional: Toggle Icon, optional to override the icon used for the toggle */}",
+				"\tfavorites={${13:[]}/* optional: ID list of favorited ApplicationLauncherItems */}",
+				"\tonFavorite={${14:(itemId: string, isFavorite: boolean) => undefined as void}/* optional: Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */}",
+				"\tonSearch={${15:(textInput: string) => undefined as void}/* optional: Enables search. Callback called when text input is entered into search box */}",
+				"\tsearchPlaceholderText={${16:\"'Filter by name...'\"}/* optional: Placeholder text for search input */}",
+				"\tsearchNoResultsText={${17:\"'No results found'\"}/* optional: Text for search input when no results are found */}",
+				"\tsearchProps={${18:'any'}/* optional: Additional properties for search input */}",
+				"\tfavoritesLabel={${19:\"'Favorites'\"}/* optional: Label for the favorites group */}",
+				"\ttoggleId={${20:\"string\"}/* optional: ID of toggle */}",
+				"/>"
+      ],
+      "description": "ApplicationLauncher"
+    }
+  ,
+	"ApplicationLauncherContent": 
+    {
+      "prefix": "#ApplicationLauncherContent",
+      "body": [
+        "<ApplicationLauncherContent",
+				"",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Main content to be rendered */}",
+				"</ApplicationLauncherContent>"
+      ],
+      "description": "ApplicationLauncherContent"
+    }
+  ,
+	"ApplicationLauncherGroup": 
+    {
+      "prefix": "#ApplicationLauncherGroup",
+      "body": [
+        "<ApplicationLauncherGroup",
+				"",
+				"/>"
+      ],
+      "description": "ApplicationLauncherGroup"
+    }
+  ,
+	"ApplicationLauncherIcon": 
+    {
+      "prefix": "#ApplicationLauncherIcon",
+      "body": [
+        "<ApplicationLauncherIcon",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the icon container */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: content rendered inside the icon container */}",
+				"</ApplicationLauncherIcon>"
+      ],
+      "description": "ApplicationLauncherIcon"
+    }
+  ,
+	"ApplicationLauncherSeparator": 
+    {
+      "prefix": "#ApplicationLauncherSeparator",
+      "body": [
+        "<ApplicationLauncherSeparator",
+				"",
+				"/>"
+      ],
+      "description": "ApplicationLauncherSeparator"
+    }
+  ,
+	"ApplicationLauncherText": 
+    {
+      "prefix": "#ApplicationLauncherText",
+      "body": [
+        "<ApplicationLauncherText",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the text container */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: content rendered inside the text container */}",
+				"</ApplicationLauncherText>"
+      ],
+      "description": "ApplicationLauncherText"
+    }
+  ,
+	"Avatar": 
+    {
+      "prefix": "#Avatar",
+      "body": [
+        "<Avatar",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Avatar. */}",
+				"\tsrc={${2:\"''\"}/* optional: Attribute that specifies the URL of the image for the Avatar. */}",
+				"\talt={${3:\"string\"}/* required: Attribute that specifies the alternate text of the image for the Avatar. */}",
+				"/>"
+      ],
+      "description": "Avatar"
+    }
+  ,
+	"Backdrop": 
+    {
+      "prefix": "#Backdrop",
+      "body": [
+        "<Backdrop",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the button */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the backdrop */}",
+				"</Backdrop>"
+      ],
+      "description": "Backdrop"
+    }
+  ,
+	"BackgroundImage": 
+    {
+      "prefix": "#BackgroundImage",
+      "body": [
+        "<BackgroundImage",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the background. */}",
+				"\tsrc={${2:'string'}/* required: Override image styles using a string or BackgroundImageSrc */}",
+				"/>"
+      ],
+      "description": "BackgroundImage"
+    }
+  ,
+	"Badge": 
+    {
+      "prefix": "#Badge",
+      "body": [
+        "<Badge",
+				"\tisRead={${1:false}/* optional: Adds styling to the badge to indicate it has been read */}",
+				"\tclassName={${2:\"''\"}/* optional: additional classes added to the Badge */}",
+				">",
+				"\t{${0:''}/* optional: content rendered inside the Badge */}",
+				"</Badge>"
+      ],
+      "description": "Badge"
+    }
+  ,
+	"Brand": 
+    {
+      "prefix": "#Brand",
+      "body": [
+        "<Brand",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Brand. */}",
+				"\tsrc={${2:\"''\"}/* optional: Attribute that specifies the URL of the image for the Brand. */}",
+				"\talt={${3:\"string\"}/* required: Attribute that specifies the alt text of the image for the Brand. */}",
+				"/>"
+      ],
+      "description": "Brand"
+    }
+  ,
+	"Breadcrumb": 
+    {
+      "prefix": "#Breadcrumb",
+      "body": [
+        "<Breadcrumb",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the breadcrumb nav. */}",
+				"\taria-label={${2:\"'Breadcrumb'\"}/* optional: Aria label added to the breadcrumb nav. */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Children nodes be rendered to the BreadCrumb. Should be of type BreadCrumbItem. */}",
+				"</Breadcrumb>"
+      ],
+      "description": "Breadcrumb"
+    }
+  ,
+	"BreadcrumbHeading": 
+    {
+      "prefix": "#BreadcrumbHeading",
+      "body": [
+        "<BreadcrumbHeading",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the breadcrumb item. */}",
+				"\tto={${2:\"null\"}/* optional: HREF for breadcrumb link. */}",
+				"\ttarget={${3:\"null\"}/* optional: Target for breadcrumb link. */}",
+				"\tcomponent={${4:'a'}/* optional: Sets the base component to render. Defaults to <a> */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the breadcrumb title. */}",
+				"</BreadcrumbHeading>"
+      ],
+      "description": "BreadcrumbHeading"
+    }
+  ,
+	"BreadcrumbItem": 
+    {
+      "prefix": "#BreadcrumbItem",
+      "body": [
+        "<BreadcrumbItem",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the breadcrumb item. */}",
+				"\tto={${2:\"null\"}/* optional: HREF for breadcrumb link. */}",
+				"\tisActive={${3:false}/* optional: Flag indicating whether the item is active. */}",
+				"\ttarget={${4:\"null\"}/* optional: Target for breadcrumb link. */}",
+				"\tcomponent={${5:'a'}/* optional: Sets the base component to render. Defaults to <a> */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the breadcrumb item. */}",
+				"</BreadcrumbItem>"
+      ],
+      "description": "BreadcrumbItem"
+    }
+  ,
+	"Button": 
+    {
+      "prefix": "#Button",
+      "body": [
+        "<Button",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the button */}",
+				"\tcomponent={${2:'button'}/* optional: Sets the base component to render. defaults to button */}",
+				"\tisActive={${3:false}/* optional: Adds active styling to button. */}",
+				"\tisBlock={${4:false}/* optional: Adds block styling to button */}",
+				"\tisDisabled={${5:false}/* optional: Disables the button and adds disabled styling */}",
+				"\tisFocus={${6:false}/* optional: Adds focus styling to the button */}",
+				"\tisHover={${7:false}/* optional: Adds hover styling to the button */}",
+				"\tisInline={${8:false}/* optional: Adds inline styling to a link button */}",
+				"\ttype={${9:'button'}/* optional: Sets button type */}",
+				"\tvariant={${10:'primary'}/* optional: Adds button variant styles */}",
+				"\ticonPosition={${11:'left'}/* optional: Sets position of the link icon */}",
+				"\taria-label={${12:\"null\"}/* optional: Adds accessible text to the button. */}",
+				"\ticon={${13:null}/* optional: Icon for the button if variant is a link */}",
+				"\ttabIndex={${14:null}/* optional: Set button tab index unless component is not a button and is disabled */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the button */}",
+				"</Button>"
+      ],
+      "description": "Button"
+    }
+  ,
+	"Card": 
+    {
+      "prefix": "#Card",
+      "body": [
+        "<Card",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Card */}",
+				"\tcomponent={${2:'article'}/* optional: Sets the base component to render. defaults to article */}",
+				"\tisHoverable={${3:false}/* optional: Modifies the card to include hover styles on :hover */}",
+				"\tisCompact={${4:false}/* optional: Modifies the card to include compact styling */}",
+				"\tisSelectable={${5:false}/* optional: Modifies the card to include selectable styling */}",
+				"\tisSelected={${6:false}/* optional: Modifies the card to include selected styling */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Card */}",
+				"</Card>"
+      ],
+      "description": "Card"
+    }
+  ,
+	"CardActions": 
+    {
+      "prefix": "#CardActions",
+      "body": [
+        "<CardActions",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Action */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Card Action */}",
+				"</CardActions>"
+      ],
+      "description": "CardActions"
+    }
+  ,
+	"CardBody": 
+    {
+      "prefix": "#CardBody",
+      "body": [
+        "<CardBody",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Card Body */}",
+				"\tcomponent={${2:'div'}/* optional: Sets the base component to render. defaults to div */}",
+				"\tisFilled={${3:true}/* optional: Enables the body Content to fill the height of the card */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Card Body */}",
+				"</CardBody>"
+      ],
+      "description": "CardBody"
+    }
+  ,
+	"CardFooter": 
+    {
+      "prefix": "#CardFooter",
+      "body": [
+        "<CardFooter",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Footer */}",
+				"\tcomponent={${2:'div'}/* optional: Sets the base component to render. defaults to div */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Card Footer */}",
+				"</CardFooter>"
+      ],
+      "description": "CardFooter"
+    }
+  ,
+	"CardHead": 
+    {
+      "prefix": "#CardHead",
+      "body": [
+        "<CardHead",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Head */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Card Head */}",
+				"</CardHead>"
+      ],
+      "description": "CardHead"
+    }
+  ,
+	"CardHeadMain": 
+    {
+      "prefix": "#CardHeadMain",
+      "body": [
+        "<CardHeadMain",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Card Head Main */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Card Head Main */}",
+				"</CardHeadMain>"
+      ],
+      "description": "CardHeadMain"
+    }
+  ,
+	"CardHeader": 
+    {
+      "prefix": "#CardHeader",
+      "body": [
+        "<CardHeader",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Header */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Card Footer */}",
+				"</CardHeader>"
+      ],
+      "description": "CardHeader"
+    }
+  ,
+	"Checkbox": 
+    {
+      "prefix": "#Checkbox",
+      "body": [
+        "<Checkbox",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Checkbox. */}",
+				"\tisValid={${2:true}/* optional: Flag to show if the Checkbox selection is valid or invalid. */}",
+				"\tisDisabled={${3:false}/* optional: Flag to show if the Checkbox is disabled. */}",
+				"\tisChecked={${4:false}/* optional: Flag to show if the Checkbox is checked. */}",
+				"\tchecked={${5:true}/* optional:  */}",
+				"\tonChange={${6:() => {}}/* optional: A callback for when the Checkbox selection changes. */}",
+				"\tlabel={${7:<div>ReactNode</div>}/* optional: Label text of the checkbox. */}",
+				"\tid={${8:\"string\"}/* required: Id of the checkbox. */}",
+				"\taria-label={${9:\"string\"}/* optional: Aria-label of the checkbox. */}",
+				"\tdescription={${10:<div>ReactNode</div>}/* optional: Description text of the checkbox. */}",
+				"/>"
+      ],
+      "description": "Checkbox"
+    }
+  ,
+	"Chip": 
+    {
+      "prefix": "#Chip",
+      "body": [
+        "<Chip",
+				"\tcloseBtnAriaLabel={${1:\"'close'\"}/* optional: Aria Label for close button */}",
+				"\tclassName={${2:\"''\"}/* optional: Additional classes added to the chip item */}",
+				"\tisOverflowChip={${3:false}/* optional: Flag indicating if the chip has overflow */}",
+				"\tisReadOnly={${4:false}/* optional: Flag if chip is read only */}",
+				"\tonClick={${5:(_e: React.MouseEvent) => undefined as any}/* optional: Function that is called when clicking on the chip button */}",
+				"\tcomponent={${6:'div'}/* optional: Internal flag for which component will be used for chip */}",
+				"\ttooltipPosition={${7:'top'}/* optional: Position of the tooltip which is displayed if text is longer */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content rendered inside the chip text */}",
+				"</Chip>"
+      ],
+      "description": "Chip"
+    }
+  ,
+	"ChipButton": 
+    {
+      "prefix": "#ChipButton",
+      "body": [
+        "<ChipButton",
+				"\tariaLabel={${1:\"'close'\"}/* optional: Aria label for chip button */}",
+				"\tclassName={${2:\"''\"}/* optional: Additional classes added to the chip item */}",
+				"\tonClick={${3:() => undefined}/* optional: Function that is called when clicking on the chip button */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the chip item */}",
+				"</ChipButton>"
+      ],
+      "description": "ChipButton"
+    }
+  ,
+	"ChipGroup": 
+    {
+      "prefix": "#ChipGroup",
+      "body": [
+        "<ChipGroup",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the chip item */}",
+				"\tdefaultIsOpen={${2:false}/* optional: Flag for having the chip group default to expanded */}",
+				"\texpandedText={${3:\"'Show Less'\"}/* optional: Customizable \"Show Less\" text string */}",
+				"\tcollapsedText={${4:\"'${remaining} more'\"}/* optional: Customizeable template string. Use variable \"${remaining}\" for the overflow chip count. */}",
+				"\twithToolbar={${5:false}/* optional: Flag for grouping with a toolbar & category name */}",
+				"\theadingLevel={${6:'h1'}/* optional: Set heading level to the chip item label */}",
+				"\tnumChips={${7:3}/* optional: Set number of chips to show before overflow */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content rendered inside the chip text */}",
+				"</ChipGroup>"
+      ],
+      "description": "ChipGroup"
+    }
+  ,
+	"ChipGroupToolbarItem": 
+    {
+      "prefix": "#ChipGroupToolbarItem",
+      "body": [
+        "<ChipGroupToolbarItem",
+				"\tcategoryName={${1:\"''\"}/* optional: Category name text */}",
+				"\tclassName={${2:\"''\"}/* optional: Additional classes added to the chip item */}",
+				"\tisClosable={${3:false}/* optional: Flag if chip group can be closed */}",
+				"\tonClick={${4:(_e: React.MouseEvent) => undefined as any}/* optional: Function that is called when clicking on the chip group button */}",
+				"\tcloseBtnAriaLabel={${5:\"'Close chip group'\"}/* optional: Aria label for close button */}",
+				"\ttooltipPosition={${6:'top'}/* optional: Position of the tooltip which is displayed if the category name text is longer */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the chip text */}",
+				"</ChipGroupToolbarItem>"
+      ],
+      "description": "ChipGroupToolbarItem"
+    }
+  ,
+	"ClipboardCopy": 
+    {
+      "prefix": "#ClipboardCopy",
+      "body": [
+        "<ClipboardCopy",
+				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the clipboard copy container. */}",
+				"\thoverTip={${2:\"'Copy to clipboard'\"}/* optional: Tooltip message to display when hover the copy button */}",
+				"\tclickTip={${3:\"'Successfully copied to clipboard!'\"}/* optional: Tooltip message to display when clicking the copy button */}",
+				"\ttextAriaLabel={${4:\"'Copyable input'\"}/* optional: Custom flag to show that the input requires an associated id or aria-label. */}",
+				"\ttoggleAriaLabel={${5:\"'Show content'\"}/* optional: Custom flag to show that the toggle button requires an associated id or aria-label. */}",
+				"\tisReadOnly={${6:false}/* optional: Flag to show if the input is read only. */}",
+				"\tisExpanded={${7:false}/* optional: Flag to determine if clipboard copy is in the expanded state initially */}",
+				"\tisCode={${8:false}/* optional: Flag to determine if clipboard copy content includes code */}",
+				"\tvariant={${9:'inline'}/* optional: Adds Clipboard Copy variant styles. */}",
+				"\tposition={${10:'auto'}/* optional: Copy button popover position. */}",
+				"\tmaxWidth={${11:\"'150px'\"}/* optional: Maximum width of the tooltip (default 150px). */}",
+				"\texitDelay={${12:1600}/* optional: Delay in ms before the tooltip disappears. */}",
+				"\tentryDelay={${13:100}/* optional: Delay in ms before the tooltip appears. */}",
+				"\tswitchDelay={${14:2000}/* optional: Delay in ms before the tooltip message switch to hover tip. */}",
+				"\tonCopy={${15:(event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {",
+				"  const clipboard = event.currentTarget.parentElement;",
+				"  const el = document.createElement('input');",
+				"  el.value = text.toString();",
+				"  clipboard.appendChild(el);",
+				"  el.select();",
+				"  document.execCommand('copy');",
+				"  clipboard.removeChild(el);",
+				"}}/* optional: A function that is triggered on clicking the copy button. */}",
+				"\tonChange={${16:(): any => undefined}/* optional: A function that is triggered on changing the text. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: The text which is copied. */}",
+				"</ClipboardCopy>"
+      ],
+      "description": "ClipboardCopy"
+    }
+  ,
+	"ClipboardCopyButton": 
+    {
+      "prefix": "#ClipboardCopyButton",
+      "body": [
+        "<ClipboardCopyButton",
+				"\tonClick={${1:(event: React.MouseEvent) => undefined as void}/* required:  */}",
+				"\tid={${2:\"string\"}/* required:  */}",
+				"\ttextId={${3:\"string\"}/* required:  */}",
+				"\tclassName={${4:\"''\"}/* optional:  */}",
+				"\texitDelay={${5:100}/* optional:  */}",
+				"\tentryDelay={${6:100}/* optional:  */}",
+				"\tmaxWidth={${7:\"'100px'\"}/* optional:  */}",
+				"\tposition={${8:'top'}/* optional:  */}",
+				"\taria-label={${9:\"'Copyable input'\"}/* optional:  */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required:  */}",
+				"</ClipboardCopyButton>"
+      ],
+      "description": "ClipboardCopyButton"
+    }
+  ,
+	"ClipboardCopyExpanded": 
+    {
+      "prefix": "#ClipboardCopyExpanded",
+      "body": [
+        "<ClipboardCopyExpanded",
+				"\tclassName={${1:\"''\"}/* optional:  */}",
+				"\tonChange={${2:(): any => undefined}/* optional:  */}",
+				"\tisReadOnly={${3:false}/* optional:  */}",
+				"\tisCode={${4:false}/* optional:  */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required:  */}",
+				"</ClipboardCopyExpanded>"
+      ],
+      "description": "ClipboardCopyExpanded"
+    }
+  ,
+	"ClipboardCopyToggle": 
+    {
+      "prefix": "#ClipboardCopyToggle",
+      "body": [
+        "<ClipboardCopyToggle",
+				"\tonClick={${1:(event: React.MouseEvent) => undefined as void}/* required:  */}",
+				"\tid={${2:\"string\"}/* required:  */}",
+				"\ttextId={${3:\"string\"}/* required:  */}",
+				"\tcontentId={${4:\"string\"}/* required:  */}",
+				"\tisExpanded={${5:false}/* optional:  */}",
+				"\tclassName={${6:\"''\"}/* optional:  */}",
+				"/>"
+      ],
+      "description": "ClipboardCopyToggle"
+    }
+  ,
+	"ContextSelector": 
+    {
+      "prefix": "#ContextSelector",
+      "body": [
+        "<ContextSelector",
+				"\tclassName={${1:\"''\"}/* optional: Classes applied to root element of Context Selector */}",
+				"\tisOpen={${2:false}/* optional: Flag to indicate if Context Selector is opened */}",
+				"\tonToggle={${3:() => undefined as any}/* optional: Function callback called when user clicks toggle button */}",
+				"\tonSelect={${4:() => undefined as any}/* optional: Function callback called when user selects item */}",
+				"\tscreenReaderLabel={${5:\"''\"}/* optional: Labels the Context Selector for Screen Readers */}",
+				"\ttoggleText={${6:\"''\"}/* optional: Text that appears in the Context Selector Toggle */}",
+				"\tsearchButtonAriaLabel={${7:\"'Search menu items'\"}/* optional: aria-label for the Context Selector Search Button */}",
+				"\tsearchInputValue={${8:\"''\"}/* optional: Value in the Search field */}",
+				"\tonSearchInputChange={${9:() => undefined as any}/* optional: Function callback called when user changes the Search Input */}",
+				"\tsearchInputPlaceholder={${10:\"'Search'\"}/* optional: Search Input placeholder */}",
+				"\tonSearchButtonClick={${11:() => undefined as any}/* optional: Function callback for when Search Button is clicked */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Context Selector */}",
+				"</ContextSelector>"
+      ],
+      "description": "ContextSelector"
+    }
+  ,
+	"ContextSelectorItem": 
+    {
+      "prefix": "#ContextSelectorItem",
+      "body": [
+        "<ContextSelectorItem",
+				"\tclassName={${1:\"''\"}/* optional: Classes applied to root element of the Context Selector item */}",
+				"\tisDisabled={${2:false}/* optional: Render Context  Selector item as disabled */}",
+				"\tisHovered={${3:false}/* optional: Forces display of the hover state of the element */}",
+				"\tonClick={${4:(): any => undefined}/* optional: Callback for click event */}",
+				"\tindex={${5:42}/* optional: internal index of the item */}",
+				"\tsendRef={${6:() => {}}/* optional: Internal callback for ref tracking */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything which can be rendered as Context Selector item */}",
+				"</ContextSelectorItem>"
+      ],
+      "description": "ContextSelectorItem"
+    }
+  ,
+	"ContextSelectorMenuList": 
+    {
+      "prefix": "#ContextSelectorMenuList",
+      "body": [
+        "<ContextSelectorMenuList",
+				"\tclassName={${1:\"''\"}/* optional: Classess applied to root element of Context Selector menu */}",
+				"\tisOpen={${2:true}/* optional: Flag to indicate if Context Selector menu is opened */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Context Selector Menu */}",
+				"</ContextSelectorMenuList>"
+      ],
+      "description": "ContextSelectorMenuList"
+    }
+  ,
+	"ContextSelectorToggle": 
+    {
+      "prefix": "#ContextSelectorToggle",
+      "body": [
+        "<ContextSelectorToggle",
+				"\tid={${1:\"string\"}/* required: HTML ID of toggle */}",
+				"\tclassName={${2:\"''\"}/* optional: Classes applied to root element of toggle */}",
+				"\ttoggleText={${3:\"''\"}/* optional: Text that appears in the Context Selector Toggle */}",
+				"\tisOpen={${4:false}/* optional: Flag to indicate if menu is opened */}",
+				"\tonToggle={${5:(event: any, value: boolean) => undefined as any}/* optional: Callback called when toggle is clicked */}",
+				"\tonEnter={${6:() => undefined as any}/* optional: Callback for toggle open on keyboard entry */}",
+				"\tparentRef={${7:null}/* optional: Element which wraps toggle */}",
+				"\tisFocused={${8:false}/* optional: Forces focus state */}",
+				"\tisHovered={${9:false}/* optional: Forces hover state */}",
+				"\tisActive={${10:false}/* optional: Forces active state */}",
+				"/>"
+      ],
+      "description": "ContextSelectorToggle"
+    }
+  ,
+	"DataList": 
+    {
+      "prefix": "#DataList",
+      "body": [
+        "<DataList",
+				"\tclassName={${1:\"''\"}/* optional:  */}",
+				"\taria-label={${2:\"string\"}/* required:  */}",
+				"\tonSelectDataListItem={${3:(id: string) => undefined as void}/* optional:  */}",
+				"\tselectedDataListItemId={${4:\"''\"}/* optional:  */}",
+				"\tisCompact={${5:false}/* optional: Flag indicating if DataList should have compact styling */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional:  */}",
+				"</DataList>"
+      ],
+      "description": "DataList"
+    }
+  ,
+	"DataListAction": 
+    {
+      "prefix": "#DataListAction",
+      "body": [
+        "<DataListAction",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the DataList Action */}",
+				"\tid={${2:\"string\"}/* required: Identify the DataList toggle number */}",
+				"\taria-labelledby={${3:\"string\"}/* required: Adds accessible text to the DataList Action */}",
+				"\taria-label={${4:\"string\"}/* required: Adds accessible text to the DataList Action */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered as DataList Action  (e.g <Button> or <Dropdown>) */}",
+				"</DataListAction>"
+      ],
+      "description": "DataListAction"
+    }
+  ,
+	"DataListCell": 
+    {
+      "prefix": "#DataListCell",
+      "body": [
+        "<DataListCell",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the DataList cell */}",
+				"\twidth={${2:1}/* optional: Width (from 1-5) to the DataList cell */}",
+				"\tisFilled={${3:true}/* optional: Enables the body Content to fill the height of the card */}",
+				"\talignRight={${4:false}/* optional: Aligns the cell content to the right of its parent. */}",
+				"\tisIcon={${5:false}/* optional: Set to true if the cell content is an Icon */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the DataList cell */}",
+				"</DataListCell>"
+      ],
+      "description": "DataListCell"
+    }
+  ,
+	"DataListCheck": 
+    {
+      "prefix": "#DataListCheck",
+      "body": [
+        "<DataListCheck",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the DataList item checkbox */}",
+				"\tisValid={${2:true}/* optional: Flag to show if the DataList checkbox selection is valid or invalid */}",
+				"\tisDisabled={${3:false}/* optional: Flag to show if the DataList checkbox is disabled */}",
+				"\tisChecked={${4:null}/* optional: Flag to show if the DataList checkbox is checked */}",
+				"\tchecked={${5:null}/* optional: Alternate Flag to show if the DataList checkbox is checked */}",
+				"\tonChange={${6:(checked: boolean, event: React.FormEvent<HTMLInputElement>) => {}}/* optional: A callback for when the DataList checkbox selection changes */}",
+				"\taria-labelledby={${7:\"string\"}/* required: Aria-labelledby of the DataList checkbox */}",
+				"/>"
+      ],
+      "description": "DataListCheck"
+    }
+  ,
+	"DataListContent": 
+    {
+      "prefix": "#DataListContent",
+      "body": [
+        "<DataListContent",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the DataList cell */}",
+				"\tid={${2:\"''\"}/* optional: Identify the DataListContent item */}",
+				"\trowid={${3:\"''\"}/* optional: Id for the row */}",
+				"\tisHidden={${4:false}/* optional: Flag to show if the expanded content of the DataList item is visible */}",
+				"\tnoPadding={${5:false}/* optional: Flag to remove padding from the expandable content */}",
+				"\taria-label={${6:\"string\"}/* required: Adds accessible text to the DataList toggle */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the DataList item */}",
+				"</DataListContent>"
+      ],
+      "description": "DataListContent"
+    }
+  ,
+	"DataListItem": 
+    {
+      "prefix": "#DataListItem",
+      "body": [
+        "<DataListItem",
+				"\tisExpanded={${1:false}/* optional: Flag to show if the expanded content of the DataList item is visible */}",
+				"\tclassName={${2:\"''\"}/* optional: Additional classes added to the DataList item should be either <DataListItemRow> or <DataListContent> */}",
+				"\taria-labelledby={${3:\"string\"}/* required: Adds accessible text to the DataList item */}",
+				"\tid={${4:\"''\"}/* optional: Unique id for the DataList item */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the DataList item */}",
+				"</DataListItem>"
+      ],
+      "description": "DataListItem"
+    }
+  ,
+	"DataListItemCells": 
+    {
+      "prefix": "#DataListItemCells",
+      "body": [
+        "<DataListItemCells",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the DataList item Content Wrapper.  Children should be one ore more <DataListCell> nodes */}",
+				"\tdataListCells={${2:<div>ReactNode</div>}/* optional: Array of <DataListCell> nodes that are rendered one after the other. */}",
+				"\trowid={${3:\"''\"}/* optional: Id for the row */}",
+				"/>"
+      ],
+      "description": "DataListItemCells"
+    }
+  ,
+	"DataListItemRow": 
+    {
+      "prefix": "#DataListItemRow",
+      "body": [
+        "<DataListItemRow",
+				"\tclassName={${1:\"''\"}/* optional:  */}",
+				"\trowid={${2:\"''\"}/* optional:  */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required:  */}",
+				"</DataListItemRow>"
+      ],
+      "description": "DataListItemRow"
+    }
+  ,
+	"DataListToggle": 
+    {
+      "prefix": "#DataListToggle",
+      "body": [
+        "<DataListToggle",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the DataList cell */}",
+				"\tisExpanded={${2:false}/* optional: Flag to show if the expanded content of the DataList item is visible */}",
+				"\tid={${3:\"string\"}/* required: Identify the DataList toggle number */}",
+				"\trowid={${4:\"''\"}/* optional: Id for the row */}",
+				"\taria-labelledby={${5:\"''\"}/* optional: Adds accessible text to the DataList toggle */}",
+				"\taria-label={${6:\"'Details'\"}/* optional: Adds accessible text to the DataList toggle */}",
+				"\taria-controls={${7:\"''\"}/* optional: Allows users of some screen readers to shift focus to the controlled element. Should be used when the controlled contents are not adjacent to the toggle that controls them. */}",
+				"/>"
+      ],
+      "description": "DataListToggle"
+    }
+  ,
+	"DataToolbar": 
+    {
+      "prefix": "#DataToolbar",
+      "body": [
+        "<DataToolbar",
+				"\tclearAllFilters={${1:() => undefined as void}/* optional: Optional callback for clearing all filters in the toolbar */}",
+				"\tclearFiltersButtonText={${2:\"string\"}/* optional: Text to display in the clear all filters button */}",
+				"\tcollapseListedFiltersBreakpoint={${3:'md'}/* optional: The breakpoint at which the listed fitlers in chip groups are collapsed down to a summary */}",
+				"\tisExpanded={${4:true}/* optional: Flag indicating if a data toolbar toggle group's expandable content is expanded */}",
+				"\ttoggleIsExpanded={${5:() => undefined as void}/* optional: A callback for setting the isExpanded flag */}",
+				"\tclassName={${6:\"string\"}/* optional: Classes applied to root element of the data toolbar */}",
+				"\tid={${7:\"string\"}/* required: Id of the data toolbar */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered as rows in the data toolbar */}",
+				"</DataToolbar>"
+      ],
+      "description": "DataToolbar"
+    }
+  ,
+	"DataToolbarChipGroupContent": 
+    {
+      "prefix": "#DataToolbarChipGroupContent",
+      "body": [
+        "<DataToolbarChipGroupContent",
+				"\tclassName={${1:\"string\"}/* optional: Classes applied to root element of the data toolbar content row */}",
+				"\tisExpanded={${2:true}/* optional: Flag indicating if a data toolbar toggle group's expandable content is expanded */}",
+				"\tchipGroupContentRef={${3:{ current: document.createElement('div') }}/* optional: Chip group content reference for passing to data toolbar children */}",
+				"\tclearAllFilters={${4:() => undefined as void}/* optional: optional callback for clearing all filters in the toolbar */}",
+				"\tshowClearFiltersButton={${5:true}/* required: Flag indicating that the clear all filters button should be visible */}",
+				"\tclearFiltersButtonText={${6:\"'Clear all filters'\"}/* optional: Text to display in the clear all filters button */}",
+				"\tnumberOfFilters={${7:42}/* required: Total number of filters currently being applied across all DataToolbarFilter components */}",
+				"\tcollapseListedFiltersBreakpoint={${8:'lg'}/* optional: The breakpoint at which the listed filters in chip groups are collapsed down to a summary */}",
+				"/>"
+      ],
+      "description": "DataToolbarChipGroupContent"
+    }
+  ,
+	"DataToolbarContent": 
+    {
+      "prefix": "#DataToolbarContent",
+      "body": [
+        "<DataToolbarContent",
+				"\tclassName={${1:\"string\"}/* optional: Classes applied to root element of the data toolbar content row */}",
+				"\tbreakpointMods={${2:[]}/* optional: An array of objects representing the various modifiers to apply to the content row at various breakpoints */}",
+				"\tisExpanded={${3:false}/* optional: Flag indicating if a data toolbar toggle group's expandable content is expanded */}",
+				"\tclearAllFilters={${4:() => undefined as void}/* optional: Optional callback for clearing all filters in the toolbar */}",
+				"\tshowClearFiltersButton={${5:false}/* optional: Flag indicating that the clear all filters button should be visible */}",
+				"\tclearFiltersButtonText={${6:\"string\"}/* optional: Text to display in the clear all filters button */}",
+				"\ttoolbarId={${7:\"string\"}/* optional: Id of the parent DataToolbar component */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered as children of the content row */}",
+				"</DataToolbarContent>"
+      ],
+      "description": "DataToolbarContent"
+    }
+  ,
+	"DataToolbarExpandableContent": 
+    {
+      "prefix": "#DataToolbarExpandableContent",
+      "body": [
+        "<DataToolbarExpandableContent",
+				"\tclassName={${1:\"string\"}/* optional: Classes added to the root element of the data toolbar expandable content */}",
+				"\tisExpanded={${2:false}/* optional: Flag indicating the expandable content is expanded */}",
+				"\texpandableContentRef={${3:{ current: document.createElement('div') }}/* optional: Expandable content reference for passing to data toolbar children */}",
+				"\tchipContainerRef={${4:{ current: document.createElement('div') }}/* optional: Chip container reference for passing to data toolbar children */}",
+				"\tclearAllFilters={${5:() => undefined as void}/* optional: optional callback for clearing all filters in the toolbar */}",
+				"\tclearFiltersButtonText={${6:\"'Clear all filters'\"}/* optional: Text to display in the clear all filters button */}",
+				"\tshowClearFiltersButton={${7:true}/* required: Flag indicating that the clear all filters button should be visible */}",
+				"/>"
+      ],
+      "description": "DataToolbarExpandableContent"
+    }
+  ,
+	"DataToolbarFilter": 
+    {
+      "prefix": "#DataToolbarFilter",
+      "body": [
+        "<DataToolbarFilter",
+				"\tchips={${1:[]}/* optional: An array of strings to be displayed as chips in the expandable content */}",
+				"\tdeleteChipGroup={${2:(category: string | DataToolbarChipGroup) => undefined as void}/* optional: Callback passed by consumer used to close the entire chip group */}",
+				"\tdeleteChip={${3:(category: string | DataToolbarChipGroup, chip: DataToolbarChip | string) => undefined as void}/* optional: Callback passed by consumer used to delete a chip from the chips[] */}",
+				"\tcategoryName={${4:'string'}/* required: Unique category name to be used as a label for the chip group */}",
+				"\tshowToolbarItem={${5:true}/* optional: Flag to show the toolbar item */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content to be rendered inside the data toolbar item associated with the chip group */}",
+				"</DataToolbarFilter>"
+      ],
+      "description": "DataToolbarFilter"
+    }
+  ,
+	"DataToolbarGroup": 
+    {
+      "prefix": "#DataToolbarGroup",
+      "body": [
+        "<DataToolbarGroup",
+				"\tclassName={${1:\"string\"}/* optional: Classes applied to root element of the data toolbar group */}",
+				"\tvariant={${2:'filter-group'}/* optional: A type modifier which modifies spacing specifically depending on the type of group */}",
+				"\tbreakpointMods={${3:[]}/* optional: Array of objects representing the various modifiers to apply to the data toolbar group at various breakpoints */}",
+				"\tinnerRef={${4:{ current: document.createElement('div') }}/* optional: Reference to pass to this group if it has .pf-m-chip-container modifier */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered inside the data toolbar group */}",
+				"</DataToolbarGroup>"
+      ],
+      "description": "DataToolbarGroup"
+    }
+  ,
+	"DataToolbarItem": 
+    {
+      "prefix": "#DataToolbarItem",
+      "body": [
+        "<DataToolbarItem",
+				"\tclassName={${1:\"string\"}/* optional: Classes applied to root element of the data toolbar item */}",
+				"\tvariant={${2:'separator'}/* optional: A type modifier which modifies spacing specifically depending on the type of item */}",
+				"\tbreakpointMods={${3:[]}/* optional: An array of objects representing the various modifiers to apply to the data toolbar item at various breakpoints */}",
+				"\tid={${4:\"string\"}/* optional: id for this data toolbar item */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered inside the data toolbar item */}",
+				"</DataToolbarItem>"
+      ],
+      "description": "DataToolbarItem"
+    }
+  ,
+	"DataToolbarToggleGroup": 
+    {
+      "prefix": "#DataToolbarToggleGroup",
+      "body": [
+        "<DataToolbarToggleGroup",
+				"\ttoggleIcon={${1:<div>ReactNode</div>}/* required: An icon to be rendered when the toggle group has collapsed down */}",
+				"\tbreakpoint={${2:'md'}/* required: The breakpoint at which the toggle group is collapsed down */}",
+				"\tbreakpointMods={${3:[]}/* optional: An array of objects representing the various modifiers to apply to the data toolbar toggle group at various breakpoints */}",
+				"/>"
+      ],
+      "description": "DataToolbarToggleGroup"
+    }
+  ,
+	"Divider": 
+    {
+      "prefix": "#Divider",
+      "body": [
+        "<Divider",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the divider */}",
+				"\tcomponent={${2:'hr'}/* optional: The component type to use */}",
+				"/>"
+      ],
+      "description": "Divider"
+    }
+  ,
+	"Drawer": 
+    {
+      "prefix": "#Drawer",
+      "body": [
+        "<Drawer",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Drawer. */}",
+				"\tisExpanded={${2:false}/* optional: Indicates if the drawer is expanded */}",
+				"\tisInline={${3:false}/* optional: Indicates if the content element and panel element are displayed side by side. */}",
+				"\tisStatic={${4:false}/* optional: Indicates if the drawer will always show both content and panel. */}",
+				"\tposition={${5:'right'}/* optional: Position of the drawer panel */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content rendered in the left hand panel */}",
+				"</Drawer>"
+      ],
+      "description": "Drawer"
+    }
+  ,
+	"DrawerActions": 
+    {
+      "prefix": "#DrawerActions",
+      "body": [
+        "<DrawerActions",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the drawer actions button. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Actions to be rendered in the panel head. */}",
+				"</DrawerActions>"
+      ],
+      "description": "DrawerActions"
+    }
+  ,
+	"DrawerCloseButton": 
+    {
+      "prefix": "#DrawerCloseButton",
+      "body": [
+        "<DrawerCloseButton",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the drawer close button outer <div>. */}",
+				"\tonClose={${2:() => undefined as any}/* optional: A callback for when the close button is clicked */}",
+				"\taria-label={${3:\"'Close drawer panel'\"}/* optional: Accessible label for the drawer close button */}",
+				"/>"
+      ],
+      "description": "DrawerCloseButton"
+    }
+  ,
+	"DrawerContent": 
+    {
+      "prefix": "#DrawerContent",
+      "body": [
+        "<DrawerContent",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Drawer. */}",
+				"\tpanelContent={${2:<div>ReactNode</div>}/* required: Content rendered in the drawer panel. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered in the drawer. */}",
+				"</DrawerContent>"
+      ],
+      "description": "DrawerContent"
+    }
+  ,
+	"DrawerContentBody": 
+    {
+      "prefix": "#DrawerContentBody",
+      "body": [
+        "<DrawerContentBody",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Drawer. */}",
+				"\thasPadding={${2:false}/* optional: Indicates if there should be padding around the drawer content body */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered in the drawer */}",
+				"</DrawerContentBody>"
+      ],
+      "description": "DrawerContentBody"
+    }
+  ,
+	"DrawerHead": 
+    {
+      "prefix": "#DrawerHead",
+      "body": [
+        "<DrawerHead",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the drawer head. */}",
+				"\tnoPadding={${2:false}/* optional: Indicates if there should be no padding around the drawer panel body of the head */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered in the drawer head */}",
+				"</DrawerHead>"
+      ],
+      "description": "DrawerHead"
+    }
+  ,
+	"DrawerMain": 
+    {
+      "prefix": "#DrawerMain",
+      "body": [
+        "<DrawerMain",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the drawer main wrapper. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered in the drawer main wrapper */}",
+				"</DrawerMain>"
+      ],
+      "description": "DrawerMain"
+    }
+  ,
+	"DrawerPanelBody": 
+    {
+      "prefix": "#DrawerPanelBody",
+      "body": [
+        "<DrawerPanelBody",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Drawer. */}",
+				"\tnoPadding={${2:false}/* optional: Indicates if there should be no padding around the drawer panel body */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered in the drawer */}",
+				"</DrawerPanelBody>"
+      ],
+      "description": "DrawerPanelBody"
+    }
+  ,
+	"DrawerPanelContent": 
+    {
+      "prefix": "#DrawerPanelContent",
+      "body": [
+        "<DrawerPanelContent",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the drawer. */}",
+				"\thasBorder={${2:false}/* optional: Flag indicating that the drawer panel should have a border. */}",
+				"\twidth={${3:25}/* optional: Default width for drawer panel */}",
+				"\twidthOnLg={${4:25}/* optional: Drawer panel width on large viewports */}",
+				"\twidthOnXl={${5:25}/* optional: Drawer panel width on xl viewports */}",
+				"\twidthOn2Xl={${6:25}/* optional: Drawer panel width on 2xl viewports */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered in the drawer panel. */}",
+				"</DrawerPanelContent>"
+      ],
+      "description": "DrawerPanelContent"
+    }
+  ,
+	"DrawerSection": 
+    {
+      "prefix": "#DrawerSection",
+      "body": [
+        "<DrawerSection",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the drawer section. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered in the drawer section. */}",
+				"</DrawerSection>"
+      ],
+      "description": "DrawerSection"
+    }
+  ,
+	"Dropdown": 
+    {
+      "prefix": "#Dropdown",
+      "body": [
+        "<Dropdown",
+				"\tclassName={${1:\"string\"}/* optional: Classes applied to root element of dropdown */}",
+				"\tdropdownItems={${2:[]}/* optional: Array of DropdownItem nodes that will be rendered in the dropdown Menu list */}",
+				"\tisOpen={${3:true}/* optional: Flag to indicate if menu is opened */}",
+				"\tisPlain={${4:true}/* optional: Display the toggle with no border or background */}",
+				"\tposition={${5:'right'}/* optional: Indicates where menu will be aligned horizontally */}",
+				"\tdirection={${6:'up'}/* optional: Display menu above or below dropdown toggle */}",
+				"\tisGrouped={${7:true}/* optional: Flag to indicate if dropdown has groups */}",
+				"\ttoggle={${8:<p>ReactElement</p>}/* required: Toggle for the dropdown, examples: <DropdownToggle> or <DropdownToggleCheckbox> */}",
+				"\tonSelect={${9:(event?: React.SyntheticEvent<HTMLDivElement>) => undefined as void}/* optional: Function callback called when user selects item */}",
+				"\tautoFocus={${10:true}/* optional: Flag to indicate if the first dropdown item should gain initial focus, set false when adding | a specific auto-focus item (like a current selection) otherwise leave as true */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Anything which can be rendered in a dropdown */}",
+				"</Dropdown>"
+      ],
+      "description": "Dropdown"
+    }
+  ,
+	"DropdownGroup": 
+    {
+      "prefix": "#DropdownGroup",
+      "body": [
+        "<DropdownGroup",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the DropdownGroup control */}",
+				"\tlabel={${2:''}/* optional: Group label */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Checkboxes within group */}",
+				"</DropdownGroup>"
+      ],
+      "description": "DropdownGroup"
+    }
+  ,
+	"DropdownItem": 
+    {
+      "prefix": "#DropdownItem",
+      "body": [
+        "<DropdownItem",
+				"\tclassName={${1:\"''\"}/* optional: Classes applied to root element of dropdown item */}",
+				"\tlistItemClassName={${2:\"string\"}/* optional: Class to be applied to list item */}",
+				"\tcomponent={${3:'a'}/* optional: A ReactElement to render, or a string to use as the component tag. | Example: component={<Link to=\"/components/alert/\">Alert</Link>} | Example: component=\"button\" */}",
+				"\tvariant={${4:'item'}/* optional: Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */}",
+				"\tisDisabled={${5:false}/* optional: Render dropdown item as disabled option */}",
+				"\tisHovered={${6:false}/* optional: Forces display of the hover state of the element */}",
+				"\thref={${7:\"string\"}/* optional: Default hyperlink location */}",
+				"\ttooltip={${8:null}/* optional: Tooltip to display when hovered over the item */}",
+				"\ttooltipProps={${9:undefined}/* optional: Additional tooltip props forwarded to the Tooltip component */}",
+				"\tadditionalChild={${10:<div>ReactNode</div>}/* optional: Additional node to include alongside item within the <li> */}",
+				"\tcustomChild={${11:<div>ReactNode</div>}/* optional: Custom item rendering that receives the DropdownContext */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything which can be rendered as dropdown item */}",
+				"</DropdownItem>"
+      ],
+      "description": "DropdownItem"
+    }
+  ,
+	"DropdownItemIcon": 
+    {
+      "prefix": "#DropdownItemIcon",
+      "body": [
+        "<DropdownItemIcon",
+				"\tclassName={${1:\"''\"}/* optional: Classes applied to span element of dropdown icon item */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Icon to be rendered in the dropdown item */}",
+				"</DropdownItemIcon>"
+      ],
+      "description": "DropdownItemIcon"
+    }
+  ,
+	"DropdownMenu": 
+    {
+      "prefix": "#DropdownMenu",
+      "body": [
+        "<DropdownMenu",
+				"\tclassName={${1:\"''\"}/* optional: Classess applied to root element of dropdown menu */}",
+				"\tisOpen={${2:true}/* optional: Flag to indicate if menu is opened */}",
+				"\topenedOnEnter={${3:false}/* optional: Flag to indicate if menu should be opened on enter */}",
+				"\tautoFocus={${4:true}/* optional: Flag to indicate if the first dropdown item should gain initial focus, set false when adding | a specific auto-focus item (like a current selection) otherwise leave as true */}",
+				"\tcomponent={${5:'ul'}/* optional: Indicates which component will be used as dropdown menu */}",
+				"\tposition={${6:'right'}/* optional: Indicates where menu will be alligned horizontally */}",
+				"\tisGrouped={${7:false}/* optional: Flag to indicate if menu is grouped */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Anything which can be rendered as dropdown items */}",
+				"</DropdownMenu>"
+      ],
+      "description": "DropdownMenu"
+    }
+  ,
+	"DropdownSeparator": 
+    {
+      "prefix": "#DropdownSeparator",
+      "body": [
+        "<DropdownSeparator",
+				"\tclassName={${1:\"''\"}/* optional: Classes applied to root element of dropdown item */}",
+				"\tonClick={${2:(event: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent | MouseEvent) => undefined as void}/* optional: Click event to pass to InternalDropdownItem */}",
+				"/>"
+      ],
+      "description": "DropdownSeparator"
+    }
+  ,
+	"DropdownToggle": 
+    {
+      "prefix": "#DropdownToggle",
+      "body": [
+        "<DropdownToggle",
+				"\tid={${1:\"''\"}/* optional: HTML ID of dropdown toggle */}",
+				"\tclassName={${2:\"''\"}/* optional: Classes applied to root element of dropdown toggle button */}",
+				"\tisOpen={${3:false}/* optional: Flag to indicate if menu is opened */}",
+				"\tonToggle={${4:(_isOpen: boolean) => undefined as any}/* optional: Callback called when toggle is clicked */}",
+				"\tparentRef={${5:null}/* optional: Element which wraps toggle */}",
+				"\tisFocused={${6:false}/* optional: Forces focus state */}",
+				"\tisHovered={${7:false}/* optional: Forces hover state */}",
+				"\tisActive={${8:false}/* optional: Forces active state */}",
+				"\tisPlain={${9:false}/* optional: Display the toggle with no border or background */}",
+				"\tisDisabled={${10:false}/* optional: Whether or not the <div> has a disabled state */}",
+				"\tisPrimary={${11:false}/* optional: Whether or not the dropdown toggle button should have primary button styling */}",
+				"\ticonComponent={${12:() => <p>ReactElementType</p>}/* optional: The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */}",
+				"\tsplitButtonItems={${13:[]}/* optional: Elements to display before the toggle button. When included, renders the toggle as a split button. */}",
+				"\tsplitButtonVariant={${14:'checkbox'}/* optional: Variant of split button toggle */}",
+				"\taria-label={${15:\"string\"}/* optional: Accessible label for the dropdown toggle button */}",
+				"\tariaHasPopup={${16:true}/* optional: Accessibility property to indicate correct has popup */}",
+				"\ttype={${17:'button'}/* optional: Type to put on the button */}",
+				"\tonEnter={${18:(event?: React.MouseEvent<HTMLButtonElement>) => undefined as void}/* optional: Callback called when the Enter key is pressed */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything which can be rendered as dropdown toggle button */}",
+				"</DropdownToggle>"
+      ],
+      "description": "DropdownToggle"
+    }
+  ,
+	"DropdownToggleAction": 
+    {
+      "prefix": "#DropdownToggleAction",
+      "body": [
+        "<DropdownToggleAction",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the DropdownToggleAction */}",
+				"\tisDisabled={${2:false}/* optional: Flag to show if the action button is disabled */}",
+				"\tonClick={${3:() => {}}/* optional: A callback for when the action button is clicked */}",
+				"\tid={${4:\"string\"}/* optional: Id of the action button */}",
+				"\taria-label={${5:\"string\"}/* optional: Aria-label of the action button */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Element to be rendered inside the <button> */}",
+				"</DropdownToggleAction>"
+      ],
+      "description": "DropdownToggleAction"
+    }
+  ,
+	"DropdownToggleCheckbox": 
+    {
+      "prefix": "#DropdownToggleCheckbox",
+      "body": [
+        "<DropdownToggleCheckbox",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the DropdownToggleCheckbox */}",
+				"\tisValid={${2:true}/* optional: Flag to show if the checkbox selection is valid or invalid */}",
+				"\tisDisabled={${3:false}/* optional: Flag to show if the checkbox is disabled */}",
+				"\tisChecked={${4:true}/* optional: Flag to show if the checkbox is checked */}",
+				"\tchecked={${5:true}/* optional: Alternate Flag to show if the checkbox is checked */}",
+				"\tonChange={${6:() => undefined as any}/* optional: A callback for when the checkbox selection changes */}",
+				"\tid={${7:\"string\"}/* required: Id of the checkbox */}",
+				"\taria-label={${8:\"string\"}/* required: Aria-label of the checkbox */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Element to be rendered inside the <span> */}",
+				"</DropdownToggleCheckbox>"
+      ],
+      "description": "DropdownToggleCheckbox"
+    }
+  ,
+	"InternalDropdownItem": 
+    {
+      "prefix": "#InternalDropdownItem",
+      "body": [
+        "<InternalDropdownItem",
+				"\tclassName={${1:\"''\"}/* optional: Classes applied to root element of dropdown item */}",
+				"\tlistItemClassName={${2:\"string\"}/* optional: Class applied to list element */}",
+				"\tcomponent={${3:'a'}/* optional: Indicates which component will be used as dropdown item */}",
+				"\tvariant={${4:'item'}/* optional: Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */}",
+				"\trole={${5:\"'none'\"}/* optional: Role for the item */}",
+				"\tisDisabled={${6:false}/* optional: Render dropdown item as disabled option */}",
+				"\tisHovered={${7:false}/* optional: Forces display of the hover state of the element */}",
+				"\thref={${8:\"string\"}/* optional: Default hyperlink location */}",
+				"\ttooltip={${9:<div>ReactNode</div>}/* optional: Tooltip to display when hovered over the item */}",
+				"\ttooltipProps={${10:undefined}/* optional: Additional tooltip props forwarded to the Tooltip component */}",
+				"\tindex={${11:-1}/* optional:  */}",
+				"\tcontext={${12:{",
+				"  keyHandler: () => {},",
+				"  sendRef: () => {}",
+				"}}/* optional:  */}",
+				"\tonClick={${13:(event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => undefined as any}/* optional: Callback for click event */}",
+				"\tid={${14:\"string\"}/* optional: ID for the list element */}",
+				"\tcomponentID={${15:\"string\"}/* optional: ID for the component element */}",
+				"\tadditionalChild={${16:<div>ReactNode</div>}/* optional: Additional content to include alongside item within the <li> */}",
+				"\tcustomChild={${17:<div>ReactNode</div>}/* optional: Custom item rendering that receives the DropdownContext */}",
+				"\tenterTriggersArrowDown={${18:false}/* optional: Flag indicating if hitting enter on an item also triggers an arrow down key press */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Anything which can be rendered as dropdown item */}",
+				"</InternalDropdownItem>"
+      ],
+      "description": "InternalDropdownItem"
+    }
+  ,
+	"KebabToggle": 
+    {
+      "prefix": "#KebabToggle",
+      "body": [
+        "<KebabToggle",
+				"\tid={${1:\"''\"}/* optional: HTML ID of dropdown toggle */}",
+				"\tclassName={${2:\"''\"}/* optional: Classess applied to root element of dropdown toggle */}",
+				"\tisOpen={${3:false}/* optional: Flag to indicate if menu is opened */}",
+				"\taria-label={${4:\"'Actions'\"}/* optional: Label Toggle button */}",
+				"\tonToggle={${5:() => undefined as void}/* optional: Callback called when toggle is clicked */}",
+				"\tparentRef={${6:null}/* optional: Element which wraps toggle */}",
+				"\tisFocused={${7:false}/* optional: Forces focus state */}",
+				"\tisHovered={${8:false}/* optional: Forces hover state */}",
+				"\tisActive={${9:false}/* optional: Forces active state */}",
+				"\tisDisabled={${10:false}/* optional: Disables the dropdown toggle */}",
+				"\tisPlain={${11:false}/* optional: Display the toggle with no border or background */}",
+				"\ttype={${12:'button'}/* optional: Type to put on the button */}",
+				"\tbubbleEvent={${13:false}/* optional: Allows selecting toggle to select parent */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything which can be rendered as dropdown toggle */}",
+				"</KebabToggle>"
+      ],
+      "description": "KebabToggle"
+    }
+  ,
+	"Toggle": 
+    {
+      "prefix": "#Toggle",
+      "body": [
+        "<Toggle",
+				"\tid={${1:\"string\"}/* required: HTML ID of dropdown toggle */}",
+				"\ttype={${2:'button'}/* optional: Type to put on the button */}",
+				"\tclassName={${3:\"''\"}/* optional: Classes applied to root element of dropdown toggle */}",
+				"\tisOpen={${4:false}/* optional: Flag to indicate if menu is opened */}",
+				"\tonToggle={${5:() => {}}/* optional: Callback called when toggle is clicked */}",
+				"\tonEnter={${6:() => {}}/* optional: Callback called when the Enter key is pressed */}",
+				"\tparentRef={${7:'any'}/* optional: Element which wraps toggle */}",
+				"\tisFocused={${8:false}/* optional: Forces focus state */}",
+				"\tisHovered={${9:false}/* optional: Forces hover state */}",
+				"\tisActive={${10:false}/* optional: Forces active state */}",
+				"\tisDisabled={${11:false}/* optional: Disables the dropdown toggle */}",
+				"\tisPlain={${12:false}/* optional: Display the toggle with no border or background */}",
+				"\tisPrimary={${13:false}/* optional: Display the toggle with a primary button style */}",
+				"\tisSplitButton={${14:false}/* optional: Style the toggle as a child of a split button */}",
+				"\tariaHasPopup={${15:true}/* optional: Flag for aria popup */}",
+				"\tbubbleEvent={${16:false}/* optional: Allows selecting toggle to select parent */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Anything which can be rendered as dropdown toggle */}",
+				"</Toggle>"
+      ],
+      "description": "Toggle"
+    }
+  ,
+	"EmptyState": 
+    {
+      "prefix": "#EmptyState",
+      "body": [
+        "<EmptyState",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the EmptyState */}",
+				"\tvariant={${2:'small'}/* optional: Modifies EmptyState max-width */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the EmptyState */}",
+				"</EmptyState>"
+      ],
+      "description": "EmptyState"
+    }
+  ,
+	"EmptyStateBody": 
+    {
+      "prefix": "#EmptyStateBody",
+      "body": [
+        "<EmptyStateBody",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the EmptyState */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content rendered inside the EmptyState */}",
+				"</EmptyStateBody>"
+      ],
+      "description": "EmptyStateBody"
+    }
+  ,
+	"EmptyStateIcon": 
+    {
+      "prefix": "#EmptyStateIcon",
+      "body": [
+        "<EmptyStateIcon",
+				"\tcolor={${1:\"string\"}/* optional: deprecated */}",
+				"\tsize={${2:'sm'}/* optional: deprecated */}",
+				"\ttitle={${3:\"string\"}/* optional: deprecated */}",
+				"\tclassName={${4:\"''\"}/* optional: Additional classes added to the EmptyState */}",
+				"\ticon={${5:null}/* optional: Icon component to be rendered inside the EmptyState on icon variant */}",
+				"\tcomponent={${6:null}/* optional: Component to be rendered inside the EmptyState on container variant */}",
+				"\tvariant={${7:'icon'}/* optional: Adds empty state icon variant styles */}",
+				"/>"
+      ],
+      "description": "EmptyStateIcon"
+    }
+  ,
+	"EmptyStatePrimary": 
+    {
+      "prefix": "#EmptyStatePrimary",
+      "body": [
+        "<EmptyStatePrimary",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the EmptyStatePrimary */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the EmptyStatePrimary */}",
+				"</EmptyStatePrimary>"
+      ],
+      "description": "EmptyStatePrimary"
+    }
+  ,
+	"EmptyStateSecondaryActions": 
+    {
+      "prefix": "#EmptyStateSecondaryActions",
+      "body": [
+        "<EmptyStateSecondaryActions",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the EmptyState */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the EmptyState */}",
+				"</EmptyStateSecondaryActions>"
+      ],
+      "description": "EmptyStateSecondaryActions"
+    }
+  ,
+	"Expandable": 
+    {
+      "prefix": "#Expandable",
+      "body": [
+        "<Expandable",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Expandable Component */}",
+				"\tisExpanded={${2:true}/* optional: Flag to indicate if the content is expanded */}",
+				"\ttoggleText={${3:\"''\"}/* optional: Text that appears in the toggle */}",
+				"\ttoggleTextExpanded={${4:\"''\"}/* optional: Text that appears in the toggle when expanded (will override toggleText if both are specified; used for uncontrolled expandable with dynamic toggle text) */}",
+				"\ttoggleTextCollapsed={${5:\"''\"}/* optional: Text that appears in the toggle when collapsed (will override toggleText if both are specified; used for uncontrolled expandable with dynamic toggle text) */}",
+				"\tonToggle={${6:(): any => undefined}/* optional: Callback function to toggle the expandable content */}",
+				"\tisFocused={${7:false}/* optional: Forces focus state */}",
+				"\tisHovered={${8:false}/* optional: Forces hover state */}",
+				"\tisActive={${9:false}/* optional: Forces active state */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the Expandable Component */}",
+				"</Expandable>"
+      ],
+      "description": "Expandable"
+    }
+  ,
+	"FileUpload": 
+    {
+      "prefix": "#FileUpload",
+      "body": [
+        "<FileUpload",
+				"\tid={${1:\"string\"}/* required: Unique id for the TextArea, also used to generate ids for accessible labels. */}",
+				"\ttype={${2:'text'}/* optional: What type of file. Determines what is is passed to `onChange` and expected by `value` | (a string for 'text' and 'dataURL', or a File object otherwise. */}",
+				"\tvalue={${3:'string'}/* optional: Value of the file's contents | (string if text file, File object otherwise) */}",
+				"\tfilename={${4:\"''\"}/* optional: Value to be shown in the read-only filename field. */}",
+				"\tonChange={${5:() => {}}/* optional: A callback for when the file contents change. */}",
+				"\tclassName={${6:\"string\"}/* optional: Additional classes added to the FileUpload container element. */}",
+				"\tisDisabled={${7:true}/* optional: Flag to show if the field is disabled. */}",
+				"\tisReadOnly={${8:true}/* optional: Flag to show if the field is read only. */}",
+				"\tisLoading={${9:true}/* optional: Flag to show if a file is being loaded. */}",
+				"\tspinnerAriaValueText={${10:\"string\"}/* optional: Aria-valuetext for the loading spinner */}",
+				"\tisRequired={${11:true}/* optional: Flag to show if the field is required. */}",
+				"\tvalidated={${12:'success'}/* optional:  */}",
+				"\taria-label={${13:\"string\"}/* optional: Aria-label for the TextArea. */}",
+				"\tfilenamePlaceholder={${14:\"string\"}/* optional: Placeholder string to display in the empty filename field */}",
+				"\tfilenameAriaLabel={${15:\"string\"}/* optional: Aria-label for the read-only filename field */}",
+				"\tbrowseButtonText={${16:\"string\"}/* optional: Text for the Browse button */}",
+				"\tclearButtonText={${17:\"string\"}/* optional: Text for the Clear button */}",
+				"\thideDefaultPreview={${18:true}/* optional: Flag to hide the built-in preview of the file (where available). | If true, you can use children to render an alternate preview. */}",
+				"\tallowEditingUploadedText={${19:true}/* optional: Flag to allow editing of a text file's contents after it is selected from disk */}",
+				"\tonReadStarted={${20:() => {}}/* optional: A callback for when a selected file starts loading */}",
+				"\tonReadFinished={${21:() => {}}/* optional: A callback for when a selected file finishes loading */}",
+				"\tonReadFailed={${22:() => {}}/* optional: A callback for when the FileReader API fails */}",
+				"\tdropzoneProps={${23:undefined}/* optional: Optional extra props to customize react-dropzone. */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Additional children to render after (or instead of) the file preview. */}",
+				"</FileUpload>"
+      ],
+      "description": "FileUpload"
+    }
+  ,
+	"FileUploadField": 
+    {
+      "prefix": "#FileUploadField",
+      "body": [
+        "<FileUploadField",
+				"\tid={${1:\"string\"}/* required: Unique id for the TextArea, also used to generate ids for accessible labels */}",
+				"\ttype={${2:'text'}/* optional: What type of file. Determines what is is expected by `value` | (a string for 'text' and 'dataURL', or a File object otherwise). */}",
+				"\tvalue={${3:''}/* optional: Value of the file's contents | (string if text file, File object otherwise) */}",
+				"\tfilename={${4:\"''\"}/* optional: Value to be shown in the read-only filename field. */}",
+				"\tonChange={${5:() => {}}/* optional: A callback for when the TextArea value changes. */}",
+				"\tclassName={${6:\"''\"}/* optional: Additional classes added to the FileUploadField container element. */}",
+				"\tisDisabled={${7:false}/* optional: Flag to show if the field is disabled. */}",
+				"\tisReadOnly={${8:false}/* optional: Flag to show if the field is read only. */}",
+				"\tisLoading={${9:false}/* optional: Flag to show if a file is being loaded. */}",
+				"\tspinnerAriaValueText={${10:\"string\"}/* optional: Aria-valuetext for the loading spinner */}",
+				"\tisRequired={${11:false}/* optional: Flag to show if the field is required. */}",
+				"\tvalidated={${12:'default'}/* optional:  */}",
+				"\taria-label={${13:\"'File upload'\"}/* optional: Aria-label for the TextArea. */}",
+				"\tfilenamePlaceholder={${14:\"'Drag a file here or browse to upload'\"}/* optional: Placeholder string to display in the empty filename field */}",
+				"\tfilenameAriaLabel={${15:\"filename ? 'Read only filename' : filenamePlaceholder\"}/* optional: Aria-label for the read-only filename field */}",
+				"\tbrowseButtonText={${16:\"'Browse...'\"}/* optional: Text for the Browse button */}",
+				"\tclearButtonText={${17:\"'Clear'\"}/* optional: Text for the Clear button */}",
+				"\tisClearButtonDisabled={${18:!filename && !value}/* optional: Flag to disable the Clear button */}",
+				"\thideDefaultPreview={${19:false}/* optional: Flag to hide the built-in preview of the file (where available). | If true, you can use children to render an alternate preview. */}",
+				"\tallowEditingUploadedText={${20:false}/* optional: Flag to allow editing of a text file's contents after it is selected from disk */}",
+				"\tonBrowseButtonClick={${21:() => {}}/* optional: A callback for when the Browse button is clicked. */}",
+				"\tonClearButtonClick={${22:() => {}}/* optional: A callback for when the Clear button is clicked. */}",
+				"\tisDragActive={${23:false}/* optional: Flag to show if a file is being dragged over the field */}",
+				"\tcontainerRef={${24:null}/* optional: A reference object to attach to the FileUploadField container element. */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Additional children to render after (or instead of) the file preview. */}",
+				"</FileUploadField>"
+      ],
+      "description": "FileUploadField"
+    }
+  ,
+	"ActionGroup": 
+    {
+      "prefix": "#ActionGroup",
+      "body": [
+        "<ActionGroup",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the ActionGroup. */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as ActionGroup content. */}",
+				"</ActionGroup>"
+      ],
+      "description": "ActionGroup"
+    }
+  ,
+	"Form": 
+    {
+      "prefix": "#Form",
+      "body": [
+        "<Form",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Form. */}",
+				"\tisHorizontal={${2:false}/* optional: Sets the Form to horizontal. */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as Form content. */}",
+				"</Form>"
+      ],
+      "description": "Form"
+    }
+  ,
+	"FormGroup": 
+    {
+      "prefix": "#FormGroup",
+      "body": [
+        "<FormGroup",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the FormGroup. */}",
+				"\tlabel={${2:<div>ReactNode</div>}/* optional: Label text before the field. */}",
+				"\tisRequired={${3:false}/* optional: Sets the FormGroup required. */}",
+				"\tisValid={${4:true}/* optional: Sets the FormGroup isValid. This prop will be deprecated. You should use validated instead. */}",
+				"\tvalidated={${5:'default'}/* optional: Sets the FormGroup validated. If you set to success, text color of helper text will be modified to indicate valid state. | If set to error,  text color of helper text will be modified to indicate error state. */}",
+				"\tisInline={${6:false}/* optional: Sets the FormGroup isInline. */}",
+				"\thelperText={${7:<div>ReactNode</div>}/* optional: Helper text after the field. It can be a simple text or an object. */}",
+				"\thelperTextInvalid={${8:<div>ReactNode</div>}/* optional: Helper text after the field when the field is invalid. It can be a simple text or an object. */}",
+				"\tfieldId={${9:\"string\"}/* required: ID of the included field. It has to be the same for proper working. */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as FormGroup content. */}",
+				"</FormGroup>"
+      ],
+      "description": "FormGroup"
+    }
+  ,
+	"FormHelperText": 
+    {
+      "prefix": "#FormHelperText",
+      "body": [
+        "<FormHelperText",
+				"\tisError={${1:false}/* optional: Adds error styling to the Helper Text  * */}",
+				"\tisHidden={${2:true}/* optional: Hides the helper text * */}",
+				"\tclassName={${3:\"''\"}/* optional: Additional classes added to the Helper Text Item */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Helper Text Item */}",
+				"</FormHelperText>"
+      ],
+      "description": "FormHelperText"
+    }
+  ,
+	"FormSelect": 
+    {
+      "prefix": "#FormSelect",
+      "body": [
+        "<FormSelect",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the FormSelect control */}",
+				"\tvalue={${2:''}/* optional: value of selected option */}",
+				"\tisValid={${3:true}/* optional: Flag indicating selection is valid. This prop will be deprecated. You should use validated instead. */}",
+				"\tvalidated={${4:'default'}/* optional:  */}",
+				"\tisDisabled={${5:false}/* optional: Flag indicating the FormSelect is disabled */}",
+				"\tisRequired={${6:false}/* optional: Sets the FormSelectrequired. */}",
+				"\tonBlur={${7:(): any => undefined}/* optional: Optional callback for updating when selection loses focus */}",
+				"\tonFocus={${8:(): any => undefined}/* optional: Optional callback for updating when selection gets focus */}",
+				"\tonChange={${9:(): any => undefined}/* optional: Optional callback for updating when selection changes */}",
+				"\taria-label={${10:\"string\"}/* optional: Custom flag to show that the FormSelect requires an associated id or aria-label. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: content rendered inside the FormSelect */}",
+				"</FormSelect>"
+      ],
+      "description": "FormSelect"
+    }
+  ,
+	"FormSelectOption": 
+    {
+      "prefix": "#FormSelectOption",
+      "body": [
+        "<FormSelectOption",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the Select Option */}",
+				"\tvalue={${2:''}/* optional: the value for the option */}",
+				"\tlabel={${3:\"string\"}/* required: the label for the option */}",
+				"\tisDisabled={${4:false}/* optional: flag indicating if the option is disabled */}",
+				"/>"
+      ],
+      "description": "FormSelectOption"
+    }
+  ,
+	"FormSelectOptionGroup": 
+    {
+      "prefix": "#FormSelectOptionGroup",
+      "body": [
+        "<FormSelectOptionGroup",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the Select Option */}",
+				"\tlabel={${2:\"string\"}/* required: the label for the option */}",
+				"\tisDisabled={${3:false}/* optional: flag indicating if the Option Group is disabled */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Select Option Group */}",
+				"</FormSelectOptionGroup>"
+      ],
+      "description": "FormSelectOptionGroup"
+    }
+  ,
+	"InputGroup": 
+    {
+      "prefix": "#InputGroup",
+      "body": [
+        "<InputGroup",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the input group. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the input group. */}",
+				"</InputGroup>"
+      ],
+      "description": "InputGroup"
+    }
+  ,
+	"InputGroupText": 
+    {
+      "prefix": "#InputGroupText",
+      "body": [
+        "<InputGroupText",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the input group text. */}",
+				"\tcomponent={${2:'span'}/* optional: Component that wraps the input group text. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the input group text. */}",
+				"</InputGroupText>"
+      ],
+      "description": "InputGroupText"
+    }
+  ,
+	"Label": 
+    {
+      "prefix": "#Label",
+      "body": [
+        "<Label",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the label. */}",
+				"\tisCompact={${2:false}/* optional: Flag to show if the label is compact. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the label. */}",
+				"</Label>"
+      ],
+      "description": "Label"
+    }
+  ,
+	"ListItem": 
+    {
+      "prefix": "#ListItem",
+      "body": [
+        "<ListItem",
+				"",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered inside of list item */}",
+				"</ListItem>"
+      ],
+      "description": "ListItem"
+    }
+  ,
+	"Login": 
+    {
+      "prefix": "#Login",
+      "body": [
+        "<Login",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the login layout */}",
+				"\tfooter={${2:null}/* optional: Footer component (e.g. <LoginFooter />) */}",
+				"\theader={${3:null}/* optional: Header component (e.g. <LoginHeader />) */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the main section of the login layout */}",
+				"</Login>"
+      ],
+      "description": "Login"
+    }
+  ,
+	"LoginFooter": 
+    {
+      "prefix": "#LoginFooter",
+      "body": [
+        "<LoginFooter",
+				"\tclassName={${1:\"''\"}/* optional: Additional props are spread to the container <footer> */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the footer of the login layout */}",
+				"</LoginFooter>"
+      ],
+      "description": "LoginFooter"
+    }
+  ,
+	"LoginFooterItem": 
+    {
+      "prefix": "#LoginFooterItem",
+      "body": [
+        "<LoginFooterItem",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Footer Link Item */}",
+				"\thref={${2:\"'#'\"}/* optional: The URL of the Footer Link Item */}",
+				"\ttarget={${3:\"'_blank'\"}/* optional: Specifies where to open the linked document */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the footer Link Item */}",
+				"</LoginFooterItem>"
+      ],
+      "description": "LoginFooterItem"
+    }
+  ,
+	"LoginForm": 
+    {
+      "prefix": "#LoginForm",
+      "body": [
+        "<LoginForm",
+				"\tnoAutoFocus={${1:false}/* optional: Flag to indicate if the first dropdown item should not gain initial focus */}",
+				"\tclassName={${2:\"''\"}/* optional: Additional classes added to the Login Main Body's Form */}",
+				"\tshowHelperText={${3:false}/* optional: Flag indicating the Helper Text is visible * */}",
+				"\thelperText={${4:null}/* optional: Content displayed in the Helper Text component * */}",
+				"\tusernameLabel={${5:\"'Username'\"}/* optional: Label for the Username Input Field */}",
+				"\tusernameValue={${6:\"''\"}/* optional: Value for the Username */}",
+				"\tonChangeUsername={${7:() => undefined as any}/* optional: Function that handles the onChange event for the Username */}",
+				"\tisValidUsername={${8:true}/* optional: Flag indicating if the Username is valid */}",
+				"\tpasswordLabel={${9:\"'Password'\"}/* optional: Label for the Password Input Field */}",
+				"\tpasswordValue={${10:\"''\"}/* optional: Value for the Password */}",
+				"\tonChangePassword={${11:() => undefined as any}/* optional: Function that handles the onChange event for the Password */}",
+				"\tisValidPassword={${12:true}/* optional: Flag indicating if the Password is valid */}",
+				"\tloginButtonLabel={${13:\"'Log In'\"}/* optional: Label for the Log in Button Input */}",
+				"\tisLoginButtonDisabled={${14:false}/* optional: Flag indicating if the Login Button is disabled */}",
+				"\tonLoginButtonClick={${15:() => undefined as any}/* optional: Function that is called when the Login button is clicked */}",
+				"\trememberMeLabel={${16:\"''\"}/* optional: Label for the Remember Me Checkbox that indicates the user should be kept logged in.  If the label is not provided, the checkbox will not show. */}",
+				"\tisRememberMeChecked={${17:false}/* optional: Flag indicating if the remember me Checkbox is checked. */}",
+				"\tonChangeRememberMe={${18:() => undefined as any}/* optional: Function that handles the onChange event for the Remember Me Checkbox */}",
+				"\trememberMeAriaLabel={${19:\"''\"}/* optional:  */}",
+				"/>"
+      ],
+      "description": "LoginForm"
+    }
+  ,
+	"LoginHeader": 
+    {
+      "prefix": "#LoginHeader",
+      "body": [
+        "<LoginHeader",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the login header */}",
+				"\theaderBrand={${2:null}/* optional: Header Brand component (e.g. <LoginHeader />) */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the header of the login layout */}",
+				"</LoginHeader>"
+      ],
+      "description": "LoginHeader"
+    }
+  ,
+	"LoginMainBody": 
+    {
+      "prefix": "#LoginMainBody",
+      "body": [
+        "<LoginMainBody",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Login Main Body */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Login Main Body */}",
+				"</LoginMainBody>"
+      ],
+      "description": "LoginMainBody"
+    }
+  ,
+	"LoginMainFooter": 
+    {
+      "prefix": "#LoginMainFooter",
+      "body": [
+        "<LoginMainFooter",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Login Main Footer */}",
+				"\tsocialMediaLoginContent={${2:null}/* optional: Content rendered inside the Login Main Footer as Social Media Links* */}",
+				"\tsignUpForAccountMessage={${3:null}/* optional: Content rendered inside of Login Main Footer Band to display a sign up for account message */}",
+				"\tforgotCredentials={${4:null}/* optional: Content rendered inside of Login Main Footer Band do display a forgot credentials link* */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Login Main Footer */}",
+				"</LoginMainFooter>"
+      ],
+      "description": "LoginMainFooter"
+    }
+  ,
+	"LoginMainFooterBandItem": 
+    {
+      "prefix": "#LoginMainFooterBandItem",
+      "body": [
+        "<LoginMainFooterBandItem",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Footer Link Item */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the footer Link Item */}",
+				"</LoginMainFooterBandItem>"
+      ],
+      "description": "LoginMainFooterBandItem"
+    }
+  ,
+	"LoginMainFooterLinksItem": 
+    {
+      "prefix": "#LoginMainFooterLinksItem",
+      "body": [
+        "<LoginMainFooterLinksItem",
+				"\thref={${1:\"''\"}/* optional: HREF for Footer Link Item */}",
+				"\ttarget={${2:\"''\"}/* optional: Target for Footer Link Item */}",
+				"\tclassName={${3:\"''\"}/* optional: Additional classes added to the Footer Link Item */}",
+				"\tlinkComponent={${4:'a'}/* optional: Component used to render the Footer Link Item */}",
+				"\tlinkComponentProps={${5:'any'}/* optional: Props for the LinkComponent */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the footer Link Item */}",
+				"</LoginMainFooterLinksItem>"
+      ],
+      "description": "LoginMainFooterLinksItem"
+    }
+  ,
+	"LoginMainHeader": 
+    {
+      "prefix": "#LoginMainHeader",
+      "body": [
+        "<LoginMainHeader",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Login Main Header */}",
+				"\ttitle={${2:\"''\"}/* optional: Title for the Login Main Header */}",
+				"\tsubtitle={${3:\"''\"}/* optional: Subtitle that contains the Text, URL, and URL Text for the Login Main Header */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Login Main Header */}",
+				"</LoginMainHeader>"
+      ],
+      "description": "LoginMainHeader"
+    }
+  ,
+	"LoginPage": 
+    {
+      "prefix": "#LoginPage",
+      "body": [
+        "<LoginPage",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the LoginPage. */}",
+				"\tbrandImgSrc={${2:\"''\"}/* optional: Attribute that specifies the URL of the brand image for the LoginPage */}",
+				"\tbrandImgAlt={${3:\"''\"}/* optional: Attribute that specifies the alt text of the brand image for the LoginPage. */}",
+				"\tbackgroundImgSrc={${4:''}/* optional: Attribute that specifies the URL of the background image for the LoginPage */}",
+				"\tbackgroundImgAlt={${5:\"''\"}/* optional: Attribute that specifies the alt text of the background image for the LoginPage. */}",
+				"\ttextContent={${6:\"''\"}/* optional: Content rendered inside of the Text Component of the LoginPage */}",
+				"\tfooterListItems={${7:null}/* optional: Items rendered inside of the Footer List Component of the LoginPage */}",
+				"\tfooterListVariants={${8:undefined}/* optional: Adds list variant styles for the Footer List component of the LoginPage. The only current value is'inline' */}",
+				"\tloginTitle={${9:\"string\"}/* required: Title for the Login Main Body Header of the LoginPage */}",
+				"\tloginSubtitle={${10:\"string\"}/* optional: Subtitle for the Login Main Body Header of the LoginPage */}",
+				"\tsignUpForAccountMessage={${11:null}/* optional: Content rendered inside of Login Main Footer Band to display a sign up for account message */}",
+				"\tforgotCredentials={${12:null}/* optional: Content rendered inside of Login Main Footer Band to display a forgot credentials link* */}",
+				"\tsocialMediaLoginContent={${13:null}/* optional: Content rendered inside of Social Media Login footer section . */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered inside of the LoginPage (e.g. <LoginPageForm>) */}",
+				"</LoginPage>"
+      ],
+      "description": "LoginPage"
+    }
+  ,
+	"Modal": 
+    {
+      "prefix": "#Modal",
+      "body": [
+        "<Modal",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Modal */}",
+				"\tisOpen={${2:false}/* optional: Flag to show the modal */}",
+				"\theader={${3:<div>ReactNode</div>}/* optional: Complex header (more than just text), supersedes title for header content */}",
+				"\ttitle={${4:\"string\"}/* required: Simple text content of the Modal Header, also used for aria-label on the body */}",
+				"\thideTitle={${5:false}/* optional: Flag to hide the title */}",
+				"\tshowClose={${6:true}/* optional: Flag to show the close button in the header area of the modal */}",
+				"\tariaDescribedById={${7:\"''\"}/* optional: Id to use for Modal Box description */}",
+				"\tfooter={${8:<div>ReactNode</div>}/* optional: Custom footer */}",
+				"\tactions={${9:[]}/* optional: Action buttons to add to the standard Modal Footer, ignored if `footer` is given */}",
+				"\tisFooterLeftAligned={${10:false}/* optional: Flag to indicate that the Footer content is left aligned */}",
+				"\tonClose={${11:() => undefined as any}/* optional: A callback for when the close button is clicked */}",
+				"\twidth={${12:1}/* optional: Default width of the Modal. */}",
+				"\tisLarge={${13:false}/* optional: Creates a large version of the Modal */}",
+				"\tisSmall={${14:false}/* optional: Creates a small version of the Modal */}",
+				"\tappendTo={${15:(typeof document !== 'undefined' && document.body) || null}/* optional: The parent container to append the modal to. Defaults to document.body */}",
+				"\tdisableFocusTrap={${16:true}/* optional: Flag to disable focus trap */}",
+				"\tdescription={${17:<div>ReactNode</div>}/* optional: Description of the modal */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the Modal. */}",
+				"</Modal>"
+      ],
+      "description": "Modal"
+    }
+  ,
+	"ModalBox": 
+    {
+      "prefix": "#ModalBox",
+      "body": [
+        "<ModalBox",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the ModalBox */}",
+				"\tisLarge={${2:false}/* optional: Creates a large version of the ModalBox */}",
+				"\tisSmall={${3:false}/* optional: Creates a small version of the ModalBox. */}",
+				"\ttitle={${4:\"string\"}/* required: String to use for Modal Box aria-label */}",
+				"\tid={${5:\"string\"}/* required: Id to use for Modal Box description */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the ModalBox. */}",
+				"</ModalBox>"
+      ],
+      "description": "ModalBox"
+    }
+  ,
+	"ModalBoxBody": 
+    {
+      "prefix": "#ModalBoxBody",
+      "body": [
+        "<ModalBoxBody",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the ModalBoxBody */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the ModalBoxBody */}",
+				"</ModalBoxBody>"
+      ],
+      "description": "ModalBoxBody"
+    }
+  ,
+	"ModalBoxCloseButton": 
+    {
+      "prefix": "#ModalBoxCloseButton",
+      "body": [
+        "<ModalBoxCloseButton",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the close button */}",
+				"\tonClose={${2:() => undefined as any}/* optional: A callback for when the close button is clicked */}",
+				"/>"
+      ],
+      "description": "ModalBoxCloseButton"
+    }
+  ,
+	"ModalBoxDescription": 
+    {
+      "prefix": "#ModalBoxDescription",
+      "body": [
+        "<ModalBoxDescription",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the description */}",
+				"\tid={${2:\"''\"}/* optional: ID of the description */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the description */}",
+				"</ModalBoxDescription>"
+      ],
+      "description": "ModalBoxDescription"
+    }
+  ,
+	"ModalBoxFooter": 
+    {
+      "prefix": "#ModalBoxFooter",
+      "body": [
+        "<ModalBoxFooter",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Footer */}",
+				"\tisLeftAligned={${2:false}/* optional: Flag to align buttons to the left */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Footer */}",
+				"</ModalBoxFooter>"
+      ],
+      "description": "ModalBoxFooter"
+    }
+  ,
+	"ModalBoxHeader": 
+    {
+      "prefix": "#ModalBoxHeader",
+      "body": [
+        "<ModalBoxHeader",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the button */}",
+				"\thideTitle={${2:false}/* optional: Flag to hide the title */}",
+				"\theadingLevel={${3:'h1'}/* optional: The heading level to use */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the Header */}",
+				"</ModalBoxHeader>"
+      ],
+      "description": "ModalBoxHeader"
+    }
+  ,
+	"ModalContent": 
+    {
+      "prefix": "#ModalContent",
+      "body": [
+        "<ModalContent",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the button */}",
+				"\tisLarge={${2:false}/* optional: Creates a large version of the Modal */}",
+				"\tisSmall={${3:false}/* optional: Creates a small version of the Modal */}",
+				"\tisOpen={${4:false}/* optional: Flag to show the modal */}",
+				"\theader={${5:null}/* optional: Complex header (more than just text), supersedes title for header content */}",
+				"\tdescription={${6:null}/* optional: Description of the modal */}",
+				"\ttitle={${7:\"string\"}/* required: Simple text content of the Modal Header, also used for aria-label on the body */}",
+				"\thideTitle={${8:false}/* optional: Flag to show the title (ignored for custom headers) */}",
+				"\tshowClose={${9:true}/* optional: Flag to show the close button in the header area of the modal */}",
+				"\twidth={${10:-1}/* optional: Default width of the content. */}",
+				"\tfooter={${11:null}/* optional: Custom footer */}",
+				"\tactions={${12:[]}/* optional: Action buttons to add to the standard Modal Footer, ignored if `footer` is given */}",
+				"\tisFooterLeftAligned={${13:false}/* optional: Flag to indicate that the Footer content is left aligned */}",
+				"\tonClose={${14:() => undefined as any}/* optional: A callback for when the close button is clicked */}",
+				"\tariaDescribedById={${15:\"''\"}/* optional: Id to use for Modal Box description */}",
+				"\tid={${16:\"''\"}/* optional: Id of the ModalBoxBody */}",
+				"\tdisableFocusTrap={${17:false}/* optional: Flag to disable focus trap */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Content rendered inside the Modal. */}",
+				"</ModalContent>"
+      ],
+      "description": "ModalContent"
+    }
+  ,
+	"Nav": 
+    {
+      "prefix": "#Nav",
+      "body": [
+        "<Nav",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the container */}",
+				"\tonSelect={${2:() => undefined}/* optional: Callback for updating when item selection changes */}",
+				"\tonToggle={${3:() => undefined}/* optional: Callback for when a list is expanded or collapsed */}",
+				"\taria-label={${4:\"''\"}/* optional: Accessibility label */}",
+				"\ttheme={${5:'light'}/* optional: Indicates which theme color to use */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered inside of the nav */}",
+				"</Nav>"
+      ],
+      "description": "Nav"
+    }
+  ,
+	"NavExpandable": 
+    {
+      "prefix": "#NavExpandable",
+      "body": [
+        "<NavExpandable",
+				"\ttitle={${1:\"string\"}/* required: Title shown for the expandable list */}",
+				"\tsrText={${2:\"''\"}/* optional: If defined, screen readers will read this text instead of the list title */}",
+				"\tisExpanded={${3:false}/* optional: Boolean to programatically expand or collapse section */}",
+				"\tclassName={${4:\"''\"}/* optional: Additional classes added to the container */}",
+				"\tgroupId={${5:null}/* optional: Group identifier, will be returned with the onToggle and onSelect callback passed to the Nav component */}",
+				"\tisActive={${6:false}/* optional: If true makes the expandable list title active */}",
+				"\tid={${7:\"''\"}/* optional: Identifier to use for the section aria label */}",
+				"\tonExpand={${8:(e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => undefined as void}/* optional: allow consumer to optionally override this callback and manage expand state externally */}",
+				">",
+				"\t{${0:''}/* optional: Anything that can be rendered inside of the expandable list */}",
+				"</NavExpandable>"
+      ],
+      "description": "NavExpandable"
+    }
+  ,
+	"NavGroup": 
+    {
+      "prefix": "#NavGroup",
+      "body": [
+        "<NavGroup",
+				"\ttitle={${1:\"string\"}/* required: Title shown for the group */}",
+				"\tclassName={${2:\"''\"}/* optional: Additional classes added to the container */}",
+				"\tid={${3:\"string\"}/* optional: Identifier to use for the section aria label */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered inside of the group */}",
+				"</NavGroup>"
+      ],
+      "description": "NavGroup"
+    }
+  ,
+	"NavItem": 
+    {
+      "prefix": "#NavItem",
+      "body": [
+        "<NavItem",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the nav item */}",
+				"\tto={${2:\"''\"}/* optional: Target navigation link */}",
+				"\tisActive={${3:false}/* optional: Flag indicating whether the item is active */}",
+				"\tgroupId={${4:null}/* optional: Group identifier, will be returned with the onToggle and onSelect callback passed to the Nav component */}",
+				"\titemId={${5:null}/* optional: Item identifier, will be returned with the onToggle and onSelect callback passed to the Nav component */}",
+				"\tpreventDefault={${6:false}/* optional: If true prevents the default anchor link action to occur. Set to true if you want to handle navigation yourself. */}",
+				"\tonClick={${7:null}/* optional: Callback for item click */}",
+				"\tcomponent={${8:'a'}/* optional: Component used to render NavItems */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the nav item */}",
+				"</NavItem>"
+      ],
+      "description": "NavItem"
+    }
+  ,
+	"NavList": 
+    {
+      "prefix": "#NavList",
+      "body": [
+        "<NavList",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the list */}",
+				"\tvariant={${2:'default'}/* optional: Indicates the list type. */}",
+				"\tariaLeftScroll={${3:\"'Scroll left'\"}/* optional: aria-label for the left scroll button */}",
+				"\tariaRightScroll={${4:\"'Scroll right'\"}/* optional: aria-label for the right scroll button */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Children nodes */}",
+				"</NavList>"
+      ],
+      "description": "NavList"
+    }
+  ,
+	"NotificationBadge": 
+    {
+      "prefix": "#NotificationBadge",
+      "body": [
+        "<NotificationBadge",
+				"\tisRead={${1:false}/* optional: Adds styling to the notification badge to indicate it has been read */}",
+				"\tclassName={${2:\"string\"}/* optional: additional classes added to the Notification Badge */}",
+				"\taria-label={${3:\"string\"}/* optional: Adds accessible text to the Notification Badge. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: content rendered inside the Notification Badge */}",
+				"</NotificationBadge>"
+      ],
+      "description": "NotificationBadge"
+    }
+  ,
+	"OptionsMenu": 
+    {
+      "prefix": "#OptionsMenu",
+      "body": [
+        "<OptionsMenu",
+				"\tclassName={${1:\"''\"}/* optional: Classes applied to root element of the options menu */}",
+				"\tid={${2:\"string\"}/* required: Id of the root element of the options menu */}",
+				"\tmenuItems={${3:[]}/* required: Array of OptionsMenuItem and/or OptionMenuGroup nodes that will be rendered in the options menu list */}",
+				"\ttoggle={${4:<p>ReactElement</p>}/* required: Either an OptionsMenuToggle or an OptionsMenuToggleWithText to use to toggle the options menu */}",
+				"\tisPlain={${5:true}/* optional: Flag to indicate the toggle has no border or background */}",
+				"\tisOpen={${6:true}/* optional: Flag to indicate if menu is open */}",
+				"\tisText={${7:false}/* optional: Flag to indicate if toggle is textual toggle */}",
+				"\tisGrouped={${8:false}/* optional: Flag to indicate if menu is groupped */}",
+				"\tariaLabelMenu={${9:\"string\"}/* optional: Provides an accessible name for the options menu */}",
+				"\tposition={${10:'right'}/* optional: Indicates where menu will be aligned horizontally */}",
+				"\tdirection={${11:'up'}/* optional: Menu will open up or open down from the options menu toggle */}",
+				"/>"
+      ],
+      "description": "OptionsMenu"
+    }
+  ,
+	"OptionsMenuItem": 
+    {
+      "prefix": "#OptionsMenuItem",
+      "body": [
+        "<OptionsMenuItem",
+				"\tclassName={${1:\"string\"}/* optional: Classes applied to root element of an options menu item */}",
+				"\tisSelected={${2:false}/* optional: Render options menu item as selected */}",
+				"\tisDisabled={${3:true}/* optional: Render options menu item as disabled option */}",
+				"\tonSelect={${4:() => null as any}/* optional: Callback for when this options menu item is selected */}",
+				"\tid={${5:\"''\"}/* optional: Unique id of this options menu item */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything which can be rendered as an options menu item */}",
+				"</OptionsMenuItem>"
+      ],
+      "description": "OptionsMenuItem"
+    }
+  ,
+	"OptionsMenuItemGroup": 
+    {
+      "prefix": "#OptionsMenuItemGroup",
+      "body": [
+        "<OptionsMenuItemGroup",
+				"\tclassName={${1:\"''\"}/* optional: Classes applied to root element of the options menu items group */}",
+				"\tariaLabel={${2:\"''\"}/* optional: Provides an accessible name for the options menu items group */}",
+				"\tgroupTitle={${3:''}/* optional: Optional title for the options menu items group */}",
+				"\thasSeparator={${4:false}/* optional: Flag indicating this options menu items group will be followed by a horizontal separator */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content to be rendered in the options menu items component */}",
+				"</OptionsMenuItemGroup>"
+      ],
+      "description": "OptionsMenuItemGroup"
+    }
+  ,
+	"OptionsMenuSeparator": 
+    {
+      "prefix": "#OptionsMenuSeparator",
+      "body": [
+        "<OptionsMenuSeparator",
+				"\tclassName={${1:\"''\"}/* optional: Classes applied to root element of options menu separator item */}",
+				"/>"
+      ],
+      "description": "OptionsMenuSeparator"
+    }
+  ,
+	"OptionsMenuToggle": 
+    {
+      "prefix": "#OptionsMenuToggle",
+      "body": [
+        "<OptionsMenuToggle",
+				"\tparentId={${1:\"''\"}/* optional: Id of the parent options menu component */}",
+				"\tonToggle={${2:(isOpen: boolean) => undefined as void}/* optional: Callback for when this options menu is toggled */}",
+				"\tisOpen={${3:false}/* optional: Flag to indicate if menu is open */}",
+				"\tisPlain={${4:false}/* optional: Flag to indicate if the button is plain */}",
+				"\tisFocused={${5:false}/* optional: Forces display of the hover state of the options menu */}",
+				"\tisHovered={${6:false}/* optional: Forces display of the hover state of the options menu */}",
+				"\tisSplitButton={${7:false}/* optional:  */}",
+				"\tisActive={${8:false}/* optional: Forces display of the active state of the options menu */}",
+				"\tisDisabled={${9:false}/* optional: Disables the options menu toggle */}",
+				"\thideCaret={${10:false}/* optional: hide the toggle caret */}",
+				"\taria-label={${11:\"'Options menu'\"}/* optional: Provides an accessible name for the button when an icon is used instead of text */}",
+				"\tonEnter={${12:(event: React.MouseEvent<HTMLButtonElement>) => undefined as void}/* optional: Internal function to implement enter click */}",
+				"\tparentRef={${13:document.body}/* optional: Internal parent reference */}",
+				"\ttoggleTemplate={${14:<div>ReactNode</div>}/* optional: Content to be rendered in the options menu toggle button */}",
+				"/>"
+      ],
+      "description": "OptionsMenuToggle"
+    }
+  ,
+	"OptionsMenuToggleWithText": 
+    {
+      "prefix": "#OptionsMenuToggleWithText",
+      "body": [
+        "<OptionsMenuToggleWithText",
+				"\tparentId={${1:\"''\"}/* optional: Id of the parent options menu component */}",
+				"\ttoggleText={${2:<div>ReactNode</div>}/* required: Content to be rendered inside the options menu toggle as text or another non-interactive element */}",
+				"\ttoggleTextClassName={${3:\"''\"}/* optional: classes to be added to the options menu toggle text */}",
+				"\ttoggleButtonContents={${4:<div>ReactNode</div>}/* optional: Content to be rendered inside the options menu toggle button */}",
+				"\ttoggleButtonContentsClassName={${5:\"''\"}/* optional: Classes to be added to the options menu toggle button */}",
+				"\tonToggle={${6:() => null as any}/* optional: Callback for when this options menu is toggled */}",
+				"\tonEnter={${7:(event: React.MouseEvent<HTMLButtonElement>) => undefined as void}/* optional: Inner function to indicate open on Enter */}",
+				"\tisOpen={${8:false}/* optional: Flag to indicate if menu is open */}",
+				"\tisPlain={${9:false}/* optional: Flag to indicate if the button is plain */}",
+				"\tisFocused={${10:false}/* optional: Forces display of the focused state of the options menu button */}",
+				"\tisHovered={${11:false}/* optional: Forces display of the hover state of the options menu button */}",
+				"\tisActive={${12:false}/* optional: Forces display of the active state of the options menu button */}",
+				"\tisDisabled={${13:false}/* optional: Disables the options menu toggle */}",
+				"\tparentRef={${14:document.body}/* optional: Internal parent reference */}",
+				"\tariaHasPopup={${15:true}/* optional: Indicates that the element has a popup context menu or sub-level menu */}",
+				"\taria-label={${16:\"'Options menu'\"}/* optional: Provides an accessible name for the button when an icon is used instead of text */}",
+				"/>"
+      ],
+      "description": "OptionsMenuToggleWithText"
+    }
+  ,
+	"OverflowMenu": 
+    {
+      "prefix": "#OverflowMenu",
+      "body": [
+        "<OverflowMenu",
+				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the OverflowMenu. */}",
+				"\tbreakpoint={${2:'md'}/* required: Indicates breakpoint at which to switch between horizontal menu and vertical dropdown */}",
+				">",
+				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
+				"</OverflowMenu>"
+      ],
+      "description": "OverflowMenu"
+    }
+  ,
+	"OverflowMenuContent": 
+    {
+      "prefix": "#OverflowMenuContent",
+      "body": [
+        "<OverflowMenuContent",
+				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the OverflowMenuContent */}",
+				"\tisPersistent={${2:true}/* optional: Modifies the overflow menu content visibility */}",
+				">",
+				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
+				"</OverflowMenuContent>"
+      ],
+      "description": "OverflowMenuContent"
+    }
+  ,
+	"OverflowMenuControl": 
+    {
+      "prefix": "#OverflowMenuControl",
+      "body": [
+        "<OverflowMenuControl",
+				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the OverflowMenuControl */}",
+				"\thasAdditionalOptions={${2:true}/* optional: Triggers the overflow dropdown to persist at all viewport sizes */}",
+				">",
+				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
+				"</OverflowMenuControl>"
+      ],
+      "description": "OverflowMenuControl"
+    }
+  ,
+	"OverflowMenuDropdownItem": 
+    {
+      "prefix": "#OverflowMenuDropdownItem",
+      "body": [
+        "<OverflowMenuDropdownItem",
+				"\tisShared={${1:false}/* optional: Indicates when a dropdown item shows and hides the corresponding list item */}",
+				">",
+				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
+				"</OverflowMenuDropdownItem>"
+      ],
+      "description": "OverflowMenuDropdownItem"
+    }
+  ,
+	"OverflowMenuGroup": 
+    {
+      "prefix": "#OverflowMenuGroup",
+      "body": [
+        "<OverflowMenuGroup",
+				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the OverflowMenuGroup */}",
+				"\tisPersistent={${2:false}/* optional: Modifies the overflow menu group visibility */}",
+				"\tgroupType={${3:'button'}/* optional: Indicates a button or icon group */}",
+				">",
+				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
+				"</OverflowMenuGroup>"
+      ],
+      "description": "OverflowMenuGroup"
+    }
+  ,
+	"OverflowMenuItem": 
+    {
+      "prefix": "#OverflowMenuItem",
+      "body": [
+        "<OverflowMenuItem",
+				"\tclassName={${1:\"string\"}/* optional: Additional classes added to the OverflowMenuItem */}",
+				"\tisPersistent={${2:false}/* optional: Modifies the overflow menu item visibility */}",
+				">",
+				"\t{${0:'any'}/* optional: Any elements that can be rendered in the menu */}",
+				"</OverflowMenuItem>"
+      ],
+      "description": "OverflowMenuItem"
+    }
+  ,
+	"Page": 
+    {
+      "prefix": "#Page",
+      "body": [
+        "<Page",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the page layout */}",
+				"\theader={${2:null}/* optional: Header component (e.g. <PageHeader />) */}",
+				"\tsidebar={${3:null}/* optional: Sidebar component for a side nav (e.g. <PageSidebar />) */}",
+				"\tskipToContent={${4:null}/* optional: Skip to content component for the page */}",
+				"\trole={${5:\"string\"}/* optional: Sets the value for role on the <main> element */}",
+				"\tmainContainerId={${6:\"null\"}/* optional: an id to use for the [role=\"main\"] element */}",
+				"\tisManagedSidebar={${7:false}/* optional: If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into | the sidebar component or add a callback onNavToggle function into the PageHeader component */}",
+				"\tdefaultManagedSidebarIsOpen={${8:true}/* optional: If true, the managed sidebar is initially open for desktop view */}",
+				"\tonPageResize={${9:(): void => null}/* optional: Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px | Returns object { mobileView: boolean, windowSize: number } */}",
+				"\tbreadcrumb={${10:null}/* optional: Breadcrumb component for the page */}",
+				"\tmainAriaLabel={${11:\"string\"}/* optional: Accessible label, can be used to name main section */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the main section of the page layout (e.g. <PageSection />) */}",
+				"</Page>"
+      ],
+      "description": "Page"
+    }
+  ,
+	"PageHeader": 
+    {
+      "prefix": "#PageHeader",
+      "body": [
+        "<PageHeader",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the page header */}",
+				"\tlogo={${2:null}/* optional: Component to render the logo/brand (e.g. <Brand />) */}",
+				"\tlogoProps={${3:null}/* optional: Additional props passed to the logo anchor container */}",
+				"\tlogoComponent={${4:'a'}/* optional: Component to use to wrap the passed <logo> */}",
+				"\ttoolbar={${5:null}/* optional: Component to render the toolbar (e.g. <Toolbar />) */}",
+				"\tavatar={${6:null}/* optional: Component to render the avatar (e.g. <Avatar /> */}",
+				"\ttopNav={${7:null}/* optional: Component to render navigation within the header (e.g. <Nav /> */}",
+				"\tshowNavToggle={${8:false}/* optional: True to show the nav toggle button (toggles side nav) */}",
+				"\tisNavOpen={${9:true}/* optional: True if the side nav is shown */}",
+				"\tisManagedSidebar={${10:true}/* optional: If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into | the sidebar component or add a callback onNavToggle function into the PageHeader component */}",
+				"\trole={${11:\"string\"}/* optional: Sets the value for role on the <main> element */}",
+				"\tonNavToggle={${12:() => undefined as any}/* optional: Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */}",
+				"\taria-label={${13:\"'Global navigation'\"}/* optional: Aria Label for the nav toggle button */}",
+				"/>"
+      ],
+      "description": "PageHeader"
+    }
+  ,
+	"PageSection": 
+    {
+      "prefix": "#PageSection",
+      "body": [
+        "<PageSection",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the section */}",
+				"\tvariant={${2:'default'}/* optional: Section background color variant */}",
+				"\ttype={${3:'default'}/* optional: Section type variant */}",
+				"\tisFilled={${4:true}/* optional: Enables the page section to fill the available vertical space */}",
+				"\tnoPadding={${5:false}/* optional: Modifies a main page section to have no padding */}",
+				"\tnoPaddingMobile={${6:false}/* optional: Modifies a main page section to have no padding on mobile */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content rendered inside the section */}",
+				"</PageSection>"
+      ],
+      "description": "PageSection"
+    }
+  ,
+	"PageSidebar": 
+    {
+      "prefix": "#PageSidebar",
+      "body": [
+        "<PageSidebar",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the page sidebar */}",
+				"\tnav={${2:<div>ReactNode</div>}/* optional: Component to render the side navigation (e.g. <Nav /> */}",
+				"\tisManagedSidebar={${3:true}/* optional: If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into | the sidebar component or add a callback onNavToggle function into the PageHeader component */}",
+				"\tisNavOpen={${4:true}/* optional: Programmatically manage if the side nav is shown, if isManagedSidebar is set to true in the Page component, this prop is managed */}",
+				"\ttheme={${5:'light'}/* optional: Indicates the color scheme of the sidebar */}",
+				"/>"
+      ],
+      "description": "PageSidebar"
+    }
+  ,
+	"Navigation": 
+    {
+      "prefix": "#Navigation",
+      "body": [
+        "<Navigation",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes for the container */}",
+				"\tisDisabled={${2:false}/* optional: Flag indicating if the pagination is disabled */}",
+				"\tisCompact={${3:false}/* optional: Flag indicating if the pagination is compact */}",
+				"\tlastPage={${4:0}/* optional: The number of the last page */}",
+				"\tfirstPage={${5:0}/* optional: The number of first page where pagination starts */}",
+				"\tpagesTitle={${6:\"''\"}/* optional: The title of a page displayed beside the page number */}",
+				"\ttoLastPage={${7:\"'Go to last page'\"}/* optional: Accessible label for the button which moves to the last page */}",
+				"\ttoPreviousPage={${8:\"'Go to previous page'\"}/* optional: Accessible label for the button which moves to the previous page */}",
+				"\ttoNextPage={${9:\"'Go to next page'\"}/* optional: Accessible label for the button which moves to the next page */}",
+				"\ttoFirstPage={${10:\"'Go to first page'\"}/* optional: Accessible label for the button which moves to the first page */}",
+				"\tcurrPage={${11:\"'Current page'\"}/* optional: Accessible label for the input displaying the current page */}",
+				"\tpaginationTitle={${12:\"'Pagination'\"}/* optional: Accessible label for the pagination component */}",
+				"\tpage={${13:42}/* required: The number of the current page */}",
+				"\tperPage={${14:42}/* optional: Number of items per page. */}",
+				"\tonSetPage={${15:{}/*unrecognizedType OnSetPage undefined*/}/* required: Function called when page is changed */}",
+				"\tonNextClick={${16:() => undefined as any}/* optional: Function called when user clicks to navigate to next page */}",
+				"\tonPreviousClick={${17:() => undefined as any}/* optional: Function called when user clicks to navigate to previous page */}",
+				"\tonFirstClick={${18:() => undefined as any}/* optional: Function called when user clicks to navigate to first page */}",
+				"\tonLastClick={${19:() => undefined as any}/* optional: Function called when user clicks to navigate to last page */}",
+				"\tonPageInput={${20:() => undefined as any}/* optional: Function called when user inputs page number */}",
+				"/>"
+      ],
+      "description": "Navigation"
+    }
+  ,
+	"OptionsToggle": 
+    {
+      "prefix": "#OptionsToggle",
+      "body": [
+        "<OptionsToggle",
+				"\titemsTitle={${1:\"'items'\"}/* optional: The type or title of the items being paginated */}",
+				"\toptionsToggle={${2:\"'Select'\"}/* optional: The text to be displayed on the Options Toggle */}",
+				"\titemsPerPageTitle={${3:\"'Items per page'\"}/* optional: The Title of the Pagination Options Menu */}",
+				"\tfirstIndex={${4:0}/* optional: The first index of the items being paginated */}",
+				"\tlastIndex={${5:0}/* optional: The last index of the items being paginated */}",
+				"\titemCount={${6:0}/* optional: The total number of items being paginated */}",
+				"\twidgetId={${7:\"''\"}/* optional: Id added to the title of the Pagination Options Menu */}",
+				"\tshowToggle={${8:true}/* optional: showToggle */}",
+				"\tonToggle={${9:(_isOpen: boolean) => undefined as any}/* optional: Event function that fires when user clicks the Options Menu toggle */}",
+				"\tisOpen={${10:false}/* optional: Flag indicating if the Options Menu dropdown is open or not */}",
+				"\tisDisabled={${11:false}/* optional: Flag indicating if the Options Menu is disabled */}",
+				"\tparentRef={${12:null}/* optional:  */}",
+				"\ttoggleTemplate={${13:''}/* optional: This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */}",
+				"\tonEnter={${14:null}/* optional: Callback for toggle open on keyboard entry */}",
+				"/>"
+      ],
+      "description": "OptionsToggle"
+    }
+  ,
+	"Pagination": 
+    {
+      "prefix": "#Pagination",
+      "body": [
+        "<Pagination",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes for the container. */}",
+				"\titemCount={${2:42}/* required: Total number of items. */}",
+				"\tvariant={${3:'top'}/* optional: Position where pagination is rendered. */}",
+				"\tisDisabled={${4:false}/* optional: Flag indicating if pagination is disabled */}",
+				"\tisCompact={${5:false}/* optional: Flag indicating if pagination is compact */}",
+				"\tperPage={${6:42}/* optional: Number of items per page. */}",
+				"\tperPageOptions={${7:[",
+				"  {",
+				"    title: '10',",
+				"    value: 10",
+				"  },",
+				"  {",
+				"    title: '20',",
+				"    value: 20",
+				"  },",
+				"  {",
+				"    title: '50',",
+				"    value: 50",
+				"  },",
+				"  {",
+				"    title: '100',",
+				"    value: 100",
+				"  }",
+				"]}/* optional: Select from options to number of items per page. */}",
+				"\tdefaultToFullPage={${8:false}/* optional: Indicate whether to show last full page of results when user selects perPage value greater than remaining rows */}",
+				"\tfirstPage={${9:1}/* optional: Page we start at. */}",
+				"\tpage={${10:0}/* optional: Current page number. */}",
+				"\toffset={${11:0}/* optional: Start index of rows to display, used in place of providing page */}",
+				"\titemsStart={${12:null}/* optional: First index of items on current page. */}",
+				"\titemsEnd={${13:null}/* optional: Last index of items on current page. */}",
+				"\twidgetId={${14:\"'pagination-options-menu'\"}/* optional: ID to ideintify widget on page. */}",
+				"\tdropDirection={${15:'up'}/* optional: Direction of dropdown context menu. */}",
+				"\ttitles={${16:undefined}/* optional: Object with titles to display in pagination. */}",
+				"\ttoggleTemplate={${17:'string'}/* optional: This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */}",
+				"\tonSetPage={${18:() => undefined}/* optional: Function called when user sets page. */}",
+				"\tonFirstClick={${19:() => undefined}/* optional: Function called when user clicks on navigate to first page. */}",
+				"\tonPreviousClick={${20:() => undefined}/* optional: Function called when user clicks on navigate to previous page. */}",
+				"\tonNextClick={${21:() => undefined}/* optional: Function called when user clicks on navigate to next page. */}",
+				"\tonLastClick={${22:() => undefined}/* optional: Function called when user clicks on navigate to last page. */}",
+				"\tonPageInput={${23:() => undefined}/* optional: Function called when user inputs page number. */}",
+				"\tonPerPageSelect={${24:() => undefined}/* optional: Function called when user selects number of items per page. */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: What should be rendered inside */}",
+				"</Pagination>"
+      ],
+      "description": "Pagination"
+    }
+  ,
+	"PaginationOptionsMenu": 
+    {
+      "prefix": "#PaginationOptionsMenu",
+      "body": [
+        "<PaginationOptionsMenu",
+				"\tclassName={${1:\"''\"}/* optional: Custom class name added to the Pagination Options Menu */}",
+				"\twidgetId={${2:\"''\"}/* optional: Id added to the title of the Pagination Options Menu */}",
+				"\tisDisabled={${3:false}/* optional: Flag indicating if Pagination Options Menu is disabled */}",
+				"\tdropDirection={${4:'up'}/* optional: Menu will open up or open down from the Options menu toggle */}",
+				"\tperPageOptions={${5:[]}/* optional: Array of titles and values which will be the options on the Options Menu dropdown */}",
+				"\titemsPerPageTitle={${6:\"'Items per page'\"}/* optional: The Title of the Pagination Options Menu */}",
+				"\tpage={${7:42}/* optional: Current page number */}",
+				"\tperPageSuffix={${8:\"'per page'\"}/* optional: The suffix to be displayed after each option on the Options Menu dropdown */}",
+				"\titemsTitle={${9:\"'items'\"}/* optional: The type or title of the items being paginated */}",
+				"\toptionsToggle={${10:\"'Select'\"}/* optional: The text to be displayed on the Options Toggle */}",
+				"\titemCount={${11:0}/* optional: The total number of items being paginated */}",
+				"\tfirstIndex={${12:0}/* optional: The first index of the items being paginated */}",
+				"\tlastIndex={${13:0}/* optional: The last index of the items being paginated */}",
+				"\tdefaultToFullPage={${14:false}/* optional: Flag to show last full page of results if perPage selected > remaining rows */}",
+				"\tperPage={${15:0}/* optional: The number of items to be displayed per page */}",
+				"\tlastPage={${16:42}/* optional: The number of the last page */}",
+				"\ttoggleTemplate={${17:({ firstIndex, lastIndex, itemCount, itemsTitle }: ToggleTemplateProps) => (",
+				"  <React.Fragment>",
+				"    <b>",
+				"      {firstIndex} - {lastIndex}",
+				"    </b>{' '}",
+				"    of<b>{itemCount}</b> {itemsTitle}",
+				"  </React.Fragment>",
+				")}/* optional: This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */}",
+				"\tonPerPageSelect={${18:() => null as any}/* optional: Function called when user selects number of items per page. */}",
+				"/>"
+      ],
+      "description": "PaginationOptionsMenu"
+    }
+  ,
+	"ToggleTemplate": 
+    {
+      "prefix": "#ToggleTemplate",
+      "body": [
+        "<ToggleTemplate",
+				"\tfirstIndex={${1:0}/* optional: The first index of the items being paginated */}",
+				"\tlastIndex={${2:0}/* optional: The last index of the items being paginated */}",
+				"\titemCount={${3:0}/* optional: The total number of items being paginated */}",
+				"\titemsTitle={${4:\"'items'\"}/* optional: The type or title of the items being paginated */}",
+				"/>"
+      ],
+      "description": "ToggleTemplate"
+    }
+  ,
+	"Popover": 
+    {
+      "prefix": "#Popover",
+      "body": [
+        "<Popover",
+				"\taria-label={${1:\"''\"}/* optional: Accessible label, required when header is not present */}",
+				"\tappendTo={${2:() => document.body}/* optional: The element to append the popover to, defaults to body */}",
+				"\tbodyContent={${3:<div>ReactNode</div>}/* required: Body content */}",
+				"\tboundary={${4:'window'}/* optional: If enableFlip is true, the popover responds to this boundary */}",
+				"\tclassName={${5:\"''\"}/* optional: Popover additional class */}",
+				"\tcloseBtnAriaLabel={${6:\"'Close'\"}/* optional: Aria label for the Close button */}",
+				"\tdistance={${7:25}/* optional: Distance of the popover to its target, defaults to 25 */}",
+				"\tenableFlip={${8:true}/* optional: If true, tries to keep the popover in view by flipping it if necessary */}",
+				"\tflipBehavior={${9:['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']}/* optional: The desired position to flip the popover to if the initial position is not possible. | By setting this prop to 'flip' it attempts to flip the popover to the opposite side if there is no space. | You can also pass an array of positions that determines the flip order. It should contain the initial position | followed by alternative positions if that position is unavailable. | Example: Initial position is 'top'. Button with popover is in the top right corner. 'flipBehavior' is set to | ['top', 'right', 'left']. Since there is no space to the top, it checks if right is available. There's also no | space to the right, so it finally shows the popover on the left. */}",
+				"\tfooterContent={${10:null}/* optional: Footer content */}",
+				"\theaderContent={${11:null}/* optional: Header content, leave empty for no header */}",
+				"\thideOnOutsideClick={${12:true}/* optional: Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */}",
+				"\tisVisible={${13:null}/* optional: True to show the popover programmatically. Used in conjunction with the shouldClose prop. | By default, the popover child element handles click events automatically. If you want to control this programmatically, | the popover will not auto-close if the Close button is clicked, ESC key is used, or if a click occurs outside the popover. | Instead, the consumer is responsible for closing the popover themselves by adding a callback listener for the shouldClose prop. */}",
+				"\tminWidth={${14:\"string\"}/* optional: Minimum width of the popover (default 6.25rem) */}",
+				"\tmaxWidth={${15:\"string\"}/* optional: Maximum width of the popover (default 18.75rem) */}",
+				"\tonHidden={${16:(): void => null}/* optional: Lifecycle function invoked when the popover has fully transitioned out. */}",
+				"\tonHide={${17:(): void => null}/* optional: Lifecycle function invoked when the popover begins to transition out. */}",
+				"\tonMount={${18:(): void => null}/* optional: Lifecycle function invoked when the popover has been mounted to the DOM. */}",
+				"\tonShow={${19:(): void => null}/* optional: Lifecycle function invoked when the popover begins to transition in. */}",
+				"\tonShown={${20:(): void => null}/* optional: Lifecycle function invoked when the popover has fully transitioned in. */}",
+				"\tposition={${21:'top'}/* optional: Popover position. Note: With 'enableFlip' set to true, | it will change the position if there is not enough space for the starting position. | The behavior of where it flips to can be controlled through the flipBehavior prop. */}",
+				"\tshouldClose={${22:(): void => null}/* optional: Callback function that is only invoked when isVisible is also controlled. Called when the popover Close button is | clicked or the ESC key is used */}",
+				"\tzIndex={${23:9999}/* optional: z-index of the popover */}",
+				"\ttippyProps={${24:undefined}/* optional: additional Props to pass through to tippy.js */}",
+				">",
+				"\t{${0:<p>ReactElement</p>}/* required: The reference element to which the popover is relatively placed to */}",
+				"</Popover>"
+      ],
+      "description": "Popover"
+    }
+  ,
+	"PopoverArrow": 
+    {
+      "prefix": "#PopoverArrow",
+      "body": [
+        "<PopoverArrow",
+				"\tclassName={${1:\"''\"}/* optional: Popover arrow additional className */}",
+				"/>"
+      ],
+      "description": "PopoverArrow"
+    }
+  ,
+	"PopoverBody": 
+    {
+      "prefix": "#PopoverBody",
+      "body": [
+        "<PopoverBody",
+				"\tid={${1:\"string\"}/* required: PopoverBody id */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: PopoverBody content */}",
+				"</PopoverBody>"
+      ],
+      "description": "PopoverBody"
+    }
+  ,
+	"PopoverCloseButton": 
+    {
+      "prefix": "#PopoverCloseButton",
+      "body": [
+        "<PopoverCloseButton",
+				"\tonClose={${1:() => undefined as void}/* optional: PopoverCloseButton onClose function */}",
+				"\taria-label={${2:\"string\"}/* required: Aria label for the Close button */}",
+				"/>"
+      ],
+      "description": "PopoverCloseButton"
+    }
+  ,
+	"PopoverContent": 
+    {
+      "prefix": "#PopoverContent",
+      "body": [
+        "<PopoverContent",
+				"\tclassName={${1:\"null\"}/* optional: PopoverContent additional class */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: PopoverContent content */}",
+				"</PopoverContent>"
+      ],
+      "description": "PopoverContent"
+    }
+  ,
+	"PopoverDialog": 
+    {
+      "prefix": "#PopoverDialog",
+      "body": [
+        "<PopoverDialog",
+				"\tposition={${1:'top'}/* optional: PopoverDialog position */}",
+				"\tclassName={${2:\"null\"}/* optional: PopoverDialog additional class */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: PopoverDialog body */}",
+				"</PopoverDialog>"
+      ],
+      "description": "PopoverDialog"
+    }
+  ,
+	"PopoverFooter": 
+    {
+      "prefix": "#PopoverFooter",
+      "body": [
+        "<PopoverFooter",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Popover Footer */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Footer node */}",
+				"</PopoverFooter>"
+      ],
+      "description": "PopoverFooter"
+    }
+  ,
+	"PopoverHeader": 
+    {
+      "prefix": "#PopoverHeader",
+      "body": [
+        "<PopoverHeader",
+				"\tid={${1:\"string\"}/* required: popover id */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: header node */}",
+				"</PopoverHeader>"
+      ],
+      "description": "PopoverHeader"
+    }
+  ,
+	"Progress": 
+    {
+      "prefix": "#Progress",
+      "body": [
+        "<Progress",
+				"\tclassName={${1:\"''\"}/* optional: Classname for progress component. */}",
+				"\tsize={${2:null}/* optional: Size variant of progress. */}",
+				"\tmeasureLocation={${3:'outside'}/* optional: Where the measure percent will be located. */}",
+				"\tvariant={${4:'danger'}/* optional: Status variant of progress. */}",
+				"\ttitle={${5:\"''\"}/* optional: Title above progress. */}",
+				"\tlabel={${6:null}/* optional: Text description of current progress value to display instead of percentage. */}",
+				"\tvalue={${7:0}/* optional: Actual value of progress. */}",
+				"\tid={${8:\"''\"}/* optional: DOM id for progress component. */}",
+				"\tmin={${9:0}/* optional: Minimal value of progress. */}",
+				"\tmax={${10:100}/* optional: Maximum value of progress. */}",
+				"\tvalueText={${11:\"null\"}/* optional: Accessible text description of current progress value, for when value is not a percentage. Use with label. */}",
+				"/>"
+      ],
+      "description": "Progress"
+    }
+  ,
+	"ProgressBar": 
+    {
+      "prefix": "#ProgressBar",
+      "body": [
+        "<ProgressBar",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes for Progres bar. */}",
+				"\tvalue={${2:42}/* required: Actual progress value. */}",
+				"\tariaProps={${3:undefined}/* optional: Minimal value of progress. */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: What should be rendered inside progress bar. */}",
+				"</ProgressBar>"
+      ],
+      "description": "ProgressBar"
+    }
+  ,
+	"ProgressContainer": 
+    {
+      "prefix": "#ProgressContainer",
+      "body": [
+        "<ProgressContainer",
+				"\tariaProps={${1:undefined}/* optional: Properties needed for aria support */}",
+				"\tparentId={${2:\"string\"}/* required: Progress component DOM ID. */}",
+				"\ttitle={${3:\"''\"}/* optional: Progress title. */}",
+				"\tlabel={${4:null}/* optional: Label to indicate what progress is showing. */}",
+				"\tvariant={${5:'danger'}/* optional: Type of progress status. */}",
+				"\tmeasureLocation={${6:'outside'}/* optional: Location of progress value. */}",
+				"\tvalue={${7:42}/* required: Actual progress value. */}",
+				"/>"
+      ],
+      "description": "ProgressContainer"
+    }
+  ,
+	"Radio": 
+    {
+      "prefix": "#Radio",
+      "body": [
+        "<Radio",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the radio. */}",
+				"\tid={${2:\"string\"}/* required: Id of the radio. */}",
+				"\tisLabelWrapped={${3:true}/* optional: Flag to show if the radio label is wrapped on small screen. */}",
+				"\tisLabelBeforeButton={${4:true}/* optional: Flag to show if the radio label is shown before the radio button. */}",
+				"\tchecked={${5:true}/* optional: Flag to show if the radio is checked. */}",
+				"\tisChecked={${6:true}/* optional: Flag to show if the radio is checked. */}",
+				"\tisDisabled={${7:false}/* optional: Flag to show if the radio is disabled. */}",
+				"\tisValid={${8:true}/* optional: Flag to show if the radio selection is valid or invalid. */}",
+				"\tlabel={${9:<div>ReactNode</div>}/* optional: Label text of the radio. */}",
+				"\tname={${10:\"string\"}/* required: Name for group of radios */}",
+				"\tonChange={${11:() => {}}/* optional: A callback for when the radio selection changes. */}",
+				"\taria-label={${12:\"string\"}/* optional: Aria label for the radio. */}",
+				"\tdescription={${13:<div>ReactNode</div>}/* optional: Description text of the radio. */}",
+				"/>"
+      ],
+      "description": "Radio"
+    }
+  ,
+	"CheckboxSelectGroup": 
+    {
+      "prefix": "#CheckboxSelectGroup",
+      "body": [
+        "<CheckboxSelectGroup",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the CheckboxSelectGroup control */}",
+				"\tlabel={${2:\"''\"}/* optional: Group label */}",
+				"\ttitleId={${3:\"''\"}/* optional: ID for title label */}",
+				">",
+				"\t{${0:[]}/* optional: Checkboxes within group */}",
+				"</CheckboxSelectGroup>"
+      ],
+      "description": "CheckboxSelectGroup"
+    }
+  ,
+	"CheckboxSelectOption": 
+    {
+      "prefix": "#CheckboxSelectOption",
+      "body": [
+        "<CheckboxSelectOption",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Select Option */}",
+				"\tindex={${2:0}/* optional: Internal index of the option */}",
+				"\tvalue={${3:\"''\"}/* optional: The value for the option */}",
+				"\tisDisabled={${4:false}/* optional: Flag indicating if the option is disabled */}",
+				"\tisChecked={${5:false}/* optional: Internal flag indicating if the option is checked */}",
+				"\tsendRef={${6:() => {}}/* optional: Internal callback for ref tracking */}",
+				"\tkeyHandler={${7:() => {}}/* optional: Internal callback for keyboard navigation */}",
+				"\tonClick={${8:() => {}}/* optional: Optional callback for click event */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Optional alternate display for the option */}",
+				"</CheckboxSelectOption>"
+      ],
+      "description": "CheckboxSelectOption"
+    }
+  ,
+	"Select": 
+    {
+      "prefix": "#Select",
+      "body": [
+        "<Select",
+				"\tclassName={${1:\"''\"}/* optional: Classes applied to the root of the Select */}",
+				"\tdirection={${2:'up'}/* optional: Flag specifying which direction the Select menu expands */}",
+				"\tisExpanded={${3:false}/* optional: Flag to indicate if select is expanded */}",
+				"\tisGrouped={${4:false}/* optional: Flag to indicate if select options are grouped */}",
+				"\tisPlain={${5:false}/* optional: Display the toggle with no border or background */}",
+				"\tisDisabled={${6:false}/* optional: Flag to indicate if select is disabled */}",
+				"\tisCreatable={${7:false}/* optional: Flag to indicate if the typeahead select allows new items */}",
+				"\tcreateText={${8:\"'Create'\"}/* optional: Text displayed in typeahead select to prompt the user to create an item */}",
+				"\tplaceholderText={${9:''}/* optional: Title text of Select */}",
+				"\tnoResultsFoundText={${10:\"'No results found'\"}/* optional: Text to display in typeahead select when no results are found */}",
+				"\tselections={${11:''}/* optional: Selected item for single select variant.  Array of selected items for multi select variants. */}",
+				"\tisCheckboxSelectionBadgeHidden={${12:true}/* optional: Flag indicating if selection badge should be hidden for checkbox variant,default false */}",
+				"\ttoggleId={${13:\"null\"}/* optional: Id for select toggle element */}",
+				"\taria-label={${14:\"''\"}/* optional: Adds accessible text to Select */}",
+				"\tariaLabelledBy={${15:\"''\"}/* optional: Id of label for the Select aria-labelledby */}",
+				"\tariaLabelTypeAhead={${16:\"''\"}/* optional: Label for input field of type ahead select variants */}",
+				"\tariaLabelClear={${17:\"'Clear all'\"}/* optional: Label for clear selection button of type ahead select variants */}",
+				"\tariaLabelToggle={${18:\"'Options menu'\"}/* optional: Label for toggle of type ahead select variants */}",
+				"\tariaLabelRemove={${19:\"'Remove'\"}/* optional: Label for remove chip button of multiple type ahead select variant */}",
+				"\tonSelect={${20:(",
+				"  event: React.MouseEvent | React.ChangeEvent,",
+				"  value: string | SelectOptionObject,",
+				"  isPlaceholder?: boolean",
+				") => undefined as void}/* optional: Callback for selection behavior */}",
+				"\tonToggle={${21:(isExpanded: boolean) => undefined as void}/* required: Callback for toggle button behavior */}",
+				"\tonClear={${22:() => undefined as void}/* optional: Callback for typeahead clear button */}",
+				"\tonFilter={${23:null}/* optional: Optional callback for custom filtering */}",
+				"\tonCreateOption={${24:() => undefined as void}/* optional: Optional callback for newly created options */}",
+				"\tvariant={${25:'single'}/* optional: Variant of rendered Select */}",
+				"\twidth={${26:''}/* optional: Width of the select container as a number of px or string percentage */}",
+				"\tmaxHeight={${27:'string'}/* optional: Max height of the select container as a number of px or string percentage */}",
+				"\ttoggleIcon={${28:null}/* optional: Icon element to render inside the select toggle */}",
+				"\tcustomContent={${29:null}/* optional: Custom content to render in the select menu.  If this prop is defined, the variant prop will be ignored and the select will render with a single select toggle */}",
+				"\thasInlineFilter={${30:false}/* optional: Flag indicating if select should have an inline text input for filtering */}",
+				">",
+				"\t{${0:[]}/* optional: Content rendered inside the Select */}",
+				"</Select>"
+      ],
+      "description": "Select"
+    }
+  ,
+	"SelectGroup": 
+    {
+      "prefix": "#SelectGroup",
+      "body": [
+        "<SelectGroup",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the CheckboxSelectGroup control */}",
+				"\tlabel={${2:\"''\"}/* optional: Group label */}",
+				"\ttitleId={${3:\"''\"}/* optional: ID for title label */}",
+				">",
+				"\t{${0:[]}/* optional: Checkboxes within group */}",
+				"</SelectGroup>"
+      ],
+      "description": "SelectGroup"
+    }
+  ,
+	"SelectMenu": 
+    {
+      "prefix": "#SelectMenu",
+      "body": [
+        "<SelectMenu",
+				"\tisCustomContent={${1:false}/* optional: Flag indicating that the children is custom content to render inside the SelectMenu.  If true, variant prop is ignored. */}",
+				"\tclassName={${2:\"''\"}/* optional: Additional classes added to the SelectMenu control */}",
+				"\tisExpanded={${3:false}/* optional: Flag indicating the Select is expanded */}",
+				"\tisGrouped={${4:false}/* optional: Flag indicating the Select options are grouped */}",
+				"\tselected={${5:''}/* optional: Currently selected option (for single, typeahead variants) */}",
+				"\tchecked={${6:[]}/* optional: Currently checked options (for checkbox variant) */}",
+				"\topenedOnEnter={${7:false}/* optional: Internal flag for specifiying how the menu was opened */}",
+				"\tmaxHeight={${8:''}/* optional: Flag to specify the  maximum height of the menu, as a string percentage or number of pixels */}",
+				"\tnoResultsFoundText={${9:\"string\"}/* optional: Inner prop passed from parent */}",
+				"\tcreateText={${10:\"string\"}/* optional: Inner prop passed from parent */}",
+				"\tsendRef={${11:() => {}}/* optional: Internal callback for ref tracking */}",
+				"\tkeyHandler={${12:() => {}}/* optional: Internal callback for keyboard navigation */}",
+				"\thasInlineFilter={${13:false}/* optional: Flag indicating select has an inline text input for filtering */}",
+				">",
+				"\t{${0:[undefined as React.ReactElement]}/* required: Content rendered inside the SelectMenu */}",
+				"</SelectMenu>"
+      ],
+      "description": "SelectMenu"
+    }
+  ,
+	"SelectOption": 
+    {
+      "prefix": "#SelectOption",
+      "body": [
+        "<SelectOption",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Select Option */}",
+				"\tindex={${2:0}/* optional: Internal index of the option */}",
+				"\tcomponent={${3:'button'}/* optional: Indicates which component will be used as select item */}",
+				"\tvalue={${4:''}/* optional: The value for the option, can be a string or select option object */}",
+				"\tisDisabled={${5:false}/* optional: Flag indicating if the option is disabled */}",
+				"\tisPlaceholder={${6:false}/* optional: Flag indicating if the option acts as a placeholder */}",
+				"\tisNoResultsOption={${7:false}/* optional: Flad indicating if the option acts as a \"no results\" indicator */}",
+				"\tisSelected={${8:false}/* optional: Internal flag indicating if the option is selected */}",
+				"\tisChecked={${9:false}/* optional: Internal flag indicating if the option is checked */}",
+				"\tisFocused={${10:false}/* optional: Internal flag indicating if the option is focused */}",
+				"\tsendRef={${11:() => {}}/* optional: Internal callback for ref tracking */}",
+				"\tkeyHandler={${12:() => {}}/* optional: Internal callback for keyboard navigation */}",
+				"\tonClick={${13:() => {}}/* optional: Optional callback for click event */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Optional alternate display for the option */}",
+				"</SelectOption>"
+      ],
+      "description": "SelectOption"
+    }
+  ,
+	"SelectToggle": 
+    {
+      "prefix": "#SelectToggle",
+      "body": [
+        "<SelectToggle",
+				"\tid={${1:\"string\"}/* required: HTML ID of dropdown toggle */}",
+				"\tclassName={${2:\"''\"}/* optional: Classes applied to root element of dropdown toggle */}",
+				"\tisExpanded={${3:false}/* optional: Flag to indicate if select is expanded */}",
+				"\tonToggle={${4:() => {}}/* optional: Callback called when toggle is clicked */}",
+				"\tonEnter={${5:() => {}}/* optional: Callback for toggle open on keyboard entry */}",
+				"\tonClose={${6:() => {}}/* optional: Callback for toggle close */}",
+				"\thandleTypeaheadKeys={${7:(position: string) => undefined as void}/* optional: Internal callback for toggle keyboard navigation */}",
+				"\tparentRef={${8:{ current: document.createElement('div') }}/* required: Element which wraps toggle */}",
+				"\tisFocused={${9:false}/* optional: Forces focus state */}",
+				"\tisHovered={${10:false}/* optional: Forces hover state */}",
+				"\tisActive={${11:false}/* optional: Forces active state */}",
+				"\tisPlain={${12:false}/* optional: Display the toggle with no border or background */}",
+				"\tisDisabled={${13:false}/* optional: Flag indicating if select is disabled */}",
+				"\ttype={${14:'button'}/* optional: Type of the toggle button, defaults to 'button' */}",
+				"\tariaLabelledBy={${15:\"''\"}/* optional: Id of label for the Select aria-labelledby */}",
+				"\tariaLabelToggle={${16:\"''\"}/* optional: Label for toggle of select variants */}",
+				"\tvariant={${17:'single'}/* optional: Flag for variant, determines toggle rules and interaction */}",
+				"\thasClearButton={${18:false}/* optional: Flag indicating if select toggle has an clear button */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: Anything which can be rendered as dropdown toggle */}",
+				"</SelectToggle>"
+      ],
+      "description": "SelectToggle"
+    }
+  ,
+	"SimpleList": 
+    {
+      "prefix": "#SimpleList",
+      "body": [
+        "<SimpleList",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the SimpleList container */}",
+				"\tonSelect={${2:(",
+				"  ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,",
+				"  props: SimpleListItemProps",
+				") => undefined as void}/* optional: Callback when an item is selected */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the SimpleList */}",
+				"</SimpleList>"
+      ],
+      "description": "SimpleList"
+    }
+  ,
+	"SimpleListGroup": 
+    {
+      "prefix": "#SimpleListGroup",
+      "body": [
+        "<SimpleListGroup",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the SimpleList <ul> */}",
+				"\ttitleClassName={${2:\"''\"}/* optional: Additional classes added to the SimpleList group title */}",
+				"\ttitle={${3:''}/* optional: Title of the SimpleList group */}",
+				"\tid={${4:\"''\"}/* optional: ID of SimpleList group */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the SimpleList group */}",
+				"</SimpleListGroup>"
+      ],
+      "description": "SimpleListGroup"
+    }
+  ,
+	"SimpleListItem": 
+    {
+      "prefix": "#SimpleListItem",
+      "body": [
+        "<SimpleListItem",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the SimpleList <li> */}",
+				"\tcomponent={${2:'button'}/* optional: Component type of the SimpleList item */}",
+				"\tcomponentClassName={${3:\"''\"}/* optional: Additional classes added to the SimpleList <a> or <button> */}",
+				"\tcomponentProps={${4:'any'}/* optional: Additional props added to the SimpleList <a> or <button> */}",
+				"\tisCurrent={${5:false}/* optional: Indicates if the link is current/highlighted */}",
+				"\tonClick={${6:() => {}}/* optional: OnClick callback for the SimpleList item */}",
+				"\ttype={${7:'button'}/* optional: Type of button SimpleList item */}",
+				"\thref={${8:\"''\"}/* optional: Default hyperlink location */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered inside the SimpleList item */}",
+				"</SimpleListItem>"
+      ],
+      "description": "SimpleListItem"
+    }
+  ,
+	"SkipToContent": 
+    {
+      "prefix": "#SkipToContent",
+      "body": [
+        "<SkipToContent",
+				"\tcomponent={${1:'a'}/* optional: Sets the base component to render. Defaults to an anchor */}",
+				"\thref={${2:\"string\"}/* required: The skip to content link. */}",
+				"\tclassName={${3:\"''\"}/* optional: Additional styles to apply to the skip to content component. */}",
+				"\tshow={${4:false}/* optional: Forces the skip to component to display. This is primarily for demonstration purposes and would not normally be used. */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: Content to display within the skip to content component, typically a string. */}",
+				"</SkipToContent>"
+      ],
+      "description": "SkipToContent"
+    }
+  ,
+	"Spinner": 
+    {
+      "prefix": "#Spinner",
+      "body": [
+        "<Spinner",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Spinner. */}",
+				"\tsize={${2:'xl'}/* optional: Size variant of progress. */}",
+				"\taria-valuetext={${3:\"'Loading...'\"}/* optional: Aria value text */}",
+				"/>"
+      ],
+      "description": "Spinner"
+    }
+  ,
+	"Switch": 
+    {
+      "prefix": "#Switch",
+      "body": [
+        "<Switch",
+				"\tid={${1:\"''\"}/* optional: id for the label. */}",
+				"\tclassName={${2:\"''\"}/* optional: Additional classes added to the Switch */}",
+				"\tlabel={${3:\"''\"}/* optional: Text value for the label when on */}",
+				"\tlabelOff={${4:\"''\"}/* optional: Text value for the label when off */}",
+				"\tisChecked={${5:true}/* optional: Flag to show if the Switch is checked. */}",
+				"\tisDisabled={${6:false}/* optional: Flag to show if the Switch is disabled. */}",
+				"\tonChange={${7:() => undefined as any}/* optional: A callback for when the Switch selection changes. (isChecked, event) => {} */}",
+				"\taria-label={${8:\"''\"}/* optional: Adds accessible text to the Switch, and should describe the isChecked=\"true\" state. When label is defined, aria-label should be set to the text string that is visible when isChecked is true. */}",
+				"/>"
+      ],
+      "description": "Switch"
+    }
+  ,
+	"TabButton": 
+    {
+      "prefix": "#TabButton",
+      "body": [
+        "<TabButton",
+				"\tclassName={${1:\"string\"}/* optional: additional classes added to the Tab */}",
+				"\thref={${2:\"string\"}/* optional: URL associated with the Tab. A Tab with an href will render as an <a> instead of a <button>. A Tab inside a <Tabs variant=\"nav\"> should have an href. */}",
+				"\ttabContentRef={${3:() => {}}/* optional: child reference for case in which a TabContent section is defined outside of a Tabs component */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* optional: content rendered inside the Tab content area. */}",
+				"</TabButton>"
+      ],
+      "description": "TabButton"
+    }
+  ,
+	"TabContent": 
+    {
+      "prefix": "#TabContent",
+      "body": [
+        "<TabContent",
+				"\tchild={${1:<p>ReactElement</p>}/* optional: Child to show in the content area */}",
+				"\tclassName={${2:\"string\"}/* optional: class of tab content area if used outside Tabs component */}",
+				"\tactiveKey={${3:1}/* optional: Identifies the active Tab */}",
+				"\teventKey={${4:1}/* optional: uniquely identifies the controlling Tab if used outside Tabs component */}",
+				"\tinnerRef={${5:() => {}}/* optional: Callback for the section ref */}",
+				"\tid={${6:\"string\"}/* required: id passed from parent to identify the content section */}",
+				"\taria-label={${7:\"string\"}/* optional: title of controlling Tab if used outside Tabs component */}",
+				">",
+				"\t{${0:'any'}/* optional: content rendered inside the tab content area if used outside Tabs component */}",
+				"</TabContent>"
+      ],
+      "description": "TabContent"
+    }
+  ,
+	"Tabs": 
+    {
+      "prefix": "#Tabs",
+      "body": [
+        "<Tabs",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the Tabs */}",
+				"\tactiveKey={${2:0}/* optional: the index of the active tab */}",
+				"\tonSelect={${3:() => undefined as any}/* optional: handle tab selection */}",
+				"\tid={${4:\"string\"}/* optional: uniquely identifies the Tabs */}",
+				"\tisFilled={${5:false}/* optional: enables the filled tab list layout */}",
+				"\tisSecondary={${6:false}/* optional: enables Secondary Tab styling */}",
+				"\tleftScrollAriaLabel={${7:\"'Scroll left'\"}/* optional: aria-label for the left Scroll Button */}",
+				"\trightScrollAriaLabel={${8:\"'Scroll right'\"}/* optional: aria-label for the right Scroll Button */}",
+				"\tvariant={${9:'div'}/* optional: determines what tag is used around the Tabs. Use \"nav\" to define the Tabs inside a navigation region */}",
+				"\taria-label={${10:\"string\"}/* optional: provides an accessible label for the Tabs. Labels should be unique for each set of Tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the Tabs from other navigation regions on the page. */}",
+				"\tmountOnEnter={${11:false}/* optional: waits until the first \"enter\" transition to mount tab children (add them to the DOM) */}",
+				"\tunmountOnExit={${12:false}/* optional: unmounts tab children (removes them from the DOM) when they are no longer visible */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: content rendered inside the Tabs Component. */}",
+				"</Tabs>"
+      ],
+      "description": "Tabs"
+    }
+  ,
+	"Text": 
+    {
+      "prefix": "#Text",
+      "body": [
+        "<Text",
+				"\tcomponent={${1:'h1'}/* optional: The text component */}",
+				"\tclassName={${2:\"''\"}/* optional: Additional classes added to the Text */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered within the Text */}",
+				"</Text>"
+      ],
+      "description": "Text"
+    }
+  ,
+	"TextContent": 
+    {
+      "prefix": "#TextContent",
+      "body": [
+        "<TextContent",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the TextContent */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered within the TextContent */}",
+				"</TextContent>"
+      ],
+      "description": "TextContent"
+    }
+  ,
+	"TextList": 
+    {
+      "prefix": "#TextList",
+      "body": [
+        "<TextList",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the TextList */}",
+				"\tcomponent={${2:'ul'}/* optional: The text list component */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered within the TextList */}",
+				"</TextList>"
+      ],
+      "description": "TextList"
+    }
+  ,
+	"TextListItem": 
+    {
+      "prefix": "#TextListItem",
+      "body": [
+        "<TextListItem",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the TextListItem */}",
+				"\tcomponent={${2:'li'}/* optional: The text list item component */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Content rendered within the TextListItem */}",
+				"</TextListItem>"
+      ],
+      "description": "TextListItem"
+    }
+  ,
+	"TextArea": 
+    {
+      "prefix": "#TextArea",
+      "body": [
+        "<TextArea",
+				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the TextArea. */}",
+				"\tisRequired={${2:false}/* optional: Flag to show if the TextArea is required. */}",
+				"\tisValid={${3:true}/* optional: Flag to show if the TextArea is valid or invalid. This prop will be deprecated. You should use validated instead. */}",
+				"\tvalidated={${4:'default'}/* optional: Value to indicate if the textarea is modified to show that validation state. | If set to success, textarea will be modified to indicate valid state. | If set to error, textarea will be modified to indicate error state. */}",
+				"\tvalue={${5:'string'}/* optional: Value of the TextArea. */}",
+				"\tonChange={${6:(value: string, event: React.ChangeEvent<HTMLTextAreaElement>) => undefined as void}/* optional: A callback for when the TextArea value changes. */}",
+				"\tresizeOrientation={${7:'both'}/* optional: Sets the orientation to limit the resize to */}",
+				"\taria-label={${8:\"null\"}/* optional: Custom flag to show that the TextArea requires an associated id or aria-label. */}",
+				"/>"
+      ],
+      "description": "TextArea"
+    }
+  ,
+	"Title": 
+    {
+      "prefix": "#Title",
+      "body": [
+        "<Title",
+				"\tsize={${1:'xs'}/* required: the size of the Title */}",
+				"\tclassName={${2:\"''\"}/* optional: Additional classes added to the Title */}",
+				"\theadingLevel={${3:'h1'}/* optional: the heading level to use */}",
+				">",
+				"\t{${0:''}/* optional: content rendered inside the Title */}",
+				"</Title>"
+      ],
+      "description": "Title"
+    }
+  ,
+	"Tooltip": 
+    {
+      "prefix": "#Tooltip",
+      "body": [
+        "<Tooltip",
+				"\tappendTo={${1:() => document.body}/* optional: The element to append the tooltip to, defaults to body */}",
+				"\taria={${2:'describedby'}/* optional: Aria-labelledby or aria-describedby for tooltip */}",
+				"\tboundary={${3:'window'}/* optional: If enableFlip is true, the tooltip responds to this boundary */}",
+				"\tclassName={${4:\"''\"}/* optional: Tooltip additional class */}",
+				"\tcontent={${5:<div>ReactNode</div>}/* required: Tooltip content */}",
+				"\tdistance={${6:15}/* optional: Distance of the tooltip to its target, defaults to 15 */}",
+				"\tenableFlip={${7:true}/* optional: If true, tries to keep the tooltip in view by flipping it if necessary */}",
+				"\tentryDelay={${8:500}/* optional: Delay in ms before the tooltip appears */}",
+				"\texitDelay={${9:500}/* optional: Delay in ms before the tooltip disappears */}",
+				"\tflipBehavior={${10:['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']}/* optional: The desired position to flip the tooltip to if the initial position is not possible. | By setting this prop to 'flip' it attempts to flip the tooltip to the opposite side if there is no space. | You can also pass an array of positions that determines the flip order. It should contain the initial position | followed by alternative positions if that position is unavailable. | Example: Initial position is 'top'. Button with tooltip is in the top right corner. 'flipBehavior' is set to | ['top', 'right', 'left']. Since there is no space to the top, it checks if right is available. There's also no | space to the right, so it finally shows the tooltip on the left. */}",
+				"\tisAppLauncher={${11:false}/* optional: If true, displays as an application launcher */}",
+				"\tmaxWidth={${12:\"string\"}/* optional: Maximum width of the tooltip (default 12.5rem) */}",
+				"\tposition={${13:'top'}/* optional: Tooltip position. Note: With 'enableFlip' set to true, | it will change the position if there is not enough space for the starting position. | The behavior of where it flips to can be controlled through the flipBehavior prop. */}",
+				"\ttrigger={${14:\"'mouseenter focus'\"}/* optional: Tooltip trigger: click, mouseenter, focus, manual */}",
+				"\tisContentLeftAligned={${15:false}/* optional: Flag to indicate that the text content is left aligned */}",
+				"\tisVisible={${16:false}/* optional: value for visibility when trigger is 'manual' */}",
+				"\tzIndex={${17:9999}/* optional: z-index of the tooltip */}",
+				"\ttippyProps={${18:undefined}/* optional: additional Props to pass through to tippy.js */}",
+				"\tid={${19:\"''\"}/* optional: ID */}",
+				">",
+				"\t{${0:<p>ReactElement</p>}/* required: The reference element to which the tooltip is relatively placed to */}",
+				"</Tooltip>"
+      ],
+      "description": "Tooltip"
+    }
+  ,
+	"TooltipArrow": 
+    {
+      "prefix": "#TooltipArrow",
+      "body": [
+        "<TooltipArrow",
+				"\tclassName={${1:\"string\"}/* optional: className */}",
+				"/>"
+      ],
+      "description": "TooltipArrow"
+    }
+  ,
+	"TooltipContent": 
+    {
+      "prefix": "#TooltipContent",
+      "body": [
+        "<TooltipContent",
+				"\tclassName={${1:\"string\"}/* optional: PopoverContent additional class */}",
+				"\tisLeftAligned={${2:true}/* optional: Flag to align text to the left */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: PopoverContent content */}",
+				"</TooltipContent>"
+      ],
+      "description": "TooltipContent"
+    }
+  ,
+	"Wizard": 
+    {
+      "prefix": "#Wizard",
+      "body": [
+        "<Wizard",
+				"\tisOpen={${1:false}/* optional: True to show the wizard (not applicable for isInPage) */}",
+				"\tisInPage={${2:false}/* optional: True to show the wizard without the modal */}",
+				"\tisCompactNav={${3:false}/* optional: If true makes the navigation more compact */}",
+				"\tisFullHeight={${4:false}/* optional: True to set full height wizard */}",
+				"\tisFullWidth={${5:false}/* optional: True to set full width wizard */}",
+				"\twidth={${6:null}/* optional: Custom width of the wizard */}",
+				"\theight={${7:null}/* optional: Custom height of the wizard */}",
+				"\ttitle={${8:\"''\"}/* optional: The wizard title (required unless isInPage is used) */}",
+				"\tdescription={${9:\"''\"}/* optional: The wizard description */}",
+				"\tonClose={${10:() => undefined as any}/* optional: Callback function to close the wizard */}",
+				"\tonGoToStep={${11:null}/* optional: Callback function when a step in the nav is clicked */}",
+				"\tclassName={${12:\"''\"}/* optional: Additional classes spread to the Wizard */}",
+				"\tsteps={${13:[]}/* required: The wizard steps configuration object */}",
+				"\tstartAtStep={${14:1}/* optional: The current step the wizard is on (1 or higher) */}",
+				"\tariaLabelNav={${15:\"'Steps'\"}/* optional: aria-label for the Nav */}",
+				"\thasBodyPadding={${16:true}/* optional: Can remove the default padding around the main body content by setting this to false */}",
+				"\tfooter={${17:null}/* optional: (Use to control the footer) Passing in a footer component lets you control the buttons yourself */}",
+				"\tonSave={${18:() => undefined as void}/* optional: (Unused if footer is controlled) Callback function to save at the end of the wizard, if not specified uses onClose */}",
+				"\tonNext={${19:null}/* optional: (Unused if footer is controlled) Callback function after Next button is clicked */}",
+				"\tonBack={${20:null}/* optional: (Unused if footer is controlled) Callback function after Back button is clicked */}",
+				"\tnextButtonText={${21:\"'Next'\"}/* optional: (Unused if footer is controlled) The Next button text */}",
+				"\tbackButtonText={${22:\"'Back'\"}/* optional: (Unused if footer is controlled) The Back button text */}",
+				"\tcancelButtonText={${23:\"'Cancel'\"}/* optional: (Unused if footer is controlled) The Cancel button text */}",
+				"\tariaLabelCloseButton={${24:\"'Close'\"}/* optional: (Unused if footer is controlled) aria-label for the close button */}",
+				"\tappendTo={${25:null}/* optional: The parent container to append the modal to. Defaults to document.body */}",
+				"/>"
+      ],
+      "description": "Wizard"
+    }
+  ,
+	"WizardBody": 
+    {
+      "prefix": "#WizardBody",
+      "body": [
+        "<WizardBody",
+				"\thasBodyPadding={${1:true}/* optional: Set to false to remove the default body padding */}",
+				">",
+				"\t{${0:'any'}/* required: Anything that can be rendered in the Wizard body */}",
+				"</WizardBody>"
+      ],
+      "description": "WizardBody"
+    }
+  ,
+	"WizardFooter": 
+    {
+      "prefix": "#WizardFooter",
+      "body": [
+        "<WizardFooter",
+				"",
+				">",
+				"\t{${0:'any'}/* required: Buttons in the footer */}",
+				"</WizardFooter>"
+      ],
+      "description": "WizardFooter"
+    }
+  ,
+	"WizardFooterInternal": 
+    {
+      "prefix": "#WizardFooterInternal",
+      "body": [
+        "<WizardFooterInternal",
+				"\tonNext={${1:'any'}/* required:  */}",
+				"\tonBack={${2:'any'}/* required:  */}",
+				"\tonClose={${3:'any'}/* required:  */}",
+				"\tisValid={${4:true}/* required:  */}",
+				"\tfirstStep={${5:true}/* required:  */}",
+				"\tactiveStep={${6:{}/*unrecognizedType WizardStep undefined*/}/* required:  */}",
+				"\tnextButtonText={${7:\"string\"}/* required:  */}",
+				"\tbackButtonText={${8:\"string\"}/* required:  */}",
+				"\tcancelButtonText={${9:\"string\"}/* required:  */}",
+				"/>"
+      ],
+      "description": "WizardFooterInternal"
+    }
+  ,
+	"WizardHeader": 
+    {
+      "prefix": "#WizardHeader",
+      "body": [
+        "<WizardHeader",
+				"\tonClose={${1:() => undefined}/* optional: Callback function called when the X (Close) button is clicked */}",
+				"\ttitle={${2:\"string\"}/* required: Title of the wizard */}",
+				"\tdescription={${3:\"string\"}/* optional: Description of the wizard */}",
+				"\tariaLabelCloseButton={${4:\"string\"}/* optional: aria-label applied to the X (Close) button */}",
+				"\ttitleId={${5:\"string\"}/* optional: id for the title */}",
+				"\tdescriptionId={${6:\"string\"}/* optional: id for the description */}",
+				"/>"
+      ],
+      "description": "WizardHeader"
+    }
+  ,
+	"WizardNav": 
+    {
+      "prefix": "#WizardNav",
+      "body": [
+        "<WizardNav",
+				"\tariaLabel={${1:\"string\"}/* optional: aria-label applied to the nav element */}",
+				"\tisOpen={${2:false}/* optional: Whether the nav is expanded */}",
+				"\treturnList={${3:false}/* optional: True to return the inner list without the wrapping nav element */}",
+				">",
+				"\t{${0:'any'}/* optional: children should be WizardNavItem components */}",
+				"</WizardNav>"
+      ],
+      "description": "WizardNav"
+    }
+  ,
+	"WizardNavItem": 
+    {
+      "prefix": "#WizardNavItem",
+      "body": [
+        "<WizardNavItem",
+				"\ttext={${1:\"''\"}/* optional: The text to display in the nav item */}",
+				"\tisCurrent={${2:false}/* optional: Whether the nav item is the currently active item */}",
+				"\tisDisabled={${3:false}/* optional: Whether the nav item is disabled */}",
+				"\tstep={${4:42}/* required: The step passed into the onNavItemClick callback */}",
+				"\tonNavItemClick={${5:() => undefined}/* optional: Callback for when the nav item is clicked */}",
+				"\tnavItemComponent={${6:'a'}/* optional: Component used to render WizardNavItem */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Can nest a WizardNav component for substeps */}",
+				"</WizardNavItem>"
+      ],
+      "description": "WizardNavItem"
+    }
+  ,
+	"WizardToggle": 
+    {
+      "prefix": "#WizardToggle",
+      "body": [
+        "<WizardToggle",
+				"\tnav={${1:(isWizardNavOpen: boolean) => undefined as React.ReactElement}/* required: Function that returns the WizardNav component */}",
+				"\tsteps={${2:[]}/* required: The wizard steps */}",
+				"\tactiveStep={${3:{}/*unrecognizedType WizardStep undefined*/}/* required: The currently active WizardStep */}",
+				"\thasBodyPadding={${4:true}/* optional: Set to false to remove body padding */}",
+				"\tisNavOpen={${5:true}/* required: If the nav is open */}",
+				"\tonNavToggle={${6:(isOpen: boolean) => undefined as void}/* required: Callback function for when the nav is toggled */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required: The WizardFooter */}",
+				"</WizardToggle>"
+      ],
+      "description": "WizardToggle"
+    }
+  ,
+	"FocusTrap": 
+    {
+      "prefix": "#FocusTrap",
+      "body": [
+        "<FocusTrap",
+				"\tclassName={${1:\"string\"}/* optional:  */}",
+				"\tactive={${2:true}/* optional:  */}",
+				"\tpaused={${3:false}/* optional:  */}",
+				"\tfocusTrapOptions={${4:undefined}/* optional:  */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required:  */}",
+				"</FocusTrap>"
+      ],
+      "description": "FocusTrap"
+    }
+  ,
+	"PopoverBase": 
+    {
+      "prefix": "#PopoverBase",
+      "body": [
+        "<PopoverBase",
+				"\tcontent={${1:<div>ReactNode</div>}/* required:  */}",
+				"\tisEnabled={${2:true}/* optional:  */}",
+				"\tisVisible={${3:true}/* optional:  */}",
+				"\tonCreate={${4:(tippy: Instance<Props>) => undefined as void}/* optional:  */}",
+				"\ttrigger={${5:\"'mouseenter focus'\"}/* optional:  */}",
+				">",
+				"\t{${0:<div>ReactNode</div>}/* required:  */}",
+				"</PopoverBase>"
+      ],
+      "description": "PopoverBase"
+    }
+  ,
+	"Bullseye": 
+    {
+      "prefix": "#Bullseye",
+      "body": [
+        "<Bullseye",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the Bullseye layout */}",
+				"\tcomponent={${2:'div'}/* optional: Sets the base component to render. defaults to div */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Bullseye layout */}",
+				"</Bullseye>"
+      ],
+      "description": "Bullseye"
+    }
+  ,
+	"Flex": 
+    {
+      "prefix": "#Flex",
+      "body": [
+        "<Flex",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the Flex layout */}",
+				"\tbreakpointMods={${2:[]}/* optional: An array of objects representing the various modifiers to apply to the flex component at various breakpoints */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Flex layout */}",
+				"</Flex>"
+      ],
+      "description": "Flex"
+    }
+  ,
+	"FlexItem": 
+    {
+      "prefix": "#FlexItem",
+      "body": [
+        "<FlexItem",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the Flex layout */}",
+				"\tbreakpointMods={${2:[]}/* optional: An array of objects representing the various modifiers to apply to the flex item at various breakpoints */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Flex layout */}",
+				"</FlexItem>"
+      ],
+      "description": "FlexItem"
+    }
+  ,
+	"Gallery": 
+    {
+      "prefix": "#Gallery",
+      "body": [
+        "<Gallery",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the Gallery layout */}",
+				"\tgutter={${2:null}/* optional: Adds space between children. */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Gallery layout */}",
+				"</Gallery>"
+      ],
+      "description": "Gallery"
+    }
+  ,
+	"GalleryItem": 
+    {
+      "prefix": "#GalleryItem",
+      "body": [
+        "<GalleryItem",
+				"",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Gallery Item */}",
+				"</GalleryItem>"
+      ],
+      "description": "GalleryItem"
+    }
+  ,
+	"Grid": 
+    {
+      "prefix": "#Grid",
+      "body": [
+        "<Grid",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the Grid layout */}",
+				"\tgutter={${2:null}/* optional: Adds space between children. */}",
+				"\tspan={${3:null}/* optional: The number of rows a column in the grid should span.  Value should be a number 1-12 */}",
+				"\tsm={${4:1}/* optional: the number of columns all grid items should span on a small device */}",
+				"\tmd={${5:1}/* optional: the number of columns all grid items should span on a medium device */}",
+				"\tlg={${6:1}/* optional: the number of columns all grid items should span on a large device */}",
+				"\txl={${7:1}/* optional: the number of columns all grid items should span on a xLarge device */}",
+				"\txl2={${8:1}/* optional: the number of columns all grid items should span on a 2xLarge device */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Grid layout */}",
+				"</Grid>"
+      ],
+      "description": "Grid"
+    }
+  ,
+	"GridItem": 
+    {
+      "prefix": "#GridItem",
+      "body": [
+        "<GridItem",
+				"\tclassName={${1:\"''\"}/* optional: additional classes added to the Grid Layout Item */}",
+				"\tspan={${2:null}/* optional: the number of columns the grid item spans. Value should be a number 1-12 */}",
+				"\trowSpan={${3:null}/* optional: the number of rows the grid item spans. Value should be a number 1-12 */}",
+				"\toffset={${4:null}/* optional: the number of columns a grid item is offset */}",
+				"\tsm={${5:1}/* optional: the number of columns the grid item spans on small device. Value should be a number 1-12 */}",
+				"\tsmRowSpan={${6:1}/* optional: the number of rows the grid item spans on medium device. Value should be a number 1-12 */}",
+				"\tsmOffset={${7:1}/* optional: the number of columns the grid item is offset on small device. Value should be a number 1-12 */}",
+				"\tmd={${8:1}/* optional: the number of columns the grid item spans on medium device. Value should be a number 1-12 */}",
+				"\tmdRowSpan={${9:1}/* optional: the number of rows the grid item spans on medium device. Value should be a number 1-12 */}",
+				"\tmdOffset={${10:1}/* optional: the number of columns the grid item is offset on medium device. Value should be a number 1-12 */}",
+				"\tlg={${11:1}/* optional: the number of columns the grid item spans on large device. Value should be a number 1-12 */}",
+				"\tlgRowSpan={${12:1}/* optional: the number of rows the grid item spans on large device. Value should be a number 1-12 */}",
+				"\tlgOffset={${13:1}/* optional: the number of columns the grid item is offset on large device. Value should be a number 1-12 */}",
+				"\txl={${14:1}/* optional: the number of columns the grid item spans on xLarge device. Value should be a number 1-12 */}",
+				"\txlRowSpan={${15:1}/* optional: the number of rows the grid item spans on large device. Value should be a number 1-12 */}",
+				"\txlOffset={${16:1}/* optional: the number of columns the grid item is offset on xLarge device. Value should be a number 1-12 */}",
+				"\txl2={${17:1}/* optional: the number of columns the grid item spans on 2xLarge device. Value should be a number 1-12 */}",
+				"\txl2RowSpan={${18:1}/* optional: the number of rows the grid item spans on 2xLarge device. Value should be a number 1-12 */}",
+				"\txl2Offset={${19:1}/* optional: the number of columns the grid item is offset on 2xLarge device. Value should be a number 1-12 */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Grid Layout Item */}",
+				"</GridItem>"
+      ],
+      "description": "GridItem"
+    }
+  ,
+	"Level": 
+    {
+      "prefix": "#Level",
+      "body": [
+        "<Level",
+				"\tgutter={${1:null}/* optional: Adds space between children. */}",
+				"\tclassName={${2:\"''\"}/* optional: additional classes added to the Level layout */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Level layout */}",
+				"</Level>"
+      ],
+      "description": "Level"
+    }
+  ,
+	"LevelItem": 
+    {
+      "prefix": "#LevelItem",
+      "body": [
+        "<LevelItem",
+				"",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Level Layout Item */}",
+				"</LevelItem>"
+      ],
+      "description": "LevelItem"
+    }
+  ,
+	"Split": 
+    {
+      "prefix": "#Split",
+      "body": [
+        "<Split",
+				"\tgutter={${1:null}/* optional: Adds space between children. */}",
+				"\tclassName={${2:\"''\"}/* optional: additional classes added to the Split layout */}",
+				"\tcomponent={${3:'div'}/* optional: Sets the base component to render. defaults to div */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Split layout */}",
+				"</Split>"
+      ],
+      "description": "Split"
+    }
+  ,
+	"SplitItem": 
+    {
+      "prefix": "#SplitItem",
+      "body": [
+        "<SplitItem",
+				"\tisFilled={${1:false}/* optional: Flag indicating if this Split Layout item should fill the available horizontal space. */}",
+				"\tclassName={${2:\"''\"}/* optional: additional classes added to the Split Layout Item */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Split Layout Item */}",
+				"</SplitItem>"
+      ],
+      "description": "SplitItem"
+    }
+  ,
+	"Stack": 
+    {
+      "prefix": "#Stack",
+      "body": [
+        "<Stack",
+				"\tgutter={${1:null}/* optional: Adds space between children. */}",
+				"\tclassName={${2:\"''\"}/* optional: additional classes added to the Stack layout */}",
+				"\tcomponent={${3:'div'}/* optional: Sets the base component to render. defaults to div */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: content rendered inside the Stack layout */}",
+				"</Stack>"
+      ],
+      "description": "Stack"
+    }
+  ,
+	"StackItem": 
+    {
+      "prefix": "#StackItem",
+      "body": [
+        "<StackItem",
+				"\tisFilled={${1:false}/* optional: Flag indicating if this Stack Layout item should fill the available vertical space. */}",
+				"\tclassName={${2:\"''\"}/* optional: content rendered inside the Stack Layout Item */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: additional classes added to the Stack Layout Item */}",
+				"</StackItem>"
+      ],
+      "description": "StackItem"
+    }
+  ,
+	"Toolbar": 
+    {
+      "prefix": "#Toolbar",
+      "body": [
+        "<Toolbar",
+				"\tclassName={${1:\"null\"}/* optional: Classes applied to toolbar parent */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as toolbar content */}",
+				"</Toolbar>"
+      ],
+      "description": "Toolbar"
+    }
+  ,
+	"ToolbarGroup": 
+    {
+      "prefix": "#ToolbarGroup",
+      "body": [
+        "<ToolbarGroup",
+				"\tclassName={${1:\"null\"}/* optional: Classes applied to toolbar group */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as one toolbar group */}",
+				"</ToolbarGroup>"
+      ],
+      "description": "ToolbarGroup"
+    }
+  ,
+	"ToolbarItem": 
+    {
+      "prefix": "#ToolbarItem",
+      "body": [
+        "<ToolbarItem",
+				"\tclassName={${1:\"null\"}/* optional: Classes applied to toolbar item */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as toolbar item content */}",
+				"</ToolbarItem>"
+      ],
+      "description": "ToolbarItem"
+    }
+  ,
+	"ToolbarSection": 
+    {
+      "prefix": "#ToolbarSection",
+      "body": [
+        "<ToolbarSection",
+				"\tclassName={${1:\"null\"}/* optional: Classes applied to toolbar section */}",
+				"\taria-label={${2:\"string\"}/* optional: Aria label applied to toolbar section */}",
+				">",
+				"\t{${0:<>ReactNode</>}/* optional: Anything that can be rendered as toolbar section */}",
+				"</ToolbarSection>"
+      ],
+      "description": "ToolbarSection"
+    }
+  ,
+}
