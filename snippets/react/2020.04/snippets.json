@@ -1082,10 +1082,9 @@
       "body": [
         "<DataToolbarFilter",
 				"\tchips={${1:[]}/* optional: An array of strings to be displayed as chips in the expandable content */}",
-				"\tdeleteChipGroup={${2:(category: string | DataToolbarChipGroup) => undefined as void}/* optional: Callback passed by consumer used to close the entire chip group */}",
-				"\tdeleteChip={${3:(category: string | DataToolbarChipGroup, chip: DataToolbarChip | string) => undefined as void}/* optional: Callback passed by consumer used to delete a chip from the chips[] */}",
-				"\tcategoryName={${4:'string'}/* required: Unique category name to be used as a label for the chip group */}",
-				"\tshowToolbarItem={${5:true}/* optional: Flag to show the toolbar item */}",
+				"\tdeleteChip={${2:(category: string | DataToolbarChipGroup, chip: DataToolbarChip | string) => undefined as void}/* optional: Callback passed by consumer used to delete a chip from the chips[] */}",
+				"\tcategoryName={${3:'string'}/* required: Unique category name to be used as a label for the chip group */}",
+				"\tshowToolbarItem={${4:true}/* optional: Flag to show the toolbar item */}",
 				">",
 				"\t{${0:<div>ReactNode</div>}/* required: Content to be rendered inside the data toolbar item associated with the chip group */}",
 				"</DataToolbarFilter>"
@@ -1158,8 +1157,8 @@
 				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the Drawer. */}",
 				"\tisExpanded={${2:false}/* optional: Indicates if the drawer is expanded */}",
 				"\tisInline={${3:false}/* optional: Indicates if the content element and panel element are displayed side by side. */}",
-				"\tisStatic={${4:false}/* optional: Indicates if the drawer will always show both content and panel. */}",
-				"\tposition={${5:'right'}/* optional: Position of the drawer panel */}",
+				"\tisStatic={${4:false}/* optional:  */}",
+				"\tposition={${5:'right'}/* optional:  */}",
 				">",
 				"\t{${0:<div>ReactNode</div>}/* optional: Content rendered in the left hand panel */}",
 				"</Drawer>"
@@ -1268,11 +1267,11 @@
       "body": [
         "<DrawerPanelContent",
 				"\tclassName={${1:\"''\"}/* optional: Additional classes added to the drawer. */}",
-				"\thasBorder={${2:false}/* optional: Flag indicating that the drawer panel should have a border. */}",
-				"\twidth={${3:25}/* optional: Default width for drawer panel */}",
-				"\twidthOnLg={${4:25}/* optional: Drawer panel width on large viewports */}",
-				"\twidthOnXl={${5:25}/* optional: Drawer panel width on xl viewports */}",
-				"\twidthOn2Xl={${6:25}/* optional: Drawer panel width on 2xl viewports */}",
+				"\thasBorder={${2:false}/* optional:  */}",
+				"\twidth={${3:25}/* optional:  */}",
+				"\twidthOnLg={${4:25}/* optional:  */}",
+				"\twidthOnXl={${5:25}/* optional:  */}",
+				"\twidthOn2Xl={${6:25}/* optional:  */}",
 				">",
 				"\t{${0:<div>ReactNode</div>}/* optional: Content to be rendered in the drawer panel. */}",
 				"</DrawerPanelContent>"
@@ -3860,5 +3859,4 @@
       ],
       "description": "ToolbarSection"
     }
-  ,
 }

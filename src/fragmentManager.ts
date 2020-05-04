@@ -129,7 +129,7 @@ export class FragmentManager implements IFragmentManager {
   }
 
   public loadFragments(version: string) {
-    const snippetPath = `../../snippets/${this.type}/fragments_${version}.json`;
+    const snippetPath = `../../snippets/${this.type}/${version}/fragments.json`;
     const pathToFragments = path.join(__dirname, snippetPath);
     console.info(`${this.type} path: ${pathToFragments}`, new Date().toISOString());
     const data = fs.readFileSync(pathToFragments, 'utf8');

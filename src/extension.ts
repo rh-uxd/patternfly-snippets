@@ -4,6 +4,9 @@ import { CodeFragmentProvider, CodeFragmentGroupTreeItem } from './fragmentProvi
 import { FragmentManager } from './fragmentManager';
 import { SnippetCompletionItemProvider, addAutoImport } from './snippetLoader';
 
+const pkg = require('../package.json');
+console.log(pkg.name);
+
 export async function activate(context: vscode.ExtensionContext) {
   const fragmentManagerReact = new FragmentManager(context, 'react');
   const fragmentManagerCore = new FragmentManager(context, 'core');
@@ -140,6 +143,15 @@ export async function activate(context: vscode.ExtensionContext) {
     fragmentManagerReact.toggleAutoImportReact();
   };
 
+  const showChangelog = (type: 'react' | 'core') => {
+    const version = type === 'react' ? fragmentManagerReact.getVersion() : fragmentManagerCore.getVersion();
+    vscode.env.openExternal(
+      vscode.Uri.parse(`https://www.patternfly.org/${version || 'v4'}/documentation/${type}/overview/release-notes`)
+    );
+  };
+  const showChangelogCore = () => showChangelog('core');
+  const showChangelogReact = () => showChangelog('react');
+
   const onUpdateConfiguration = (event: vscode.ConfigurationChangeEvent) => {
     const config = vscode.workspace.getConfiguration('patternflySnippets');
 
@@ -189,23 +201,27 @@ export async function activate(context: vscode.ExtensionContext) {
   );
   context.subscriptions.push(vscode.commands.registerCommand('patternflySnippets.autoImportCommand', toggleAutoImportReact));
   context.subscriptions.push(
-    vscode.commands.registerCommand('patternflySnippets.switchVersion_core_2020.03', () => switchVersionCore('2020.03'))
+    vscode.commands.registerCommand(`patternflySnippets.changelog_core`, showChangelogCore)
   );
   context.subscriptions.push(
-    vscode.commands.registerCommand('patternflySnippets.switchVersion_react_2020.03', () => switchVersionReact('2020.03'))
+    vscode.commands.registerCommand(`patternflySnippets.changelog_react`, showChangelogReact)
   );
-  context.subscriptions.push(
-    vscode.commands.registerCommand('patternflySnippets.switchVersion_react_2020.02', () => switchVersionReact('2020.02'))
-  );
-  context.subscriptions.push(
-    vscode.commands.registerCommand('patternflySnippets.switchVersion_react_2020.01', () => switchVersionReact('2020.01'))
-  );
-  context.subscriptions.push(
-    vscode.commands.registerCommand('patternflySnippets.switchVersion_react_2019.11', () => switchVersionReact('2019.11'))
-  );
-  context.subscriptions.push(
-    vscode.commands.registerCommand('patternflySnippets.switchVersion_react_2019.10', () => switchVersionReact('2019.10'))
-  );
+
+  pkg.contributes.configuration.forEach(config => {
+    if (config.properties['patternflySnippets.reactPatternflyRelease']) {
+      config.properties['patternflySnippets.reactPatternflyRelease']['enum'].forEach(release => {
+        context.subscriptions.push(
+          vscode.commands.registerCommand(`patternflySnippets.switchVersion_react_${release}`, () => switchVersionReact(release))
+        );
+      });
+    } else if (config.properties['patternflySnippets.corePatternflyRelease']) {
+      config.properties['patternflySnippets.corePatternflyRelease']['enum'].forEach(release => {
+        context.subscriptions.push(
+          vscode.commands.registerCommand(`patternflySnippets.switchVersion_core_${release}`, () => switchVersionCore(release))
+        );
+      });
+    }
+  });
 
   // push these subscriptions last
   loadSnippets();

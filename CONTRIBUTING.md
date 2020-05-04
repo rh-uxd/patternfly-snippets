@@ -17,6 +17,7 @@ cd packages/react-core
 // TODO: update the generator so it doesn't always run the tests
 yarn gen:tests --path="./src" --make-tests=false --make-snippets=true --make-fragments=true
 mv src/codeFragmentsWithComments.json ../../../../snippets/react/fragments_2020.XX.json
+// TODO: This file has an extra comma at the end that should not be there
 mv src/snippetsWithComments.json ../../../../snippets/react/snippets_2020.XX.json
 
 // Core

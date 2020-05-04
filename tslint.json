@@ -16,5 +16,10 @@
         "no-floating-promises": true
     },
     "no-string-literal": false,
-    "rulesDirectory": []
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": [
+            "submodules"
+        ]
+    }
 }

@@ -53,7 +53,7 @@ export class SnippetCompletionItemProvider implements vscode.CompletionItemProvi
     this.trigger = trigger;
     const pathToSnippet = path.join(
       __dirname,
-      `../../snippets/${type}/snippets_${release}.json`
+      `../../snippets/${type}/${release}/snippets.json`
     );
     console.info(`Loading snippet from ${pathToSnippet} with trigger ${trigger}`);
     this.snippets = require(pathToSnippet);
