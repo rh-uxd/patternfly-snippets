@@ -5,7 +5,7 @@ import { FragmentManager } from './fragmentManager';
 import { SnippetCompletionItemProvider, addAutoImport } from './snippetLoader';
 
 const pkg = require('../package.json');
-console.log(pkg.name);
+// console.log(pkg.name);
 
 export async function activate(context: vscode.ExtensionContext) {
   const fragmentManagerReact = new FragmentManager(context, 'react');
