@@ -4,6 +4,13 @@ All notable changes to the "pfsnippets" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.1.0] - 2020-05-04
+### Added
+- Release 2020.04 and 2020.05
+- Changelog links
+### Fixed
+- Only load extension when the container is active
+
 ## [1.0.4] - 2020-04-22
 ### Fixed
 - Added a web icon

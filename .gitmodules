@@ -1,0 +1,6 @@
+[submodule "submodules/patternfly-react"]
+	path = submodules/patternfly-react
+	url = https://github.com/patternfly/patternfly-react
+[submodule "submodules/patternfly"]
+	path = submodules/patternfly
+	url = https://github.com/patternfly/patternfly
