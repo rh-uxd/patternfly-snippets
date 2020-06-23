@@ -123,6 +123,8 @@ export async function activate(context: vscode.ExtensionContext) {
   const switchVersionReact = (version: string) => {
     fragmentManagerReact.updateVersionUsed(version);
     fragmentManagerReact.reimportDefaults(version);
+    const config = vscode.workspace.getConfiguration('patternflySnippets');
+    config.update('reactPatternflyRelease', version, true);
     loadSnippets(true);
     vscode.window.showInformationMessage(`Loaded release ${version} for react`);
   };
@@ -130,6 +132,8 @@ export async function activate(context: vscode.ExtensionContext) {
   const switchVersionCore = (version: string) => {
     fragmentManagerCore.updateVersionUsed(version);
     fragmentManagerCore.reimportDefaults(version);
+    const config = vscode.workspace.getConfiguration('patternflySnippets');
+    config.update('corePatternflyRelease', version, true);
     loadSnippets(true);
     vscode.window.showInformationMessage(`Loaded release ${version} for core`);
   };
