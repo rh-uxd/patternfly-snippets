@@ -99,6 +99,10 @@
         }
       },
       {
+        "command": "patternflySnippets.switchVersion_core_2020.06",
+        "title": "Release 2020.06"
+      },
+      {
         "command": "patternflySnippets.switchVersion_core_2020.05",
         "title": "Release 2020.05"
       },
@@ -109,6 +113,10 @@
       {
         "command": "patternflySnippets.switchVersion_core_2020.03",
         "title": "Release 2020.03"
+      },
+      {
+				"command": "patternflySnippets.switchVersion_react_2020.06",
+				"title": "Release 2020.06"
       },
       {
 				"command": "patternflySnippets.switchVersion_react_2020.05",
@@ -147,19 +155,24 @@
           "group": "navigation@0"
         },
         {
-          "command": "patternflySnippets.switchVersion_core_2020.05",
+          "command": "patternflySnippets.switchVersion_core_2020.06",
           "when": "view == pfSnippetsCore",
           "group": "inline@0"
         },
         {
-          "command": "patternflySnippets.switchVersion_core_2020.04",
+          "command": "patternflySnippets.switchVersion_core_2020.05",
           "when": "view == pfSnippetsCore",
           "group": "inline@1"
         },
         {
-          "command": "patternflySnippets.switchVersion_core_2020.03",
+          "command": "patternflySnippets.switchVersion_core_2020.04",
           "when": "view == pfSnippetsCore",
           "group": "inline@2"
+        },
+        {
+          "command": "patternflySnippets.switchVersion_core_2020.03",
+          "when": "view == pfSnippetsCore",
+          "group": "inline@3"
         },
         {
           "command": "patternflySnippets.changelog_react",
@@ -177,39 +190,44 @@
           "group": "navigation@2"
         },
         {
-          "command": "patternflySnippets.switchVersion_react_2020.05",
+          "command": "patternflySnippets.switchVersion_react_2020.06",
           "when": "view == pfSnippetsReact",
           "group": "inline@0"
         },
         {
-          "command": "patternflySnippets.switchVersion_react_2020.04",
+          "command": "patternflySnippets.switchVersion_react_2020.05",
           "when": "view == pfSnippetsReact",
           "group": "inline@1"
-				},
+        },
         {
-          "command": "patternflySnippets.switchVersion_react_2020.03",
+          "command": "patternflySnippets.switchVersion_react_2020.04",
           "when": "view == pfSnippetsReact",
           "group": "inline@2"
 				},
         {
-          "command": "patternflySnippets.switchVersion_react_2020.02",
+          "command": "patternflySnippets.switchVersion_react_2020.03",
           "when": "view == pfSnippetsReact",
           "group": "inline@3"
 				},
-				{
-          "command": "patternflySnippets.switchVersion_react_2020.01",
+        {
+          "command": "patternflySnippets.switchVersion_react_2020.02",
           "when": "view == pfSnippetsReact",
           "group": "inline@4"
 				},
 				{
-          "command": "patternflySnippets.switchVersion_react_2019.11",
+          "command": "patternflySnippets.switchVersion_react_2020.01",
           "when": "view == pfSnippetsReact",
           "group": "inline@5"
 				},
 				{
-          "command": "patternflySnippets.switchVersion_react_2019.10",
+          "command": "patternflySnippets.switchVersion_react_2019.11",
           "when": "view == pfSnippetsReact",
           "group": "inline@6"
+				},
+				{
+          "command": "patternflySnippets.switchVersion_react_2019.10",
+          "when": "view == pfSnippetsReact",
+          "group": "inline@7"
         }
       ],
       "view/item/context": [
@@ -227,8 +245,8 @@
         "properties": {
           "patternflySnippets.reactPatternflyRelease": {
             "type": "string",
-            "default": "2020.05",
-            "enum": ["2020.05", "2020.04", "2020.03", "2020.02", "2020.01", "2019.11", "2019.10"],
+            "default": "2020.06",
+            "enum": ["2020.06", "2020.05", "2020.04", "2020.03", "2020.02", "2020.01", "2019.11", "2019.10"],
             "description": "PatternFly release"
           },
           "patternflySnippets.reactIncludeCommentsInFragment": {
@@ -265,8 +283,8 @@
         "properties": {
           "patternflySnippets.corePatternflyRelease": {
             "type": "string",
-            "default": "2020.05",
-            "enum": ["2020.05", "2020.04", "2020.03"],
+            "default": "2020.06",
+            "enum": ["2020.06", "2020.05", "2020.04", "2020.03"],
             "description": "PatternFly release"
           },
           "patternflySnippets.coreSnippetPrefix": {
