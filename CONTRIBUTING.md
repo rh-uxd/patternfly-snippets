@@ -97,6 +97,7 @@ Cleanup:
 
 // Push to github
 - First update the package.json version number field
+- Update CHANGELOG.md
 `git checkout -b release-$RELEASE`
 `git add .`
 `git commit -m 'Update to release $RELEASE`

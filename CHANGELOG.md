@@ -4,6 +4,12 @@ All notable changes to the "pfsnippets" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.2.0] - 2020-06-23
+### Added
+- Release 2020.06 and 2020.07
+### Fixed
+- Changing versions in the snippets menus also change it for the loaded snippets that can be inserted with the keyboard shortcuts
+
 ## [1.1.0] - 2020-05-04
 ### Added
 - Release 2020.04 and 2020.05
